@@ -1,0 +1,464 @@
+/******* Desktop Styles *******/
+
+@media screen {
+  .content {
+    column-gap: 2em;
+    column-rule: 1px solid #cccccc;
+  }
+  body {
+    font-size: 95%;
+    line-height: 125%;
+  }
+  kbd.key,
+  kbd.function,
+  kbd.shift {
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 3px;
+    /*padding: 1px 3px 0px 3px;*/
+    padding: 1px 3px 0px 3px;
+  }
+  kbd.key {
+    color: #333333;
+    border-color: #333333;
+  }
+  kbd.function {
+    color: #0099cc;
+    border-color: #0099cc;
+  }
+  .shift {
+    color: #ffcc33;
+    border-color: #ffcc33;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .content {
+    column-count: 2;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .content {
+    column-count: 3;
+  }
+}
+
+/******* Print Styles *******/
+
+/* Note: Safari does not support multicolumn printing */
+
+@media print {
+  @page {
+    margin: 10mm 10mm 10mm 10mm;
+  }
+  .content {
+    column-gap: 10mm;
+  }
+  body {
+    font-size: 10pt;
+    line-height: 12pt;
+  }
+  kbd.key,
+  kbd.function,
+  kbd.shift {
+    border-style: solid;
+    border-width: 1pt;
+    border-radius: 2pt;
+    padding: 0pt 3pt 0pt 3pt;
+  }
+  kbd.key {
+    color: #333333;
+    border-color: #333333;
+  }
+  kbd.function {
+    color: #333333;
+    border-color: #0099cc;
+  }
+  .shift {
+    color: #ffcc33;
+    border-color: #ffcc33;
+  }
+}
+
+@media print and (orientation: portrait) {
+  .content {
+    column-count: 1;
+  }
+}
+
+@media print and (orientation: landscape) {
+  .content {
+    column-count: 3;
+  }
+}
+
+@media print {
+  .no-print,
+  .no-print * {
+    display: none !important;
+  }
+}
+/******* Header *******/
+
+header {
+  background-color: #333333;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+}
+
+.header tr {
+  margin: 0;
+  padding: 0;
+}
+
+.header td {
+  margin: 0;
+  padding: 0;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/***** Navigation *****/
+
+.topnav {
+  overflow: hidden;
+  background-color: #333333;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 0.5em 0.5em;
+  text-decoration: none;
+  font-size: 100%;
+  font-weight: 400;
+}
+
+.topnav a:first-child {
+  padding-left: 1em;
+}
+
+.active {
+  background-color: #4caf50;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+.topnav a:hover {
+  background-color: #555;
+  color: white;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+  .topnav.responsive {
+    position: relative;
+  }
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav.responsive {
+    float: none;
+  }
+  .topnav.responsive {
+    position: relative;
+  }
+  .topnav.responsive {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/******* Layout on home page (1 or 2 columns) *******/
+
+.row {
+  width: 100%;
+  overflow: auto;
+}
+
+.column {
+  display: block;
+  width: 100%;
+}
+
+@media only screen and (min-width: 800px) {
+  .column {
+    float: left;
+  }
+  .left {
+    width: 30%;
+    margin-right: 2%;
+  }
+  .right {
+    width: 68%;
+    margin-right: 0;
+  }
+}
+
+.banner {
+  background-image: url(../images/hp41-modules.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: #000000;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex: 1;
+}
+
+/******* General *******/
+
+body {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  margin: 1em;
+}
+
+.content {
+  column-fill: balance;
+}
+
+h1,
+h2 {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 150%;
+  color: #333333;
+  column-span: all;
+  margin-top: 2em;
+}
+
+h2 {
+  font-size: 125%;
+  color: #0099cc;
+  break-after: avoid-column;
+  margin-bottom: 0.25em;
+}
+
+p {
+  text-align: justify;
+  margin-top: 0.25em;
+}
+
+p:first-child {
+  margin-top: 0;
+}
+
+h2:first-child {
+  margin-top: 0;
+}
+
+/******* Quick Reference Index *******/
+
+table.index {
+  border-collapse: collapse;
+  break-after: column;
+}
+
+.index td {
+  background-repeat: no-repeat;
+  background-position: left center;
+  vertical-align: top;
+  padding: 0.5em 0 0.5em 2em;
+}
+
+.time-icon {
+  background-image: url("../images/time.svg");
+}
+
+.math-icon {
+  background-image: url("../images/math.svg");
+}
+
+.connect-icon {
+  background-image: url("../images/connect.svg");
+}
+
+/******* Function Definitions *******/
+
+/* 
+Notes:
+- implemented using tables because of many display
+  issues with definition lists.
+- Firefox unfortunately does not break tables so we
+  have to reset the layout.
+*/
+
+table.functions,
+table.functions > tbody,
+table.functions > tbody > tr {
+  display: block;
+}
+
+table.functions td,
+table.functions th {
+  vertical-align: top;
+  padding-top: 0.75em;
+}
+
+table.functions td {
+  text-align: justify;
+  padding-left: 1em;
+}
+
+table.functions th {
+  text-align: left;
+  width: 4em;
+}
+
+kbd.key,
+kbd.function,
+kbd.shift {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 400;
+  font-size: 80%;
+  text-align: center;
+}
+
+kbd.shift {
+  background: #ffcc33;
+}
+
+/******* Tables *******/
+
+table {
+  border-collapse: collapse;
+  break-before: avoid-column;
+}
+
+table.values {
+  /*width: 100%;*/
+  margin: 0.75em 0;
+}
+
+table.values td.left {
+  text-align: left;
+}
+
+table.values td {
+  text-align: right;
+  padding: 0.25em 0.25em;
+  border: 1px solid #333333;
+}
+
+/*******/
+
+.keyboard {
+  width: 100%;
+}
+
+table.keyboard td.indent {
+  text-indent: -0.75em;
+  padding-left: 2.5em;
+}
+
+table.keyboard td.nowrap {
+  white-space: nowrap;
+  padding-left: 2em;
+}
+
+table.keyboard td {
+  padding-top: 0.25em;
+  text-align: left;
+}
+
+/*******/
+
+.stack {
+  width: 75%;
+  margin-top: 1em;
+  margin-left: 8%;
+  margin-right: 17%;
+}
+
+table.stack caption {
+  color: #0099cc;
+  font-weight: bold;
+  text-align: center;
+  padding-left: 1.5em;
+  padding-bottom: 0.25em;
+}
+
+table.stack td {
+  padding: 0.25em 0;
+}
+
+table.stack td.border {
+  border: 2px solid #333333;
+  text-align: center;
+  width: 90%;
+}
+
+.note {
+  padding-top: 0.5em;
+  text-align: left;
+}
+
+/*******/
+
+.simple {
+  border: 1px solid #333333;
+  border-collapse: separate;
+  margin: 0.5em 0;
+}
+
+table.simple td {
+  padding: 0 0;
+  text-align: right;
+  vertical-align: middle;
+}
+
+/*******/
+
+.standard {
+  border-collapse: collapse;
+  border: 1px solid #333333;
+  width: 100%;
+  margin: 1em 0;
+}
+
+table.standard caption {
+  color: #333333;
+  padding: 0.5em 1em;
+  font-weight: bold;
+  font-size: 110%;
+}
+
+table.standard td {
+  border: 1px solid #333333;
+  padding: 0.5em 0.75em;
+}
