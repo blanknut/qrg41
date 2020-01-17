@@ -4,8 +4,6 @@
   font-family: 'HP41X';
   src: url('fonts/HP41CharacterSetXtended.woff2') format('woff2'),
       url('fonts/HP41CharacterSetXtended.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
 }
 
 /******* Desktop Styles *******/
@@ -292,6 +290,11 @@ p:first-child {
 h2:first-child {
   margin-top: 0;
 }
+
+.hp41chars {
+  font-family: "HP41X";
+}
+
 
 /******* Quick Reference Index *******/
 
