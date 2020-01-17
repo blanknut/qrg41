@@ -1,9 +1,10 @@
 /******* Fonts *******/
 
 @font-face {
-  font-family: 'HP41X';
-  src: url('fonts/HP41CharacterSetXtended.woff2') format('woff2'),
-      url('fonts/HP41CharacterSetXtended.woff') format('woff');
+  font-family: "HP41X";
+  src:
+    url("fonts/HP41CharacterSetXtended.woff2") format("woff2"),
+    url("fonts/HP41CharacterSetXtended.woff") format("woff");
 }
 
 /******* Desktop Styles *******/
@@ -296,7 +297,6 @@ h2:first-child {
   font-family: "HP41X";
 }
 
-
 /******* Quick Reference Index *******/
 
 table.index {
@@ -380,8 +380,8 @@ table {
 }
 
 table.center {
-  margin-left:auto; 
-  margin-right:auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 table.values {
@@ -472,16 +472,19 @@ table.simple td {
   border-collapse: collapse;
 }
 
-table.chars td, table.chars th {
-  border: 1px solid #333333; 
+table.chars td,
+table.chars th {
+  border: 1px solid #333333;
   padding: 0.25em 0.75em;
 }
 
-table.chars td:nth-child(even), table.chars th:nth-child(even) {
+table.chars td:nth-child(even),
+table.chars th:nth-child(even) {
   border-left: 0;
 }
 
-table.chars td:nth-child(odd), table.chars th:nth-child(odd) {
+table.chars td:nth-child(odd),
+table.chars th:nth-child(odd) {
   border-right: 0;
 }
 
@@ -521,21 +524,23 @@ table.standard td {
   margin: 0px 0px 10px 10px;
 }
 
-.zoom {
-  transition: transform 0.5s;
-  -moz-transition: transform 0.5s;
-  -webkit-transition: transform 0.5s;
-  -o-transition: transform 0.5s;
-  -ms-transition: transform 0.5s;
- }
-
- .zoom:hover {
-  cursor: zoom-in; 
-  cursor: -moz-zoom-in;
-  cursor: -webkit-zoom-in;
-  transform: scale(4.0, 4.0);
-  -moz-transform: scale(4.0, 4.0);
-  -webkit-transform: scale(4.0, 4.0);
-  -o-transform: scale(4.0, 4.0);
-  -ms-transform: scale(4.0, 4.0);
- }
+@media (hover: hover) and (pointer: fine) {
+  /* don't use hover on touch devices */
+  .zoom {
+    transition: transform 0.5s;
+    -moz-transition: transform 0.5s;
+    -webkit-transition: transform 0.5s;
+    -o-transition: transform 0.5s;
+    -ms-transition: transform 0.5s;
+  }
+  .zoom:hover {
+    cursor: zoom-in;
+    cursor: -moz-zoom-in;
+    cursor: -webkit-zoom-in;
+    transform: scale(4, 4);
+    -moz-transform: scale(4, 4);
+    -webkit-transform: scale(4, 4);
+    -o-transform: scale(4, 4);
+    -ms-transform: scale(4, 4);
+  }
+}
