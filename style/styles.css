@@ -504,8 +504,8 @@ table.standard td {
 
 @font-face {
   font-family: 'HP41X';
-  src: url('fonts/HP41CharacterSetXtended.woff2') format('woff2'),
-      url('fonts/HP41CharacterSetXtended.woff') format('woff');
+  src: url('https://qrg41.fjk.ch/style/fonts/HP41CharacterSetXtended.woff2') format('woff2'),
+      url('https://qrg41.fjk.ch/style/fonts/HP41CharacterSetXtended.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
