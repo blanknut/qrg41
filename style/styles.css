@@ -262,6 +262,7 @@ h2 {
   font-family: "Roboto Condensed", sans-serif;
   font-weight: 700;
   line-height: 125%;
+  clear: both;
 }
 
 h1 {
@@ -512,3 +513,29 @@ table.standard td {
   border: 1px solid #333333;
   padding: 0.5em 0.75em;
 }
+
+/******* Images *******/
+
+.img-left {
+  float: right;
+  margin: 0px 0px 10px 10px;
+}
+
+.zoom {
+  transition: transform 0.5s;
+  -moz-transition: transform 0.5s;
+  -webkit-transition: transform 0.5s;
+  -o-transition: transform 0.5s;
+  -ms-transition: transform 0.5s;
+ }
+
+ .zoom:hover {
+  cursor: zoom-in; 
+  cursor: -moz-zoom-in;
+  cursor: -webkit-zoom-in;
+  transform: scale(4.0, 4.0);
+  -moz-transform: scale(4.0, 4.0);
+  -webkit-transform: scale(4.0, 4.0);
+  -o-transform: scale(4.0, 4.0);
+  -ms-transform: scale(4.0, 4.0);
+ }
