@@ -253,6 +253,7 @@ h1,
 h2 {
   font-family: "Roboto Condensed", sans-serif;
   font-weight: 700;
+  line-height: 125%;
 }
 
 h1 {
@@ -294,6 +295,10 @@ table.index {
   background-position: left center;
   vertical-align: top;
   padding: 0.5em 0 0.5em 2em;
+}
+
+.xfn-icon {
+  background-image: url("../images/xfn.svg");
 }
 
 .time-icon {
@@ -358,6 +363,11 @@ kbd.shift {
 table {
   border-collapse: collapse;
   break-before: avoid-column;
+}
+
+table.center {
+  margin-left:auto; 
+  margin-right:auto;
 }
 
 table.values {
@@ -444,6 +454,33 @@ table.simple td {
 
 /*******/
 
+.chars {
+  border-collapse: collapse;
+}
+
+table.chars td, table.chars th {
+  border: 1px solid #333333; 
+  padding: 0.25em 0.75em;
+}
+
+table.chars td:nth-child(even), table.chars th:nth-child(even) {
+  border-left: 0;
+}
+
+table.chars td:nth-child(odd), table.chars th:nth-child(odd) {
+  border-right: 0;
+}
+
+table.chars td:nth-child(odd) {
+  text-align: center;
+}
+
+table.chars td:nth-child(even) {
+  text-align: right;
+}
+
+/*******/
+
 .standard {
   border-collapse: collapse;
   border: 1px solid #333333;
@@ -461,4 +498,14 @@ table.standard caption {
 table.standard td {
   border: 1px solid #333333;
   padding: 0.5em 0.75em;
+}
+
+/******* Fonts *******/
+
+@font-face {
+  font-family: 'HP41X';
+  src: url('fonts/HP41CharacterSetXtended.woff2') format('woff2'),
+      url('fonts/HP41CharacterSetXtended.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }

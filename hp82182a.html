@@ -1,530 +1,634 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+
 <html lang="en-US">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>HP-41 QREF</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&display=swap"
-      rel="stylesheet"
-      />
-    <link rel="stylesheet" type="text/css" href="style/styles.css" />
-  </head>
-  <body>
-    <div class="sticky no-print">
-      <div class="topnav" id="this-topnav">
-        <a href="index.html">HOME</a>
-        <a href="hp82182a.html" class="active">TIME</a>
-        <a href="hp82183a.html">EXT I/O</a>
-        <a href="javascript:void(0);" class="icon" onclick="onTopnavClick()">&#9776;</a>
-      </div>
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 16.4), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HP-41 QREF</title>
+  <link href=
+  "https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&amp;display=swap"
+  rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="style/styles.css">
+</head>
+
+<body>
+  <div class="sticky no-print">
+    <div class="topnav" id="this-topnav">
+      <a href="index.html">HOME</a> <a href="hp82180a.html">XFN</a> <a href=
+      "hp82182a.html" class="active">TIME</a> <a href="hp82183a.html">EXT
+      I/O</a> <a href="javascript:void(0);" class="icon" onclick=
+      "onTopnavClick()">&#9776;</a>
     </div>
-    <div class="main">
-      <h1>HP 82182A Time Module</h1>
-      <div class="content">
-        <p>
-          While the HP 82182A Time Module is plugged into the calculator, the
-          time module clock and stopwatch are available for your use. All of the
-          clock and stopwatch functions are programmable except where noted
-          otherwise.
-        </p>
-        <h2>Alarm Functions</h2>
-        <table class="functions">
-          <tr>
-            <th><kbd class="function">ALMCAT</kbd></th>
-            <td>
-              Lists all pending and past-due clock alarms. Pressing
-              <kbd class="key">R/S</kbd> during an
-              <kbd class="function">ALMCAT</kbd> listing halts the
-              calculator in <kbd class="function">ALMCAT</kbd> mode and
-              redefines the keyboard to the following non-programmable alarm
-              catalog functions (the <kbd class="key">ALPHA</kbd> input is
-              not used):
-              <table class="keyboard">
-                <tr>
-                  <td>Delete alarm</td>
-                  <td class="nowrap">
-                    <kbd class="shift">&ensp;</kbd>
-                    <kbd class="key">C</kbd>
-                  </td>
-                </tr>
-                <tr>
-                  <td colspan="2">Display:</td>
-                </tr>
-                <tr>
-                  <td class="indent">Alarm Date</td>
-                  <td class="nowrap"><kbd class="key">D</kbd></td>
-                </tr>
-                <tr>
-                  <td class="indent">Alarm Time</td>
-                  <td class="nowrap"><kbd class="key">T</kbd></td>
-                </tr>
-                <tr>
-                  <td class="indent">Alarm Message, Label, or Function</td>
-                  <td class="nowrap"><kbd class="key">M</kbd></td>
-                </tr>
-                <tr>
-                  <td class="indent">Alarm Repeat Interval</td>
-                  <td class="nowrap"><span class="key">R</span></td>
-                </tr>
-                <tr>
-                  <td class="indent">Current Time</td>
-                  <td class="nowrap">
-                    <kbd class="shift">&ensp;</kbd>&nbsp;<kbd
-                      class="key"
-                      >T</kbd
-                      >
-                  </td>
-                </tr>
-                <tr>
-                  <td class="indent">
-                    Next Alarm and Message, Label, or Function
-                  </td>
-                  <td class="nowrap"><kbd class="key">SST</kbd></td>
-                </tr>
-                <tr>
-                  <td class="indent">
-                    Preceding Alarm and Message, Label, or Function
-                  </td>
-                  <td class="nowrap">
-                    <kbd class="shift">&ensp;</kbd>&nbsp;<kbd
-                      class="key"
-                      >BST</kbd
-                      >
-                  </td>
-                </tr>
-                <tr>
-                  <td class="indent">Exit Alarm Catalog Mode</td>
-                  <td class="nowrap"><kbd class="key">&larr;</kbd></td>
-                </tr>
-                <tr>
-                  <td class="indent">
-                    Reset Alarm Using Specified Repeat Interval
-                  </td>
-                  <td class="nowrap">
-                    <kbd class="shift">&ensp;</kbd>&nbsp;<kbd
-                      class="key"
-                      >R</kbd
-                      >
-                  </td>
-                </tr>
-                <tr>
-                  <td class="indent">
-                    Resume <kbd class="function">ALMCAT</kbd> Listing
-                  </td>
-                  <td class="nowrap"><kbd class="key">R/S</kbd></td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">ALMNOW</kbd></th>
-            <td>
-              Activates the oldest past-due program or function alarm in memory.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">XYZALM</kbd></th>
-            <td>
-              Sets an alarm using the parameters in the stack and ALPHA registers,
-              as follows:
-              <table class="stack">
-                <caption>
-                  Stack Parameters
-                </caption>
-                <tr>
-                  <td>Z</td>
-                  <td class="border"><i>Repeat Interval</i></td>
-                </tr>
-                <tr>
-                  <td>Y</td>
-                  <td class="border"><i>Date</i></td>
-                </tr>
-                <tr>
-                  <td>X</td>
-                  <td class="border"><i>Time</i></td>
-                </tr>
-              </table>
-              <p class="note">
-                <small
-                  >Z-Register: 0 = No Repeat<br />Y-Register: 0 = Current
-                Date</small
-                  >
-              </p>
-              <table class="stack">
-                <caption>
-                  ALPHA Parameter Options
-                </caption>
-                <tr>
-                  <td>&ensp;</td>
-                  <td class="border">Blank</td>
-                </tr>
-              </table>
-              <table class="stack">
-                <tr>
-                  <td>&ensp;</td>
-                  <td class="border"><i>Message</i></td>
-                </tr>
-              </table>
-              <table class="stack">
-                <tr>
-                  <td>&ensp;</td>
-                  <td class="border">
-                    &nearr;&nearr;<i>label or</i> &nearr;&nearr;<i>function</i>
-                  </td>
-                </tr>
-              </table>
-              <table class="stack">
-                <tr>
-                  <td>&ensp;</td>
-                  <td class="border">
-                    &nearr;<i>label or</i> &nearr;<i>function</i>
-                  </td>
-                </tr>
-              </table>
-              <p class="note">
-                <small
-                  >&nearr;&nearr;<i>label or</i> &nearr;&nearr;<i>function</i> =
-                Interrupting Control Alarm<br />
-                &nearr;<i>label or</i> &nearr;<i>function</i> = Noninterrupting
-                Control Alarm<br />
-                (A "function" specified in any alarm must be a programmable
-                function belonging to a plug-in device)</small
-                  >
-              </p>
-            </td>
-          </tr>
-        </table>
-        <h2>ALPHA Date and Time Functions</h2>
-        <table class="functions">
-          <tr>
-            <th><kbd class="function">ADATE</kbd></th>
-            <td>
-              Appends the number in the X-register to the ALPHA register in date
-              format. The number of digits varies according to the number of
-              digits in the display setting.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">ATIME</kbd></th>
-            <td>
-              Appends the number in the X-register to the ALPHA register in the
-              <kbd class="function">CLK12</kbd> or
-              <kbd class="function">CLK24</kbd> time format. The number is
-              truncated according to the number of digits in the display setting.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">ATIME24</kbd></th>
-            <td>
-              Operates the same as <kbd class="function">ATIME</kbd>, except
-              that the number appended will always appear in the
-              <kbd class="function">CLK24</kbd> time format.
-            </td>
-          </tr>
-        </table>
-        <h2>Clock Functions</h2>
-        <table class="functions">
-          <tr>
-            <th><kbd class="function">CLK12</kbd></th>
-            <td>Switches the calculator to the 12-hour time display format.</td>
-          </tr>
-          <tr>
-            <th><kbd class="function">CLK24</kbd></th>
-            <td>Switches the calculator to the 24-hour time display format.</td>
-          </tr>
-          <tr>
-            <th><kbd class="function">CLKT</kbd></th>
-            <td>Switches the clock to the time-only display format.</td>
-          </tr>
-          <tr>
-            <th><kbd class="function">CLKTD</kbd></th>
-            <td>Switches the clock to the time and date display format.</td>
-          </tr>
-          <tr>
-            <th>
-              <kbd class="function">CLOCK</kbd><br/>or<br/>
-              <kbd class="shift">&ensp;</kbd>
-              <kbd class="function">ON</kbd>
-            </th>
-            <td>Displays the clock.</td>
-          </tr>
-          <tr>
-            <th><kbd class="function">CORRECT</kbd></th>
-            <td>
-              Performs the same operation as
-              <kbd class="key">SETIME</kbd> and automatically adjusts the
-              accuracy factor.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">DATE</kbd></th>
-            <td>
-              Recalls the current date to the X-register. If executed from the
-              keyboard, the date and day are displayed.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">DATE+</kbd></th>
-            <td>
-              Calculates a new date by combining a date in the Y-register with a
-              number of days in the X-register. Refer to the Date Format Table on
-              the back page.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">DDAYS</kbd></th>
-            <td>
-              Calculates the number of days between a date in the X-register and a
-              date in the Y-register. Refer to the Date Format Table on the back
-              page.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">DMY</kbd></th>
-            <td>
-              Switches the date input/output to Day-Month-Year format; sets flag
-              31. Refer to the Date Format Table on the back page.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">DOW</kbd></th>
-            <td>
-              Replaces a date in the X-register with the corresponding number for
-              the day of the week (0 = Sunyday, ...; 6 = Saturday). When executed
-              from the keyboard, <kbd class="function">DOW</kbd> also
-              displays the day of the week.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">MDY</kbd></th>
-            <td>
-              Switches the date input/output to Month-Day-Year format; clears flag
-              31. Refer to the Date Format Table on the back page.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">RCLAF</kbd></th>
-            <td>Recalls the clock accuracy factor to the X-register.</td>
-          </tr>
-          <tr>
-            <th><kbd class="function">SETAF</kbd></th>
-            <td>
-              Sets the clock accuracy factor using a number in the range -99.9
-              &le; <i>x</i> &leq; 99.9.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">SETDATE</kbd></th>
-            <td>
-              Sets the clock date to the date specified in the X-register. Refer
-              to the Date Format Table on the back page.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">SETIME</kbd></th>
-            <td>
-              Sets the clock to the time in the X-register.
-              <table class="simple">
-                <tr style="height: 0.5em">
-                  <td colspan="15"></td>
-                </tr>
-                <tr>
-                  <td>&ensp;</td>
-                  <td>0</td>
-                  <td>.</td>
-                  <td>000000</td>
-                  <td>&ensp;</td>
-                  <td>through</td>
-                  <td>&ensp;</td>
-                  <td>11</td>
-                  <td>.</td>
-                  <td>595999</td>
-                  <td>&ensp;</td>
-                  <td>=</td>
-                  <td>&ensp;</td>
-                  <td>A.M.</td>
-                  <td>&ensp;</td>
-                </tr>
-                <tr>
-                  <td>&ensp;</td>
-                  <td>12</td>
-                  <td>.</td>
-                  <td>000000</td>
-                  <td>&ensp;</td>
-                  <td>through</td>
-                  <td>&ensp;</td>
-                  <td>23</td>
-                  <td>.</td>
-                  <td>595999</td>
-                  <td>&ensp;</td>
-                  <td rowspan="2">=</td>
-                  <td>&ensp;</td>
-                  <td rowspan="2">P.M.</td>
-                  <td>&ensp;</td>
-                </tr>
-                <tr>
-                  <td>&ensp;</td>
-                  <td>-1</td>
-                  <td>.</td>
-                  <td>000000</td>
-                  <td>&ensp;</td>
-                  <td>through</td>
-                  <td>&ensp;</td>
-                  <td>-11</td>
-                  <td>.</td>
-                  <td>595999</td>
-                  <td>&ensp;</td>
-                </tr>
-                <tr style="height: 0.5em">
-                  <td colspan="15"></td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">T+X</kbd></th>
-            <td>
-              Changes the clock time by the time value in the X-register,
-              according to the &plusmn;HHHH.MMSShh format. The date will change if
-              the time change crosses a date boundary.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">TIME</kbd></th>
-            <td>
-              Recalls the current time to the X-register (24-hour time format). If
-              executed from the keyboard, also displays the time.
-            </td>
-          </tr>
-        </table>
-        <h2>Stopwatch Mode Operation</h2>
-        <table class="functions">
-          <tr>
-            <th><kbd class="function">SW</kbd></th>
-            <td>
-              Switches the calculator to Stopwatch mode and reassigns the keyboard
-              to the following Stopwatch mode functions:
-              <table class="keyboard">
-                <tr>
-                  <td>Change <b>R</b><i>nn</i> or <b>D</b><i>nn</i></td>
-                  <td class="nowrap"><i>nn</i> (n = digit key)</td>
-                </tr>
-                <tr>
-                  <td>Clear Halted Stopwatch</td>
-                  <td class="nowrap"><kbd class="key">&larr;</kbd></td>
-                </tr>
-                <tr>
-                  <td>Exit Stopwatch Mode</td>
-                  <td class="nowrap">
-                    <kbd class="shift">&ensp;</kbd>
-                    <kbd class="key">&larr;</kbd>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Next <b>R</b><i>nn</i> or <b>D</b><i>nn</i></td>
-                  <td class="nowrap"><kbd class="key">SST</kbd></td>
-                </tr>
-                <tr>
-                  <td>Preceding <b>R</b><i>nn</i> or <b>D</b><i>nn</i></td>
-                  <td class="nowrap">
-                    <kbd class="shift">&ensp;</kbd>
-                    <kbd class="key">BST</kbd>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Record Split</td>
-                  <td class="nowrap"><kbd class="key">ENTER&uarr;</kbd></td>
-                </tr>
-                <tr>
-                  <td>Start/Stop Stopwatch</td>
-                  <td class="nowrap"><kbd class="key">R/S</kbd></td>
-                </tr>
-                <tr>
-                  <td>Register Pointer On/Off</td>
-                  <td class="nowrap"><kbd class="key">EEX</kbd></td>
-                </tr>
-                <tr>
-                  <td>Split Difference On/Off</td>
-                  <td class="nowrap"><kbd class="key">CHS</kbd></td>
-                </tr>
-                <tr>
-                  <td>Split Recall On/Off</td>
-                  <td class="nowrap"><kbd class="key">RCL</kbd></td>
-                </tr>
-                <tr>
-                  <td>Three-Digit Pointer On/Off</td>
-                  <td class="nowrap">
-                    <kbd class="shift">&ensp;</kbd>
-                    <kbd class="key">EEX</kbd>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-        </table>
-        <h2>Stopwatch Operation Out of Stopwatch Mode</h2>
-        <p>
-          The following four functions operate only when the calculator is not
-          set to Stopwatch mode.
-        </p>
-        <table class="functions">
-          <tr>
-            <th><kbd class="function">RCLSW</kbd></th>
-            <td>Recalls the current Stopwatch time to the X-register.</td>
-          </tr>
-          <tr>
-            <th><kbd class="function">RUNSW</kbd></th>
-            <td>Causes the stopwatch to begin running.</td>
-          </tr>
-          <tr>
-            <th><kbd class="function">SETSW</kbd></th>
-            <td>
-              Sets the stopwatch to the starting time in the X-register (-99.59599
-              &le; <i>t</i> &le; 99.595999).
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">STOPSW</kbd></th>
-            <td>Halts the stopwatch.</td>
-          </tr>
-        </table>
-        <table class="standard">
-          <caption>
-            Date Format Table
-          </caption>
-          <tr>
-            <td>Setting</td>
-            <td>
-              Input* and Output Format ( <kbd class="key">FIX</kbd> 6
-              Display)
-            </td>
-            <td>
-              Display When <kbd class="function">DATE</kbd> Executed From
-              Keyboard
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <kbd class="function">MDY</kbd><br /><kbd
-                class="function"
-                >DMY</kbd
-                >
-            </td>
-            <td><i>MM.DDYYYY</i><br /><i>DD.MMYYYY</i></td>
-            <td><i>MM/DD/YY day</i><br /><i>DD.MM.YY day</i></td>
-          </tr>
-          <tr>
-            <td colspan="3">
-              <small>*Input must be a positive number. All trailing digits after the
-              year must be zero; otherwise an error message will result.</small>
-            </td>
-          </tr>
-        </table>
-      </div>
+  </div>
+
+  <div class="main">
+    <h1>HP 82182A Time Module</h1>
+
+    <div class="content">
+      <p>While the HP 82182A Time Module is plugged into the calculator, the
+      time module clock and stopwatch are available for your use. All of the
+      clock and stopwatch functions are programmable except where noted
+      otherwise.</p>
+
+      <h2>Alarm Functions</h2>
+
+      <table class="functions">
+        <tr>
+          <th><kbd class="function">ALMCAT</kbd></th>
+
+          <td>
+            Lists all pending and past-due clock alarms. Pressing <kbd class=
+            "key">R/S</kbd> during an <kbd class="function">ALMCAT</kbd>
+            listing halts the calculator in <kbd class="function">ALMCAT</kbd>
+            mode and redefines the keyboard to the following non-programmable
+            alarm catalog functions (the <kbd class="key">ALPHA</kbd> input is
+            not used):
+
+            <table class="keyboard">
+              <tr>
+                <td>Delete alarm</td>
+
+                <td class="nowrap"><kbd class="shift">&ensp;</kbd> <kbd class=
+                "key">C</kbd></td>
+              </tr>
+
+              <tr>
+                <td colspan="2">Display:</td>
+              </tr>
+
+              <tr>
+                <td class="indent">Alarm Date</td>
+
+                <td class="nowrap"><kbd class="key">D</kbd></td>
+              </tr>
+
+              <tr>
+                <td class="indent">Alarm Time</td>
+
+                <td class="nowrap"><kbd class="key">T</kbd></td>
+              </tr>
+
+              <tr>
+                <td class="indent">Alarm Message, Label, or Function</td>
+
+                <td class="nowrap"><kbd class="key">M</kbd></td>
+              </tr>
+
+              <tr>
+                <td class="indent">Alarm Repeat Interval</td>
+
+                <td class="nowrap"><span class="key">R</span></td>
+              </tr>
+
+              <tr>
+                <td class="indent">Current Time</td>
+
+                <td class="nowrap"><kbd class=
+                "shift">&ensp;</kbd>&nbsp;<kbd class="key">T</kbd></td>
+              </tr>
+
+              <tr>
+                <td class="indent">Next Alarm and Message, Label, or
+                Function</td>
+
+                <td class="nowrap"><kbd class="key">SST</kbd></td>
+              </tr>
+
+              <tr>
+                <td class="indent">Preceding Alarm and Message, Label, or
+                Function</td>
+
+                <td class="nowrap"><kbd class=
+                "shift">&ensp;</kbd>&nbsp;<kbd class="key">BST</kbd></td>
+              </tr>
+
+              <tr>
+                <td class="indent">Exit Alarm Catalog Mode</td>
+
+                <td class="nowrap"><kbd class="key">&larr;</kbd></td>
+              </tr>
+
+              <tr>
+                <td class="indent">Reset Alarm Using Specified Repeat
+                Interval</td>
+
+                <td class="nowrap"><kbd class=
+                "shift">&ensp;</kbd>&nbsp;<kbd class="key">R</kbd></td>
+              </tr>
+
+              <tr>
+                <td class="indent">Resume <kbd class="function">ALMCAT</kbd>
+                Listing</td>
+
+                <td class="nowrap"><kbd class="key">R/S</kbd></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">ALMNOW</kbd></th>
+
+          <td>Activates the oldest past-due program or function alarm in
+          memory.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">XYZALM</kbd></th>
+
+          <td>
+            Sets an alarm using the parameters in the stack and ALPHA
+            registers, as follows:
+
+            <table class="stack">
+              <caption>
+                Stack Parameters
+              </caption>
+
+              <tr>
+                <td>Z</td>
+
+                <td class="border"><i>Repeat Interval</i></td>
+              </tr>
+
+              <tr>
+                <td>Y</td>
+
+                <td class="border"><i>Date</i></td>
+              </tr>
+
+              <tr>
+                <td>X</td>
+
+                <td class="border"><i>Time</i></td>
+              </tr>
+            </table>
+
+            <p class="note"><small>Z-Register: 0 = No Repeat<br>
+            Y-Register: 0 = Current Date</small></p>
+
+            <table class="stack">
+              <caption>
+                ALPHA Parameter Options
+              </caption>
+
+              <tr>
+                <td>&ensp;</td>
+
+                <td class="border">Blank</td>
+              </tr>
+            </table>
+
+            <table class="stack">
+              <tr>
+                <td>&ensp;</td>
+
+                <td class="border"><i>Message</i></td>
+              </tr>
+            </table>
+
+            <table class="stack">
+              <tr>
+                <td>&ensp;</td>
+
+                <td class="border">&amp;nearr;&amp;nearr;<i>label or</i>
+                &amp;nearr;&amp;nearr;<i>function</i></td>
+              </tr>
+            </table>
+
+            <table class="stack">
+              <tr>
+                <td>&ensp;</td>
+
+                <td class="border">&amp;nearr;<i>label or</i>
+                &amp;nearr;<i>function</i></td>
+              </tr>
+            </table>
+
+            <p class="note"><small>&amp;nearr;&amp;nearr;<i>label or</i>
+            &amp;nearr;&amp;nearr;<i>function</i> = Interrupting Control
+            Alarm<br>
+            &amp;nearr;<i>label or</i> &amp;nearr;<i>function</i> =
+            Noninterrupting Control Alarm<br>
+            (A "function" specified in any alarm must be a programmable
+            function belonging to a plug-in device)</small></p>
+          </td>
+        </tr>
+      </table>
+
+      <h2>ALPHA Date and Time Functions</h2>
+
+      <table class="functions">
+        <tr>
+          <th><kbd class="function">ADATE</kbd></th>
+
+          <td>Appends the number in the X-register to the ALPHA register in
+          date format. The number of digits varies according to the number of
+          digits in the display setting.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">ATIME</kbd></th>
+
+          <td>Appends the number in the X-register to the ALPHA register in the
+          <kbd class="function">CLK12</kbd> or <kbd class=
+          "function">CLK24</kbd> time format. The number is truncated according
+          to the number of digits in the display setting.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">ATIME24</kbd></th>
+
+          <td>Operates the same as <kbd class="function">ATIME</kbd>, except
+          that the number appended will always appear in the <kbd class=
+          "function">CLK24</kbd> time format.</td>
+        </tr>
+      </table>
+
+      <h2>Clock Functions</h2>
+
+      <table class="functions">
+        <tr>
+          <th><kbd class="function">CLK12</kbd></th>
+
+          <td>Switches the calculator to the 12-hour time display format.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">CLK24</kbd></th>
+
+          <td>Switches the calculator to the 24-hour time display format.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">CLKT</kbd></th>
+
+          <td>Switches the clock to the time-only display format.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">CLKTD</kbd></th>
+
+          <td>Switches the clock to the time and date display format.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">CLOCK</kbd><br>
+          or<br>
+          <kbd class="shift">&ensp;</kbd> <kbd class="function">ON</kbd></th>
+
+          <td>Displays the clock.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">CORRECT</kbd></th>
+
+          <td>Performs the same operation as <kbd class="key">SETIME</kbd> and
+          automatically adjusts the accuracy factor.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">DATE</kbd></th>
+
+          <td>Recalls the current date to the X-register. If executed from the
+          keyboard, the date and day are displayed.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">DATE+</kbd></th>
+
+          <td>Calculates a new date by combining a date in the Y-register with
+          a number of days in the X-register. Refer to the Date Format Table on
+          the back page.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">DDAYS</kbd></th>
+
+          <td>Calculates the number of days between a date in the X-register
+          and a date in the Y-register. Refer to the Date Format Table on the
+          back page.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">DMY</kbd></th>
+
+          <td>Switches the date input/output to Day-Month-Year format; sets
+          flag 31. Refer to the Date Format Table on the back page.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">DOW</kbd></th>
+
+          <td>Replaces a date in the X-register with the corresponding number
+          for the day of the week (0 = Sunyday, ...; 6 = Saturday). When
+          executed from the keyboard, <kbd class="function">DOW</kbd> also
+          displays the day of the week.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">MDY</kbd></th>
+
+          <td>Switches the date input/output to Month-Day-Year format; clears
+          flag 31. Refer to the Date Format Table on the back page.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">RCLAF</kbd></th>
+
+          <td>Recalls the clock accuracy factor to the X-register.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">SETAF</kbd></th>
+
+          <td>Sets the clock accuracy factor using a number in the range -99.9
+          &le; <i>x</i> &amp;leq; 99.9.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">SETDATE</kbd></th>
+
+          <td>Sets the clock date to the date specified in the X-register.
+          Refer to the Date Format Table on the back page.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">SETIME</kbd></th>
+
+          <td>
+            Sets the clock to the time in the X-register.
+
+            <table class="simple">
+              <tr style="height: 0.5em">
+                <td colspan="15"></td>
+              </tr>
+
+              <tr>
+                <td>&ensp;</td>
+
+                <td>0</td>
+
+                <td>.</td>
+
+                <td>000000</td>
+
+                <td>&ensp;</td>
+
+                <td>through</td>
+
+                <td>&ensp;</td>
+
+                <td>11</td>
+
+                <td>.</td>
+
+                <td>595999</td>
+
+                <td>&ensp;</td>
+
+                <td>=</td>
+
+                <td>&ensp;</td>
+
+                <td>A.M.</td>
+
+                <td>&ensp;</td>
+              </tr>
+
+              <tr>
+                <td>&ensp;</td>
+
+                <td>12</td>
+
+                <td>.</td>
+
+                <td>000000</td>
+
+                <td>&ensp;</td>
+
+                <td>through</td>
+
+                <td>&ensp;</td>
+
+                <td>23</td>
+
+                <td>.</td>
+
+                <td>595999</td>
+
+                <td>&ensp;</td>
+
+                <td rowspan="2">=</td>
+
+                <td>&ensp;</td>
+
+                <td rowspan="2">P.M.</td>
+
+                <td>&ensp;</td>
+              </tr>
+
+              <tr>
+                <td>&ensp;</td>
+
+                <td>-1</td>
+
+                <td>.</td>
+
+                <td>000000</td>
+
+                <td>&ensp;</td>
+
+                <td>through</td>
+
+                <td>&ensp;</td>
+
+                <td>-11</td>
+
+                <td>.</td>
+
+                <td>595999</td>
+
+                <td>&ensp;</td>
+              </tr>
+
+              <tr style="height: 0.5em">
+                <td colspan="15"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">T+X</kbd></th>
+
+          <td>Changes the clock time by the time value in the X-register,
+          according to the &plusmn;HHHH.MMSShh format. The date will change if
+          the time change crosses a date boundary.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">TIME</kbd></th>
+
+          <td>Recalls the current time to the X-register (24-hour time format).
+          If executed from the keyboard, also displays the time.</td>
+        </tr>
+      </table>
+
+      <h2>Stopwatch Mode Operation</h2>
+
+      <table class="functions">
+        <tr>
+          <th><kbd class="function">SW</kbd></th>
+
+          <td>
+            Switches the calculator to Stopwatch mode and reassigns the
+            keyboard to the following Stopwatch mode functions:
+
+            <table class="keyboard">
+              <tr>
+                <td>Change <b>R</b><i>nn</i> or <b>D</b><i>nn</i></td>
+
+                <td class="nowrap"><i>nn</i> (n = digit key)</td>
+              </tr>
+
+              <tr>
+                <td>Clear Halted Stopwatch</td>
+
+                <td class="nowrap"><kbd class="key">&larr;</kbd></td>
+              </tr>
+
+              <tr>
+                <td>Exit Stopwatch Mode</td>
+
+                <td class="nowrap"><kbd class="shift">&ensp;</kbd> <kbd class=
+                "key">&larr;</kbd></td>
+              </tr>
+
+              <tr>
+                <td>Next <b>R</b><i>nn</i> or <b>D</b><i>nn</i></td>
+
+                <td class="nowrap"><kbd class="key">SST</kbd></td>
+              </tr>
+
+              <tr>
+                <td>Preceding <b>R</b><i>nn</i> or <b>D</b><i>nn</i></td>
+
+                <td class="nowrap"><kbd class="shift">&ensp;</kbd> <kbd class=
+                "key">BST</kbd></td>
+              </tr>
+
+              <tr>
+                <td>Record Split</td>
+
+                <td class="nowrap"><kbd class="key">ENTER&uarr;</kbd></td>
+              </tr>
+
+              <tr>
+                <td>Start/Stop Stopwatch</td>
+
+                <td class="nowrap"><kbd class="key">R/S</kbd></td>
+              </tr>
+
+              <tr>
+                <td>Register Pointer On/Off</td>
+
+                <td class="nowrap"><kbd class="key">EEX</kbd></td>
+              </tr>
+
+              <tr>
+                <td>Split Difference On/Off</td>
+
+                <td class="nowrap"><kbd class="key">CHS</kbd></td>
+              </tr>
+
+              <tr>
+                <td>Split Recall On/Off</td>
+
+                <td class="nowrap"><kbd class="key">RCL</kbd></td>
+              </tr>
+
+              <tr>
+                <td>Three-Digit Pointer On/Off</td>
+
+                <td class="nowrap"><kbd class="shift">&ensp;</kbd> <kbd class=
+                "key">EEX</kbd></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+
+      <h2>Stopwatch Operation Out of Stopwatch Mode</h2>
+
+      <p>The following four functions operate only when the calculator is not
+      set to Stopwatch mode.</p>
+
+      <table class="functions">
+        <tr>
+          <th><kbd class="function">RCLSW</kbd></th>
+
+          <td>Recalls the current Stopwatch time to the X-register.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">RUNSW</kbd></th>
+
+          <td>Causes the stopwatch to begin running.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">SETSW</kbd></th>
+
+          <td>Sets the stopwatch to the starting time in the X-register
+          (-99.59599 &le; <i>t</i> &le; 99.595999).</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">STOPSW</kbd></th>
+
+          <td>Halts the stopwatch.</td>
+        </tr>
+      </table>
+
+      <table class="standard">
+        <caption>
+          Date Format Table
+        </caption>
+
+        <tr>
+          <td>Setting</td>
+
+          <td>Input* and Output Format ( <kbd class="key">FIX</kbd> 6
+          Display)</td>
+
+          <td>Display When <kbd class="function">DATE</kbd> Executed From
+          Keyboard</td>
+        </tr>
+
+        <tr>
+          <td><kbd class="function">MDY</kbd><br>
+          <kbd class="function">DMY</kbd></td>
+
+          <td><i>MM.DDYYYY</i><br>
+          <i>DD.MMYYYY</i></td>
+
+          <td><i>MM/DD/YY day</i><br>
+          <i>DD.MM.YY day</i></td>
+        </tr>
+
+        <tr>
+          <td colspan="3"><small>*Input must be a positive number. All trailing
+          digits after the year must be zero; otherwise an error message will
+          result.</small></td>
+        </tr>
+      </table>
     </div>
-    <script>
-      function onTopnavClick() {
+  </div><script type="text/javascript">
+    function onTopnavClick() {
         var x = document.getElementById("this-topnav");
         if (x.className === "topnav") {
           x.className += " responsive";
@@ -532,6 +636,6 @@
           x.className = "topnav";
         }
       }
-    </script>
-  </body>
+  </script>
+</body>
 </html>

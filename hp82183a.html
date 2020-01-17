@@ -1,570 +1,600 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+
 <html lang="en-US">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>HP-41 QREF</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" type="text/css" href="style/styles.css" />
-  </head>
-  <body>
-    <div class="sticky no-print">
-      <div class="topnav" id="mytopnav">
-        <a href="index.html">HOME</a>
-        <a href="hp82182a.html">TIME</a>
-        <a href="hp82183a.html" class="active">EXT I/O</a>
-        <a href="javascript:void(0);" class="icon" onclick="onTopnavClick()">&#9776;</a>
-      </div>
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 16.4), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HP-41 QREF</title>
+  <link href=
+  "https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&amp;display=swap"
+  rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="style/styles.css">
+</head>
+
+<body>
+  <div class="sticky no-print">
+    <div class="topnav" id="mytopnav">
+      <a href="index.html">HOME</a> <a href="hp82180a.html">XFN</a> <a href=
+      "hp82182a.html">TIME</a> <a href="hp82183a.html" class="active">EXT
+      I/O</a> <a href="javascript:void(0);" class="icon" onclick=
+      "onTopnavClick()">&#9776;</a>
     </div>
-    <div class="main">
-      <h1>HP 82183A Extended I/O Module</h1>
-      <div class="content">
-        <p>
-          While the HP 82183A Extended I/O Module is plugged into the HP-41, the
-          following functions are available for your use. All functions are
-          programmable. Appropriate peripherals must be connected to the
-          Hewlett-Packard Interface Loop for most of the functions to be
-          executed normally.
-        </p>
-        <h2>Mass Storage Operations</h2>
-        <table class="functions">
-          <tr>
-            <th><kbd class="function">COPYFL</kbd></th>
-            <td>
-              Copies nonprivate file (named in ALPHA) from master device to
-              device addressed by number in X.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">DIRX</kbd></th>
-            <td>
-              Returns to ALPHA the name of file whose position in primary
-              medium's directory is specified by number in X. If X exceeds
-              number of files on medium,
-              <kbd class="function">DIRX</kbd> replaces 0 in X and leaves ALPHA
-              unchanged.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">FLLENG</kbd></th>
-            <td>
-              Places in X the length of the file specified in ALPHA. Length
-              values are interpreted as follows: PR, number of bytes; DA, KE,
-              ST, and WA, number of registers; AS, undefined; ??, unknown.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">FLTYPE</kbd></th>
-            <td>
-              For file named in ALPHA, places in X a two-character ALPHA string
-              representing the file type, as follows: PR, program; DA, data; KE,
-              key assignment; ST, status; WA, write-all; AS, ASCII; ??, unknown.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">MCOPY</kbd></th>
-            <td>
-              Copies contents of master medium onto all other media. Places in X
-              the number of records copied. Ignores any cassette drive having
-              its door opened prior to execution.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">MCOPYPV</kbd></th>
-            <td>
-              Same as <kbd class="function">MCOPY</kbd>, except that all HP-41
-              program files are made "private."
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">MVERIFY</kbd></th>
-            <td>
-              Checks each mass storage device to verify that number of records
-              specified in X can be read without error. Ignores any cassette
-              drive having its door opened prior to execution.
-            </td>
-          </tr>
-        </table>
-        <h2>Character Manipulation Functions</h2>
-        <table class="functions">
-          <tr>
-            <th><kbd class="function">ALENGIO</kbd></th>
-            <td>
-              Places in X the length of current ALPHA string. Skips leading
-              nulls.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">ANUMDEL</kbd></th>
-            <td>
-              Returns to X the value of a number represented by a string of
-              numerical characters in the ALPHA register. Deletes from ALPHA all
-              characters from beginning through the numerical character used.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">ATOXL</kbd></th>
-            <td>
-              Reverse of <kbd class="function">XTOAL</kbd>. Removes first
-              character from ALPHA and places in X the corresponding character
-              code.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">ATOXR</kbd></th>
-            <td>
-              Reverse of <kbd class="function">XTOAR</kbd>. Places character
-              code of last character of ALPHA string into X and deletes that
-              character from string.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">ATOXX</kbd></th>
-            <td>
-              Replaces number in X with code for character in ALPHA position
-              indicated by that number (where -24 &leq; |x| &leq; 23, and any
-              fractional part of |x| is ignored). Does not alter contents of
-              ALPHA. A positive number in X specifies position from leftmost
-              non-null character (position 0) in current string. A negative
-              number specifies absolute ALPHA register position numbered from
-              right.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">X&lt;&gt;FIO</kbd></th>
-            <td>
-              Exchanges value in X with decimal equivalent of binary value
-              represented by flags 00 through 07. Resets these flags according
-              to value in X when function executed (where 0 &leq; |x| &leq; 255,
-              and any fractional part of |x| is ignored).
-              <table class="values">
-                <tr>
-                  <td class="left">Flag</td>
-                  <td>07</td>
-                  <td>06</td>
-                  <td>05</td>
-                  <td>04</td>
-                  <td>03</td>
-                  <td>02</td>
-                  <td>01</td>
-                  <td>00</td>
-                </tr>
-                <tr>
-                  <td class="left">Value</td>
-                  <td>128</td>
-                  <td>64</td>
-                  <td>32</td>
-                  <td>16</td>
-                  <td>8</td>
-                  <td>4</td>
-                  <td>2</td>
-                  <td>1</td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">XTOAL</kbd></th>
-            <td>
-              Reverse of <kbd class="function">ATOXL</kbd>. Adds to left of
-              first non-null character in ALPHA the character corresponding to
-              the character code in X. Original string in ALPHA shifts one space
-              to right.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">XTOAR</kbd></th>
-            <td>
-              Reverse of <kbd class="function">ATOXR</kbd>. Appends to end of
-              current string in ALPHA the character corresponding to character
-              code in X.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">YTOAX</kbd></th>
-            <td>
-              Replaces a character in ALPHA with another character specified by
-              a character code in Y. Position in ALPHA determined by value in X
-              in same way as for <kbd class="function">ATOXX</kbd>.
-            </td>
-          </tr>
-        </table>
-        <h2>HP-IL Control Functions</h2>
-        <table class="functions">
-          <tr>
-            <th><kbd class="function">AID</kbd></th>
-            <td>
-              Places in X the accessory ID of primary device.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">CLRDEV</kbd></th>
-            <td>
-              Resets primary device to its initial state &ndash; typically, the
-              power-on state.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">CLRLOOP</kbd></th>
-            <td>
-              Simultaneously clears all devices on loop.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">DEVL</kbd></th>
-            <td>
-              Sends to primary device the Device-Dependent Listener command
-              number specified in X. Command number must be in the range 0 &leq;
-              |n| &leq; 31 (and any fractional part of |n| is ignored).
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">DEVT</kbd></th>
-            <td>
-              Sends to primary device the Device-Dependent Talker command number
-              specified in X. Command number must be in the range 0 &leq; |n|
-              &leq; 31 (and any fractional part of |n| is ignored).
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">FINDAID</kbd></th>
-            <td>
-              Uses accessory ID to locate device of specific class or type.
-              Returns device address to X. Loop search begins with primary
-              device. If ID is positive, search continues until specified device
-              is found. If ID is negative, search continues until address is
-              found for first device in device class corresponding to absolute
-              value of ID.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">ID</kbd></th>
-            <td>
-              Returns to ALPHA a string containing ID of primary device.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">INAC</kbd></th>
-            <td>
-              Replaces contents of ALPHA with string of bytes from primary
-              device. Adds bytes to string until either 23rd byte in sequence is
-              received or the byte (character) specified in X is received (in
-              which case the string terminates with byte preceding the byte
-              specified in X). Clears flag 17 if byte specified in X is
-              received; otherwise sets flag 17.
-              <kbd class="function">INAC</kbd> inserts dummy character "0" at
-              beginning of string.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">INACL</kbd></th>
-            <td>
-              Replaces ALPHA contents with a dummy "0" character and a string of
-              bytes from primary device. Transmission halts when either a
-              linefeed &ndash; code 10 &ndash; is received (which clears flag
-              17) or 23 characters have been received (which sets flag 17). Both
-              the linefeed and any carriage returns (character code 13) are
-              deleted from the string in ALPHA.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">INAE</kbd></th>
-            <td>
-              Replaces ALPHA contents with string of bytes from primary device.
-              Terminates input when either an End message is received or ALPHA
-              is filled (24 bytes). Sets flag 17 if End message received; clears
-              flag 17 if ALPHA filled before End received.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">INAN</kbd></th>
-            <td>
-              Replaces ALPHA contents with a string of up to 23 bytes from
-              primary device, and terminates string with dummy "0" character.
-              Value in X specifies number of bytes to be transmitted from
-              primary device.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">INP</kbd></th>
-            <td>
-              Causes primary device to send to HP-41 a series of bytes that the
-              HP-41 can translate into a program. First four bytes received
-              indicate program length in bytes. Last two bytes contain program
-              checksum. This program replaces last program in memory.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">INXB</kbd></th>
-            <td>
-              Directs primary device to send one byte of data to X.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">LOCK</kbd></th>
-            <td>
-              If primary device has remote override switch (for manually placing
-              device into Local mode), disables this switch. Device must already
-              be in Remote mode. Executing
-              <kbd class="function">NOTREM</kbd> cancels
-              <kbd class="function">LOCK</kbd>.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">NLOOP</kbd></th>
-            <td>
-              Places value in X indicating number of decices currently on HP-IL,
-              excluding HP-41 itself (and any devices that do not respond to the
-              Auto-Address message).
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">NOTREM</kbd></th>
-            <td>
-              Returns devices having Remote and Local modes to Local mode
-              control, and disables not-remote-enabled state.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">OUTAC</kbd></th>
-            <td>
-              Sends all but first non-null character in ALPHA string to device.
-              Adds to end of string the character specified by the character
-              code in X.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">OUTACL</kbd></th>
-            <td>
-              Sends string in ALPHA &ndash; minus first non-null character
-              &ndash; to primary device. Sends carriage return and line feed
-              following string.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">OUTAE</kbd></th>
-            <td>
-              Sends ALPHA string &ndash; minus first non-null character &ndash;
-              to primary device. Final character serves as part of the string
-              and as an End message.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">OUTAN</kbd></th>
-            <td>
-              Transmits to primary device up to 23 ALPHA characters, as
-              specified by value in X (where 0 &leq; |x| &leq; 23, and any
-              fractional part of |x| is ignored). Leading (first non-null)
-              character is not transmitted. Using zero (default) in X causes
-              transfer of all characters following the leading character,
-              regardless of string length.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">OUTP</kbd></th>
-            <td>
-              Sends from HP-41 to primary device the program containing the
-              global label in ALPHA. Does not send "private" programs.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">OUTXB</kbd></th>
-            <td>
-              Sends to primary device the eight-bit byte equivalent of decimal
-              byte value in X (where 0 &leq; |x| &leq; 255, and any fractional
-              part of |x| is ignored).
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">POLL</kbd></th>
-            <td>
-              Sends Identify message around loop and indicates loop's response
-              by displaying a to 255. Response number is decimal equivalent of
-              the eight parallel poll bits.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">POLLD</kbd></th>
-            <td>
-              Disables parallel poll response of primary device. (Cancels effect
-              of a previous <kbd class="function">POLLE</kbd> directed to that
-              device.)
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">POLLE</kbd></th>
-            <td>
-              Enables primary device to respond to a parallel poll. Uses
-              <i>enable number</i> in X to assign one of the eight parallel poll
-              bits to device and to specify whether device requests service.
-              Using an enable number in the range 0 &leq; |x| &leq; 7 assigns
-              bit number |x| and indicates "Service Not Requested". Using an
-              enable number in the range 8 &leq; |x| &leq; 15 assigns bit number
-              (|x| - 7) and indicates "Service Requested". (The fractional part
-              of any enable number is ignored.)
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">POLLUNC</kbd></th>
-            <td>
-              Disables parallel poll responses of all devices.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">RCLSEL</kbd></th>
-            <td>
-              Returns HP-IL address specified by most recent execution of
-              <kbd class="function">SELECT</kbd>. Address is that of primary
-              device if (1) 1 SELECT 1 executed since HP-IL module last
-              installed and (2) loop contains device having selected address.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">SRQ?</kbd></th>
-            <td>
-              Tests loop for service request by sending HP-IL Identify message.
-              When executed in running program, if device responds with service
-              request, HP-41 executes program line following
-              <kbd class="function">SRQ?</kbd> otherwise bypasses program line
-              following <kbd class="function">SRQ?</kbd>. When executed from
-              keyboard, if device responds with service request, HP-41 displays
-              <b>YES</b>; otherwise displays <b>NO</b>.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">STAT</kbd></th>
-            <td>
-              Reads up to 23 bytes of status from primary device and stores
-              these bytes as character string in ALPHA. Inserts dummy character
-              ("S" &ndash; for "status") at beginning of string.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">XFER</kbd></th>
-            <td>
-              Until End of Transmission message received, transfers data from
-              primary device to the device specified by the HP-IL address in X
-              (where 1 &leq; |x| &leq; 30, and any fractional part of |x| is
-              ignored). When executed in a program, End of Transmission message
-              signals the HP-41 to resume program execution.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">XFERC</kbd></th>
-            <td>
-              Transfers data from primary device to device specified by HP-IL
-              address in X (where 1 &leq; |x| &leq; 30, and any fractional part
-              of |x| is ignored). Transfer halts after character specified by
-              code in Y is sent.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">XFERCL</kbd></th>
-            <td>
-              Transfers data from primary device to device specified by address
-              in X (where 1 &leq; |x| &leq; 30, and any fractional part of |x|
-              is ignored). Transfer halts when linefeed character is sent.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">XFERE</kbd></th>
-            <td>
-              Transfers data between primary and another device specified by
-              address in X (where 1 &leq; |x| &leq; 30, and any fractional part
-              of |x| is ignored). Transmission ends when primary device sends
-              End message.
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">XFERN</kbd></th>
-            <td>
-              Transfers number of bytes specified in Y from primary device to
-              device at address specified by value in X (where 1 &leq; |x| &leq;
-              30, and any fractional part of Ixl is ignored).
-            </td>
-          </tr>
-        </table>
-        <h2>Advanced Control Functions</h2>
-        <table class="functions">
-          <tr>
-            <th><kbd class="function">ADROFF</kbd></th>
-            <td>
-              Disables the automatic loop addressing and talker/listener
-              commands used by data transfer functions. Sets flag 34. (Does not
-              affect HP-IL module <kbd class="function">INA</kbd> and
-              <kbd class="function">OUTA</kbd> functions.)
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">ADRON</kbd></th>
-            <td>
-              Enables the automatic loop addressing and talker/listener commands
-              used by data transfer functions. Clears flag 34. (Does not affect
-              HP-IL module <kbd class="function">INA</kbd> and
-              <kbd class="function">OUTA</kbd> functions.)
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">DDL</kbd></th>
-            <td>
-              Sends Device-Dependent Listener command message specified by value
-              in X to all active listeners (where 0 &leq; |x| &leq; 31, and any
-              fractional part of |x| is ignored).
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">DDT</kbd></th>
-            <td>
-              Sends Device-Dependent Talker message specified by value in X to
-              currently active talker (where 0 &leq; |x| &leq; 31, and any
-              fractional part of |x| is ignored).
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">LAD</kbd></th>
-            <td>
-              Switches to listener the device specified by HP-IL address in X
-              (where 1 &leq; |x| &leq; 30, and any fractional part of |x| is
-              ignored). (Sends Listen Address and Ready For Command messages.)
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">SEND</kbd></th>
-            <td>
-              Sends to primary device the command message specified by the
-              command number in X (where 0 &leq; |x| &leq; 255, and any
-              fractional part of |x| is ignored), followed by a
-              Ready-For-Command message. (For HP-IL Command Message Table, refer
-              to section 5 of your I/O module owner's manual.)
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">TAD</kbd></th>
-            <td>
-              Switches to talker the device specified by HP-IL address in X
-              (where 1 &leq; |x| &leq; 30, and any fractional part of |x| is
-              ignored). (Sends Talker Address message to device.)
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">UNL</kbd></th>
-            <td>
-              Removes all currently addressed listeners from listener status.
-              (Sends Unlisten message.)
-            </td>
-          </tr>
-          <tr>
-            <th><kbd class="function">UNT</kbd></th>
-            <td>
-              Removes current talker from talker status. (Sends Untalk message
-              followed by Ready For Command message.)
-            </td>
-          </tr>
-        </table>
-      </div>
+  </div>
+
+  <div class="main">
+    <h1>HP 82183A Extended I/O Module</h1>
+
+    <div class="content">
+      <p>While the HP 82183A Extended I/O Module is plugged into the HP-41, the
+      following functions are available for your use. All functions are
+      programmable. Appropriate peripherals must be connected to the
+      Hewlett-Packard Interface Loop for most of the functions to be executed
+      normally.</p>
+
+      <h2>Mass Storage Operations</h2>
+
+      <table class="functions">
+        <tr>
+          <th><kbd class="function">COPYFL</kbd></th>
+
+          <td>Copies nonprivate file (named in ALPHA) from master device to
+          device addressed by number in X.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">DIRX</kbd></th>
+
+          <td>Returns to ALPHA the name of file whose position in primary
+          medium's directory is specified by number in X. If X exceeds number
+          of files on medium, <kbd class="function">DIRX</kbd> replaces 0 in X
+          and leaves ALPHA unchanged.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">FLLENG</kbd></th>
+
+          <td>Places in X the length of the file specified in ALPHA. Length
+          values are interpreted as follows: PR, number of bytes; DA, KE, ST,
+          and WA, number of registers; AS, undefined; ??, unknown.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">FLTYPE</kbd></th>
+
+          <td>For file named in ALPHA, places in X a two-character ALPHA string
+          representing the file type, as follows: PR, program; DA, data; KE,
+          key assignment; ST, status; WA, write-all; AS, ASCII; ??,
+          unknown.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">MCOPY</kbd></th>
+
+          <td>Copies contents of master medium onto all other media. Places in
+          X the number of records copied. Ignores any cassette drive having its
+          door opened prior to execution.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">MCOPYPV</kbd></th>
+
+          <td>Same as <kbd class="function">MCOPY</kbd>, except that all HP-41
+          program files are made "private."</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">MVERIFY</kbd></th>
+
+          <td>Checks each mass storage device to verify that number of records
+          specified in X can be read without error. Ignores any cassette drive
+          having its door opened prior to execution.</td>
+        </tr>
+      </table>
+
+      <h2>Character Manipulation Functions</h2>
+
+      <table class="functions">
+        <tr>
+          <th><kbd class="function">ALENGIO</kbd></th>
+
+          <td>Places in X the length of current ALPHA string. Skips leading
+          nulls.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">ANUMDEL</kbd></th>
+
+          <td>Returns to X the value of a number represented by a string of
+          numerical characters in the ALPHA register. Deletes from ALPHA all
+          characters from beginning through the numerical character used.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">ATOXL</kbd></th>
+
+          <td>Reverse of <kbd class="function">XTOAL</kbd>. Removes first
+          character from ALPHA and places in X the corresponding character
+          code.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">ATOXR</kbd></th>
+
+          <td>Reverse of <kbd class="function">XTOAR</kbd>. Places character
+          code of last character of ALPHA string into X and deletes that
+          character from string.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">ATOXX</kbd></th>
+
+          <td>Replaces number in X with code for character in ALPHA position
+          indicated by that number (where -24 &amp;leq; |x| &amp;leq; 23, and
+          any fractional part of |x| is ignored). Does not alter contents of
+          ALPHA. A positive number in X specifies position from leftmost
+          non-null character (position 0) in current string. A negative number
+          specifies absolute ALPHA register position numbered from right.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">X&lt;&gt;FIO</kbd></th>
+
+          <td>
+            Exchanges value in X with decimal equivalent of binary value
+            represented by flags 00 through 07. Resets these flags according to
+            value in X when function executed (where 0 &amp;leq; |x| &amp;leq;
+            255, and any fractional part of |x| is ignored).
+
+            <table class="values">
+              <tr>
+                <td class="left">Flag</td>
+
+                <td>07</td>
+
+                <td>06</td>
+
+                <td>05</td>
+
+                <td>04</td>
+
+                <td>03</td>
+
+                <td>02</td>
+
+                <td>01</td>
+
+                <td>00</td>
+              </tr>
+
+              <tr>
+                <td class="left">Value</td>
+
+                <td>128</td>
+
+                <td>64</td>
+
+                <td>32</td>
+
+                <td>16</td>
+
+                <td>8</td>
+
+                <td>4</td>
+
+                <td>2</td>
+
+                <td>1</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">XTOAL</kbd></th>
+
+          <td>Reverse of <kbd class="function">ATOXL</kbd>. Adds to left of
+          first non-null character in ALPHA the character corresponding to the
+          character code in X. Original string in ALPHA shifts one space to
+          right.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">XTOAR</kbd></th>
+
+          <td>Reverse of <kbd class="function">ATOXR</kbd>. Appends to end of
+          current string in ALPHA the character corresponding to character code
+          in X.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">YTOAX</kbd></th>
+
+          <td>Replaces a character in ALPHA with another character specified by
+          a character code in Y. Position in ALPHA determined by value in X in
+          same way as for <kbd class="function">ATOXX</kbd>.</td>
+        </tr>
+      </table>
+
+      <h2>HP-IL Control Functions</h2>
+
+      <table class="functions">
+        <tr>
+          <th><kbd class="function">AID</kbd></th>
+
+          <td>Places in X the accessory ID of primary device.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">CLRDEV</kbd></th>
+
+          <td>Resets primary device to its initial state &ndash; typically, the
+          power-on state.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">CLRLOOP</kbd></th>
+
+          <td>Simultaneously clears all devices on loop.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">DEVL</kbd></th>
+
+          <td>Sends to primary device the Device-Dependent Listener command
+          number specified in X. Command number must be in the range 0
+          &amp;leq; |n| &amp;leq; 31 (and any fractional part of |n| is
+          ignored).</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">DEVT</kbd></th>
+
+          <td>Sends to primary device the Device-Dependent Talker command
+          number specified in X. Command number must be in the range 0
+          &amp;leq; |n| &amp;leq; 31 (and any fractional part of |n| is
+          ignored).</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">FINDAID</kbd></th>
+
+          <td>Uses accessory ID to locate device of specific class or type.
+          Returns device address to X. Loop search begins with primary device.
+          If ID is positive, search continues until specified device is found.
+          If ID is negative, search continues until address is found for first
+          device in device class corresponding to absolute value of ID.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">ID</kbd></th>
+
+          <td>Returns to ALPHA a string containing ID of primary device.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">INAC</kbd></th>
+
+          <td>Replaces contents of ALPHA with string of bytes from primary
+          device. Adds bytes to string until either 23rd byte in sequence is
+          received or the byte (character) specified in X is received (in which
+          case the string terminates with byte preceding the byte specified in
+          X). Clears flag 17 if byte specified in X is received; otherwise sets
+          flag 17. <kbd class="function">INAC</kbd> inserts dummy character "0"
+          at beginning of string.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">INACL</kbd></th>
+
+          <td>Replaces ALPHA contents with a dummy "0" character and a string
+          of bytes from primary device. Transmission halts when either a
+          linefeed &ndash; code 10 &ndash; is received (which clears flag 17)
+          or 23 characters have been received (which sets flag 17). Both the
+          linefeed and any carriage returns (character code 13) are deleted
+          from the string in ALPHA.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">INAE</kbd></th>
+
+          <td>Replaces ALPHA contents with string of bytes from primary device.
+          Terminates input when either an End message is received or ALPHA is
+          filled (24 bytes). Sets flag 17 if End message received; clears flag
+          17 if ALPHA filled before End received.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">INAN</kbd></th>
+
+          <td>Replaces ALPHA contents with a string of up to 23 bytes from
+          primary device, and terminates string with dummy "0" character. Value
+          in X specifies number of bytes to be transmitted from primary
+          device.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">INP</kbd></th>
+
+          <td>Causes primary device to send to HP-41 a series of bytes that the
+          HP-41 can translate into a program. First four bytes received
+          indicate program length in bytes. Last two bytes contain program
+          checksum. This program replaces last program in memory.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">INXB</kbd></th>
+
+          <td>Directs primary device to send one byte of data to X.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">LOCK</kbd></th>
+
+          <td>If primary device has remote override switch (for manually
+          placing device into Local mode), disables this switch. Device must
+          already be in Remote mode. Executing <kbd class=
+          "function">NOTREM</kbd> cancels <kbd class=
+          "function">LOCK</kbd>.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">NLOOP</kbd></th>
+
+          <td>Places value in X indicating number of decices currently on
+          HP-IL, excluding HP-41 itself (and any devices that do not respond to
+          the Auto-Address message).</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">NOTREM</kbd></th>
+
+          <td>Returns devices having Remote and Local modes to Local mode
+          control, and disables not-remote-enabled state.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">OUTAC</kbd></th>
+
+          <td>Sends all but first non-null character in ALPHA string to device.
+          Adds to end of string the character specified by the character code
+          in X.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">OUTACL</kbd></th>
+
+          <td>Sends string in ALPHA &ndash; minus first non-null character
+          &ndash; to primary device. Sends carriage return and line feed
+          following string.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">OUTAE</kbd></th>
+
+          <td>Sends ALPHA string &ndash; minus first non-null character &ndash;
+          to primary device. Final character serves as part of the string and
+          as an End message.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">OUTAN</kbd></th>
+
+          <td>Transmits to primary device up to 23 ALPHA characters, as
+          specified by value in X (where 0 &amp;leq; |x| &amp;leq; 23, and any
+          fractional part of |x| is ignored). Leading (first non-null)
+          character is not transmitted. Using zero (default) in X causes
+          transfer of all characters following the leading character,
+          regardless of string length.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">OUTP</kbd></th>
+
+          <td>Sends from HP-41 to primary device the program containing the
+          global label in ALPHA. Does not send "private" programs.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">OUTXB</kbd></th>
+
+          <td>Sends to primary device the eight-bit byte equivalent of decimal
+          byte value in X (where 0 &amp;leq; |x| &amp;leq; 255, and any
+          fractional part of |x| is ignored).</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">POLL</kbd></th>
+
+          <td>Sends Identify message around loop and indicates loop's response
+          by displaying a to 255. Response number is decimal equivalent of the
+          eight parallel poll bits.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">POLLD</kbd></th>
+
+          <td>Disables parallel poll response of primary device. (Cancels
+          effect of a previous <kbd class="function">POLLE</kbd> directed to
+          that device.)</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">POLLE</kbd></th>
+
+          <td>Enables primary device to respond to a parallel poll. Uses
+          <i>enable number</i> in X to assign one of the eight parallel poll
+          bits to device and to specify whether device requests service. Using
+          an enable number in the range 0 &amp;leq; |x| &amp;leq; 7 assigns bit
+          number |x| and indicates "Service Not Requested". Using an enable
+          number in the range 8 &amp;leq; |x| &amp;leq; 15 assigns bit number
+          (|x| - 7) and indicates "Service Requested". (The fractional part of
+          any enable number is ignored.)</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">POLLUNC</kbd></th>
+
+          <td>Disables parallel poll responses of all devices.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">RCLSEL</kbd></th>
+
+          <td>Returns HP-IL address specified by most recent execution of
+          <kbd class="function">SELECT</kbd>. Address is that of primary device
+          if (1) 1 SELECT 1 executed since HP-IL module last installed and (2)
+          loop contains device having selected address.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">SRQ?</kbd></th>
+
+          <td>Tests loop for service request by sending HP-IL Identify message.
+          When executed in running program, if device responds with service
+          request, HP-41 executes program line following <kbd class=
+          "function">SRQ?</kbd> otherwise bypasses program line following
+          <kbd class="function">SRQ?</kbd>. When executed from keyboard, if
+          device responds with service request, HP-41 displays <b>YES</b>;
+          otherwise displays <b>NO</b>.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">STAT</kbd></th>
+
+          <td>Reads up to 23 bytes of status from primary device and stores
+          these bytes as character string in ALPHA. Inserts dummy character
+          ("S" &ndash; for "status") at beginning of string.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">XFER</kbd></th>
+
+          <td>Until End of Transmission message received, transfers data from
+          primary device to the device specified by the HP-IL address in X
+          (where 1 &amp;leq; |x| &amp;leq; 30, and any fractional part of |x|
+          is ignored). When executed in a program, End of Transmission message
+          signals the HP-41 to resume program execution.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">XFERC</kbd></th>
+
+          <td>Transfers data from primary device to device specified by HP-IL
+          address in X (where 1 &amp;leq; |x| &amp;leq; 30, and any fractional
+          part of |x| is ignored). Transfer halts after character specified by
+          code in Y is sent.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">XFERCL</kbd></th>
+
+          <td>Transfers data from primary device to device specified by address
+          in X (where 1 &amp;leq; |x| &amp;leq; 30, and any fractional part of
+          |x| is ignored). Transfer halts when linefeed character is sent.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">XFERE</kbd></th>
+
+          <td>Transfers data between primary and another device specified by
+          address in X (where 1 &amp;leq; |x| &amp;leq; 30, and any fractional
+          part of |x| is ignored). Transmission ends when primary device sends
+          End message.</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">XFERN</kbd></th>
+
+          <td>Transfers number of bytes specified in Y from primary device to
+          device at address specified by value in X (where 1 &amp;leq; |x|
+          &amp;leq; 30, and any fractional part of Ixl is ignored).</td>
+        </tr>
+      </table>
+
+      <h2>Advanced Control Functions</h2>
+
+      <table class="functions">
+        <tr>
+          <th><kbd class="function">ADROFF</kbd></th>
+
+          <td>Disables the automatic loop addressing and talker/listener
+          commands used by data transfer functions. Sets flag 34. (Does not
+          affect HP-IL module <kbd class="function">INA</kbd> and <kbd class=
+          "function">OUTA</kbd> functions.)</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">ADRON</kbd></th>
+
+          <td>Enables the automatic loop addressing and talker/listener
+          commands used by data transfer functions. Clears flag 34. (Does not
+          affect HP-IL module <kbd class="function">INA</kbd> and <kbd class=
+          "function">OUTA</kbd> functions.)</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">DDL</kbd></th>
+
+          <td>Sends Device-Dependent Listener command message specified by
+          value in X to all active listeners (where 0 &amp;leq; |x| &amp;leq;
+          31, and any fractional part of |x| is ignored).</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">DDT</kbd></th>
+
+          <td>Sends Device-Dependent Talker message specified by value in X to
+          currently active talker (where 0 &amp;leq; |x| &amp;leq; 31, and any
+          fractional part of |x| is ignored).</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">LAD</kbd></th>
+
+          <td>Switches to listener the device specified by HP-IL address in X
+          (where 1 &amp;leq; |x| &amp;leq; 30, and any fractional part of |x|
+          is ignored). (Sends Listen Address and Ready For Command
+          messages.)</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">SEND</kbd></th>
+
+          <td>Sends to primary device the command message specified by the
+          command number in X (where 0 &amp;leq; |x| &amp;leq; 255, and any
+          fractional part of |x| is ignored), followed by a Ready-For-Command
+          message. (For HP-IL Command Message Table, refer to section 5 of your
+          I/O module owner's manual.)</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">TAD</kbd></th>
+
+          <td>Switches to talker the device specified by HP-IL address in X
+          (where 1 &amp;leq; |x| &amp;leq; 30, and any fractional part of |x|
+          is ignored). (Sends Talker Address message to device.)</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">UNL</kbd></th>
+
+          <td>Removes all currently addressed listeners from listener status.
+          (Sends Unlisten message.)</td>
+        </tr>
+
+        <tr>
+          <th><kbd class="function">UNT</kbd></th>
+
+          <td>Removes current talker from talker status. (Sends Untalk message
+          followed by Ready For Command message.)</td>
+        </tr>
+      </table>
     </div>
-    <script>
-      function onTopnavClick() {
+  </div><script type="text/javascript">
+    function onTopnavClick() {
         var x = document.getElementById("mytopnav");
         if (x.className === "topnav") {
           x.className += " responsive";
@@ -572,6 +602,6 @@
           x.className = "topnav";
         }
       }
-    </script>
-  </body>
+  </script>
+</body>
 </html>
