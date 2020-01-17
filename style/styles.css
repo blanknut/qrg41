@@ -1,3 +1,13 @@
+/******* Fonts *******/
+
+@font-face {
+  font-family: 'HP41X';
+  src: url('fonts/HP41CharacterSetXtended.woff2') format('woff2'),
+      url('fonts/HP41CharacterSetXtended.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /******* Desktop Styles *******/
 
 @media screen {
@@ -498,14 +508,4 @@ table.standard caption {
 table.standard td {
   border: 1px solid #333333;
   padding: 0.5em 0.75em;
-}
-
-/******* Fonts *******/
-
-@font-face {
-  font-family: 'HP41X';
-  src: url('https://qrg41.fjk.ch/style/fonts/HP41CharacterSetXtended.woff2') format('woff2'),
-      url('https://qrg41.fjk.ch/style/fonts/HP41CharacterSetXtended.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
 }
