@@ -327,6 +327,10 @@ table.index {
   background-image: url("../images/connect.svg");
 }
 
+.hpil-icon {
+  background-image: url("../images/hpil.svg");
+}
+
 /******* Function Definitions *******/
 
 /* 
@@ -359,6 +363,10 @@ table.functions th {
   width: 4em;
 }
 
+table.functions th.fullwidth {
+  width: 100%;
+}
+
 kbd.key,
 kbd.function,
 kbd.shift {
@@ -385,7 +393,6 @@ table.center {
 }
 
 table.values {
-  /*width: 100%;*/
   margin: 0.75em 0;
 }
 
@@ -464,6 +471,25 @@ table.simple td {
   padding: 0 0;
   text-align: right;
   vertical-align: middle;
+}
+
+/*******/
+
+.flags {
+  border-collapse: separate;
+  margin: 0;
+  padding: 0;
+}
+
+table.flags td, table.flags th {
+  padding: 0 0.5em;
+  text-align: center;
+  vertical-align: middle;
+  width: auto;
+}
+
+table.flags td:last-child, table.flags th:last-child {
+  text-align: left;
 }
 
 /*******/

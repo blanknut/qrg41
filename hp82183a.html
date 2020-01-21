@@ -17,10 +17,12 @@
 <body>
   <div class="sticky no-print">
     <div class="topnav" id="mytopnav">
-      <a href="index.html">HOME</a> <a href="hp82180a.html">XFN</a> <a href=
-      "hp82182a.html">TIME</a> <a href="hp82183a.html" class="active">EXT
-      I/O</a> <a href="javascript:void(0);" class="icon" onclick=
-      "onTopnavClick()">&#9776;</a>
+      <a href="index.html">HOME</a>
+      <a href="hp82180a.html">XFN</a>
+      <a href="hp82182a.html">TIME</a>
+      <a href="hp82160a.html">HPIL</a>
+      <a href="hp82183a.html" class="active">EXT I/O</a>
+      <a href="javascript:void(0);" class="icon" onclick="onTopnavClick()">&#9776;</a>
     </div>
   </div>
 
@@ -133,7 +135,7 @@
           <th><kbd class="function">ATOXX</kbd></th>
 
           <td>Replaces number in X with code for character in ALPHA position
-          indicated by that number (where -24 &amp;leq; |x| &amp;leq; 23, and
+          indicated by that number (where -24 &leq; |x| &leq; 23, and
           any fractional part of |x| is ignored). Does not alter contents of
           ALPHA. A positive number in X specifies position from leftmost
           non-null character (position 0) in current string. A negative number
@@ -146,7 +148,7 @@
           <td>
             Exchanges value in X with decimal equivalent of binary value
             represented by flags 00 through 07. Resets these flags according to
-            value in X when function executed (where 0 &amp;leq; |x| &amp;leq;
+            value in X when function executed (where 0 &leq; |x| &leq;
             255, and any fractional part of |x| is ignored).
 
             <table class="values">
@@ -246,7 +248,7 @@
 
           <td>Sends to primary device the Device-Dependent Listener command
           number specified in X. Command number must be in the range 0
-          &amp;leq; |n| &amp;leq; 31 (and any fractional part of |n| is
+          &leq; |n| &leq; 31 (and any fractional part of |n| is
           ignored).</td>
         </tr>
 
@@ -255,7 +257,7 @@
 
           <td>Sends to primary device the Device-Dependent Talker command
           number specified in X. Command number must be in the range 0
-          &amp;leq; |n| &amp;leq; 31 (and any fractional part of |n| is
+          &leq; |n| &leq; 31 (and any fractional part of |n| is
           ignored).</td>
         </tr>
 
@@ -384,7 +386,7 @@
           <th><kbd class="function">OUTAN</kbd></th>
 
           <td>Transmits to primary device up to 23 ALPHA characters, as
-          specified by value in X (where 0 &amp;leq; |x| &amp;leq; 23, and any
+          specified by value in X (where 0 &leq; |x| &leq; 23, and any
           fractional part of |x| is ignored). Leading (first non-null)
           character is not transmitted. Using zero (default) in X causes
           transfer of all characters following the leading character,
@@ -402,7 +404,7 @@
           <th><kbd class="function">OUTXB</kbd></th>
 
           <td>Sends to primary device the eight-bit byte equivalent of decimal
-          byte value in X (where 0 &amp;leq; |x| &amp;leq; 255, and any
+          byte value in X (where 0 &leq; |x| &leq; 255, and any
           fractional part of |x| is ignored).</td>
         </tr>
 
@@ -428,9 +430,9 @@
           <td>Enables primary device to respond to a parallel poll. Uses
           <i>enable number</i> in X to assign one of the eight parallel poll
           bits to device and to specify whether device requests service. Using
-          an enable number in the range 0 &amp;leq; |x| &amp;leq; 7 assigns bit
+          an enable number in the range 0 &leq; |x| &leq; 7 assigns bit
           number |x| and indicates "Service Not Requested". Using an enable
-          number in the range 8 &amp;leq; |x| &amp;leq; 15 assigns bit number
+          number in the range 8 &leq; |x| &leq; 15 assigns bit number
           (|x| - 7) and indicates "Service Requested". (The fractional part of
           any enable number is ignored.)</td>
         </tr>
@@ -475,7 +477,7 @@
 
           <td>Until End of Transmission message received, transfers data from
           primary device to the device specified by the HP-IL address in X
-          (where 1 &amp;leq; |x| &amp;leq; 30, and any fractional part of |x|
+          (where 1 &leq; |x| &leq; 30, and any fractional part of |x|
           is ignored). When executed in a program, End of Transmission message
           signals the HP-41 to resume program execution.</td>
         </tr>
@@ -484,7 +486,7 @@
           <th><kbd class="function">XFERC</kbd></th>
 
           <td>Transfers data from primary device to device specified by HP-IL
-          address in X (where 1 &amp;leq; |x| &amp;leq; 30, and any fractional
+          address in X (where 1 &leq; |x| &leq; 30, and any fractional
           part of |x| is ignored). Transfer halts after character specified by
           code in Y is sent.</td>
         </tr>
@@ -493,7 +495,7 @@
           <th><kbd class="function">XFERCL</kbd></th>
 
           <td>Transfers data from primary device to device specified by address
-          in X (where 1 &amp;leq; |x| &amp;leq; 30, and any fractional part of
+          in X (where 1 &leq; |x| &leq; 30, and any fractional part of
           |x| is ignored). Transfer halts when linefeed character is sent.</td>
         </tr>
 
@@ -501,7 +503,7 @@
           <th><kbd class="function">XFERE</kbd></th>
 
           <td>Transfers data between primary and another device specified by
-          address in X (where 1 &amp;leq; |x| &amp;leq; 30, and any fractional
+          address in X (where 1 &leq; |x| &leq; 30, and any fractional
           part of |x| is ignored). Transmission ends when primary device sends
           End message.</td>
         </tr>
@@ -510,8 +512,8 @@
           <th><kbd class="function">XFERN</kbd></th>
 
           <td>Transfers number of bytes specified in Y from primary device to
-          device at address specified by value in X (where 1 &amp;leq; |x|
-          &amp;leq; 30, and any fractional part of Ixl is ignored).</td>
+          device at address specified by value in X (where 1 &leq; |x|
+          &leq; 30, and any fractional part of Ixl is ignored).</td>
         </tr>
       </table>
 
@@ -540,7 +542,7 @@
           <th><kbd class="function">DDL</kbd></th>
 
           <td>Sends Device-Dependent Listener command message specified by
-          value in X to all active listeners (where 0 &amp;leq; |x| &amp;leq;
+          value in X to all active listeners (where 0 &leq; |x| &leq;
           31, and any fractional part of |x| is ignored).</td>
         </tr>
 
@@ -548,7 +550,7 @@
           <th><kbd class="function">DDT</kbd></th>
 
           <td>Sends Device-Dependent Talker message specified by value in X to
-          currently active talker (where 0 &amp;leq; |x| &amp;leq; 31, and any
+          currently active talker (where 0 &leq; |x| &leq; 31, and any
           fractional part of |x| is ignored).</td>
         </tr>
 
@@ -556,7 +558,7 @@
           <th><kbd class="function">LAD</kbd></th>
 
           <td>Switches to listener the device specified by HP-IL address in X
-          (where 1 &amp;leq; |x| &amp;leq; 30, and any fractional part of |x|
+          (where 1 &leq; |x| &leq; 30, and any fractional part of |x|
           is ignored). (Sends Listen Address and Ready For Command
           messages.)</td>
         </tr>
@@ -565,7 +567,7 @@
           <th><kbd class="function">SEND</kbd></th>
 
           <td>Sends to primary device the command message specified by the
-          command number in X (where 0 &amp;leq; |x| &amp;leq; 255, and any
+          command number in X (where 0 &leq; |x| &leq; 255, and any
           fractional part of |x| is ignored), followed by a Ready-For-Command
           message. (For HP-IL Command Message Table, refer to section 5 of your
           I/O module owner's manual.)</td>
@@ -575,7 +577,7 @@
           <th><kbd class="function">TAD</kbd></th>
 
           <td>Switches to talker the device specified by HP-IL address in X
-          (where 1 &amp;leq; |x| &amp;leq; 30, and any fractional part of |x|
+          (where 1 &leq; |x| &leq; 30, and any fractional part of |x|
           is ignored). (Sends Talker Address message to device.)</td>
         </tr>
 
