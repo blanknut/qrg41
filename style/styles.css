@@ -331,9 +331,13 @@ table.index {
   background-image: url("../images/hpil.svg");
 }
 
+.hepax-icon {
+  background-image: url("../images/hepax.svg");
+}
+
 /******* Function Definitions *******/
 
-/* 
+/*
 Notes:
 - implemented using tables because of many display
   issues with definition lists.
