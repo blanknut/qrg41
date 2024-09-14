@@ -1,601 +1,740 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 
 <html lang="en-US">
-<head>
-  <meta name="generator" content=
-  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 16.4), see www.w3.org">
-  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta
+      name="generator"
+      content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 16.4), see www.w3.org"
+    />
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>HP-41 QREF</title>
-  <link href=
-  "https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&amp;display=swap"
-  rel="stylesheet" type="text/css">
-  <link rel="stylesheet" type="text/css" href="style/styles.css">
-</head>
+    <title>HP-41 QREF</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="style/styles.css" />
+  </head>
 
-<body>
-  <div class="sticky no-print">
-    <div class="topnav" id="mytopnav">
-      <a href="index.html">HOME</a>
-      <a href="hp82180a.html">XFN</a>
-      <a href="hp82182a.html">TIME</a>
-      <a href="hp82160a.html" class="active">HPIL</a>
-      <a href="hp82183a.html">EXT I/O</a>
-      <!--
-      <a href="ccd.html">CCD</a>
-      -->
-      <a href="hepax.html">HEPAX</a>
-      <!--
-      <a href="ppc.html">PPC</a>
-      -->
-      <a href="javascript:void(0);" class="icon" onclick="onTopnavClick()">&#9776;</a>
+  <body>
+    <div class="sticky no-print">
+      <div class="topnav" id="mytopnav">
+        <a href="index.html">HOME</a>
+        <a href="hp82180a.html">XFN</a>
+        <a href="hp82182a.html">TIME</a>
+        <a href="hp82160a.html" class="active">HPIL</a>
+        <a href="hp82183a.html">EXT I/O</a>
+        <a href="hp82184a.html">PLOT</a>
+        <!--
+        <a href="ccd.html">CCD</a>
+        -->
+        <a href="hepax.html">HEPAX</a>
+        <!--
+        <a href="ppc.html">PPC</a>
+        -->
+        <a href="javascript:void(0);" class="icon" onclick="onTopnavClick()"
+          >&#9776;</a
+        >
+      </div>
     </div>
-  </div>
 
-  <div class="main">
-    <h1>HP 82160A HP-IL Module</h1>
+    <div class="main">
+      <h1>HP 82160A HP-IL Module</h1>
+
+      <div class="content">
+        <p>
+          <a
+            href="https://literature.hpcalc.org/community/hp82160a-om-en.pdf"
+            target="_blank"
+            >Manual</a
+          >
+          from
+          <a href="https://literature.hpcalc.org" target="_blank"
+            >HP Calculator Literature</a
+          >
+        </p>
+        <p>
+          <img
+            class="img-left zoom"
+            src="images/hp82160a.jpg"
+            alt="HP 82160A"
+            width="120px"
+          />
+          While the HP 82160A HP-IL Module is plugged into the calculator, the
+          following functions are available for your use. All functions are
+          programmable except as noted below. Appropriate peripherals must be
+          connected to the Hewlett-Packard Interface Loop for the functions to
+          be executed normally.<br />
+          Calculator flags indicated below determine how the interface module
+          performs certain operations. When a flag is set, operations are
+          performed as described.
+        </p>
+
+        <h2>Printer Operations</h2>
+        <p>
+          Functions marked with * are for the HP82162A Thermal Printer only.
+        </p>
+        <table class="functions">
+          <tr>
+            <th><kbd class="function">ACA</kbd></th>
+
+            <td>Accumulates the ALPHA register into the print buffer.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">ACCHR</kbd></th>
+
+            <td>
+              Accumulates a character into the print buffer. Uses X-register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">ACCOL</kbd>&nbsp;*</th>
+
+            <td>
+              Accumulates a specified column of dots into the print buffer. Uses
+              X-register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">ACSPEC</kbd>&nbsp;*</th>
+
+            <td>
+              Accumulates a special character into the print buffer. The
+              character is defined by using <kbd class="key">BLDSPEC</kbd>. Uses
+              X-register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">ACX</kbd></th>
+
+            <td>Accumulates the X-register contents into the print buffer.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">ADV</kbd></th>
+
+            <td>
+              Advances the printer paper and prints the print buffer
+              right-justified.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">BLDSPEC</kbd></th>
+
+            <td>
+              Executed up to seven times, builds a special character using
+              specified columns of dots. Accumulate using
+              <kbd class="key">ACSPEC</kbd> or store in a register. Uses X- and
+              Y-registers.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">FMT</kbd>&nbsp;*</th>
+
+            <td>
+              Accumulates a format specifier into the print buffer. Leading or
+              trailing specifier centers output; internal specifier prints left-
+              and right-justified.
+            </td>
+          </tr>
 
-    <div class="content">
-      <p><img class="img-left zoom" src="images/hp82160a.jpg" alt="HP 82160A" width="120px"/>
-        While the HP 82160A HP-IL Module is plugged into the calculator, the following functions
-        are available for your use. All functions are programmable except as noted below.
-        Appropriate peripherals must be connected to the Hewlett-Packard Interface Loop for
-        the functions to be executed normally.<br/>
-        Calculator flags indicated below determine how the interface module performs certain
-        operations. When a flag is set, operations are performed as described.</p>
+          <tr>
+            <th><kbd class="function">LIST</kbd></th>
 
-      <h2>Printer Operations</h2>
-      <p>Functions marked with * are for the HP82162A Thermal Printer only.</p>
-      <table class="functions">
-        <tr>
-          <th><kbd class="function">ACA</kbd></th>
+            <td>Lists specified program lines. Not programmable.</td>
+          </tr>
 
-          <td>Accumulates the ALPHA register into the print buffer.</td>
-        </tr>
+          <tr>
+            <th><kbd class="function">PRA</kbd></th>
 
-        <tr>
-          <th><kbd class="function">ACCHR</kbd></th>
+            <td>Prints the ALPHA register left-justified.</td>
+          </tr>
 
-          <td>Accumulates a character into the print buffer.
-            Uses X-register.</td>
-        </tr>
+          <tr>
+            <th><kbd class="function">PRAXIS</kbd>&nbsp;*</th>
 
-        <tr>
-          <th><kbd class="function">ACCOL</kbd>&nbsp;*</th>
+            <td>
+              Prints and labels a y-axis. Uses R<sub>00</sub>, R<sub>01</sub>,
+              R<sub>02</sub> (column width), R<sub>04</sub>.
+            </td>
+          </tr>
 
-          <td>
-            Accumulates a specified column of dots into the print buffer.
-            Uses X-register.</td>
-        </tr>
+          <tr>
+            <th><kbd class="function">PRBUF</kbd></th>
 
-        <tr>
-          <th><kbd class="function">ACSPEC</kbd>&nbsp;*</th>
+            <td>Prints the print buffer left-justified.</td>
+          </tr>
 
-          <td>Accumulates a special character into the print buffer.
-            The character is defined by using <kbd class="key">BLDSPEC</kbd>.
-            Uses X-register.</td>
-        </tr>
+          <tr>
+            <th><kbd class="function">PRFLAGS</kbd></th>
 
-        <tr>
-          <th><kbd class="function">ACX</kbd></th>
+            <td>Prints flag status and other calculator information.</td>
+          </tr>
 
-          <td>Accumulates the X-register contents into the print buffer.</td>
-        </tr>
+          <tr>
+            <th><kbd class="function">PRKEYS</kbd></th>
 
-        <tr>
-          <th><kbd class="function">ADV</kbd></th>
+            <td>Prints a list of currently reassigned keys.</td>
+          </tr>
 
-          <td>Advances the printer paper and prints the print buffer right-justified.</td>
-        </tr>
+          <tr>
+            <th><kbd class="function">PRPLOT</kbd></th>
 
-        <tr>
-          <th><kbd class="function">BLDSPEC</kbd></th>
+            <td>
+              Plots a function interactively. Prompts for parameters and stores
+              data in R<sub>00</sub> through R<sub>11</sub>.
+            </td>
+          </tr>
 
-          <td>Executed up to seven times, builds a special character using specified
-            columns of dots. Accumulate using <kbd class="key">ACSPEC</kbd> or store
-            in a register. Uses X- and Y-registers.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">FMT</kbd>&nbsp;*</th>
-
-          <td>Accumulates a format specifier into the print buffer. Leading or trailing
-            specifier centers output; internal specifier prints left- and right-justified.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">LIST</kbd></th>
-
-          <td>Lists specified program lines. Not programmable.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">PRA</kbd></th>
-
-          <td>Prints the ALPHA register left-justified.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">PRAXIS</kbd>&nbsp;*</th>
-
-          <td>Prints and labels a y-axis. Uses R<sub>00</sub>, R<sub>01</sub>,
-            R<sub>02</sub> (column width), R<sub>04</sub>.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">PRBUF</kbd></th>
-
-          <td>Prints the print buffer left-justified.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">PRFLAGS</kbd></th>
-
-          <td>Prints flag status and other calculator information.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">PRKEYS</kbd></th>
-
-          <td>Prints a list of currently reassigned keys.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">PRPLOT</kbd></th>
-
-          <td>Plots a function interactively. Prompts for parameters and stores data
-            in R<sub>00</sub> through R<sub>11</sub>.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">PRPLOTP</kbd>&nbsp;*</th>
-
-          <td>Plots a function noninteractively. Uses R<sub>00</sub> through R<sub>11</sub>:
-            R<sub>00</sub> (Y MIN), R<sub>01</sub> (Y MAX), R<sub>03</sub> (optional plot symbol),
-            R<sub>04</sub> (AXIS), R<sub>08</sub> (X MIN), R<sub>09</sub> (X MAX), R<sub>10</sub>
-            (X INC), R<sub>11</sub> (NAME). R<sub>06</sub> contains <i>x</i> value.
-          </td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">PRREG</kbd></th>
-
-          <td>Prints the contents of all storage registers.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">PRREGX</kbd></th>
-
-          <td>Prints the contents of registers specified by X (<i>bbb.eee</i>).</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">PR&Sigma;</kbd></th>
-
-          <td>Prints the contents of the statistics registers.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">PRSTK</kbd></th>
-
-          <td>Prints the contents of the X-, Y-, Z-, and T-registers.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">PRX</kbd></th>
-
-          <td>Prints the contents of the X-register.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">REGPLOT</kbd>&nbsp;*</th>
-
-          <td>Plots a single function value (from X-register). Uses R<sub>00</sub>,
-            R<sub>01</sub>, R<sub>02</sub> (<i>nnn.aaa</i>), R<sub>03</sub>.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">SKPCHR</kbd>&nbsp;*</th>
-
-          <td>Accumulates skipped characters into the print buffer Uses X-register.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">SKPCOL</kbd>&nbsp;*</th>
-
-          <td>Accumulates skipped dot columns into the print buffer. Uses X-register.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">STKPLOT</kbd></th>
-
-          <td>Plots a single function value using X (<i>nnn.aaa</i>), Y (Y MAX),
-            Z (Y MIN), T (<i>y</i> value).</td>
-        </tr>
-      </table>
-
-      <h2>Printer Flags</h2>
-
-      <table class="functions">
-        <tr>
-          <th>Flag 12:</th>
-
-          <td><b>Double Wide</b><br/>
-            Prints and accumulates characters double width.</td>
-        </tr>
-
-        <tr>
-          <th>Flag 13:</th>
-
-          <td><b>Lowercase</b><br/>
-            Prints and accumulates characters in lowercase.</td>
-        </tr>
-
-        <tr>
-          <th>Flag 21:</th>
-
-          <td><b>Printer Enable</b><br/>
-            Performs printer operations normally in programs. <kbd class="key">VIEW</kbd>
-            and <kbd class="key">AVIEW</kbd> print and do not halt program execution.
-            (Automatically set when flag 55 is set.)</td>
-        </tr>
-
-        <tr>
-          <th>Flag 55:</th>
-
-          <td><b>Printer Existence</b><br/>
-            Indicates a printer is connected to the system. (Automatically set when
-            printer is first detected.)</td>
-        </tr>
-
-        <tr>
-          <th class="fullwidth">
-            Flags 15 and 16: Print Mode (not used for HP 82162A Thermal Printer)
-          </th>
-        </tr>
-        <tr>
-          <th>&nbsp;</th>
-          <td>
-            <table class="flags">
-              <tr>
-                <th>Flag 15</th>
-                <th>Flag 16</th>
-                <th>Print Mode</th>
-              </tr>
-              <tr>
-                <td>clear</td>
-                <td>clear</td>
-                <td>MAN (manual)</td>
-              </tr>
-              <tr>
-                <td>clear</td>
-                <td>set</td>
-                <td>NORM (normal)</td>
-              </tr>
-              <tr>
-                <td>set</td>
-                <td>clear</td>
-                <td>TRACE</td>
-              </tr>
-              <tr>
-                <td>set</td>
-                <td>set</td>
-                <td>TRACE with stack option</td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-      </table>
-
-      <h2>Mass Storage Operations</h2>
-
-      <table class="functions">
-        <tr>
-          <th><kbd class="function">CREATE</kbd></th>
-
-          <td>Creates a new data file with specified number of registers and
-            filled with zero values. Uses ALPHA and X-registers.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">DIR</kbd></th>
-
-          <td>Displays (and prints) a directory of stored files. Indicates file type:
-            PR (program), DA (data), KE (key assignment), ST (status), and WA ("write-all").
-            Indicates file options: A (automatic), P (private), and S (secure).</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">NEWM</kbd></th>
-
-          <td>Prepares a new medium for storing files. Prompts for number of files in
-            directory space. Not programmable.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">PURGE</kbd></th>
-
-          <td>Removes a file from the medium. Uses ALPHA register.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">READA</kbd></th>
-
-          <td>Reads a "write-all" file and sets the calculator accordingly.
-            Uses ALPHA register.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">READK</kbd></th>
-
-          <td>Reads a key-assignment file and reassigns keys accordingly.
-            Uses ALPHA register.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">READP</kbd></th>
-
-          <td>Copies a program file into program memory, replacing the last program in
-            memory. Executed in USER mode, program key assignments become active also.
-            Uses ALPHA register.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">READR</kbd></th>
-
-          <td>Copies a data file into the calculator's registers until all file registers
-            copied or all storage registers filled. Uses ALPHA register.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">READRX</kbd></th>
-
-          <td>Copies part of a data file into registers specified by X (<i>bbb.eee</i>).
-            Starts at current register in data file.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">READS</kbd></th>
-
-          <td>Reads a status file and sets the calculator status. Pending program
-            returns are lost. Uses ALPHA register.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">READSUB</kbd></th>
-
-          <td>Copies a program file into program memory, placing it after the last
-            program in memory. Executed in USER mode, program key assignments become
-            active also. Uses ALPHA register.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">RENAME</kbd></th>
-
-          <td>PRenames a stored file. Uses ALPHA register.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">SEC</kbd></th>
-
-          <td>Makes a stored file secured against being erased, renamed, or altered.
-            Uses ALPHA register.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">SEEKR</kbd></th>
-
-          <td>Positions the medium to a specified data file and register.
-            Uses ALPHA and X-registers.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">UNSEC</kbd></th>
-
-          <td>Makes a stored file not secured. Uses ALPHA register.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">VERIFY</kbd></th>
-
-          <td>Verifies that a stored file can be read. Uses ALPHA register.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">WRTA</kbd></th>
-
-          <td>Stores a "write-all" file onto the medium. Uses ALPHA register.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">WRTX</kbd></th>
-
-          <td>Stores key assignments of system functions onto the medium.
-            Uses ALPHA register.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">WRTP</kbd></th>
-
-          <td>Stores a program and its key assignments onto the medium.
-            Uses ALPHA register.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">WRTPV</kbd></th>
-
-          <td>Stores a program and its key assignments onto medium and makes
-            the file private. Uses ALPHA register.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">WRTR</kbd></th>
-
-          <td>Copies all storage resisters into a data file.
-            Uses ALPHA register.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">WRTRX</kbd></th>
-
-          <td>Copies some storage registers into a data file as specified by
-            X (<i>bbb.eee</i>). Starts at current register in data file.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">WRTS</kbd></th>
-
-          <td>Stores calculator status onto the medium. Uses ALPHA register.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">ZERO</kbd></th>
-
-          <td>Fills a data file with zero values. Uses ALPHA register.</td>
-        </tr>
-      </table>
-
-      <h2>Mass Storage Flags</h2>
-
-      <table class="functions">
-        <tr>
-          <th>Flag 11:</th>
-
-          <td><b>Automatic Program Execution</b><br/>
-            Used with <kbd class="key">WRTP</kbd>, <kbd class="key">WRTPV</kbd> or <kbd class="key">WRTA</kbd>,
-            sets a program for automatic execution when copied back into the calculator from the keyboard.
-            (For <kbd class="key">WRTA</kbd>, execution set to start at current position in program memory.)</td>
-        </tr>
-      </table>
-
-      <h2>Interface Control Operations</h2>
-
-      <table class="functions">
-        <tr>
-          <th><kbd class="function">AUTOIO</kbd></th>
-
-          <td>Sets the interface to Auto mode.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">FINDID</kbd></th>
-
-          <td>Finds the address of a specified device type and places the address
-            in X. If the device is not found, zero is returned. Uses ALPHA register.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">INA</kbd></th>
-
-          <td>Inputs an ALPHA string of up to 24 characters from primary device.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">IND</kbd></th>
-
-          <td>Inputs a decimal number from primary device.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">INSTAT</kbd></th>
-
-          <td>Inputs status information from pri- mary device, sets or clears flags
-            00 through 07 accordingly, and places decimal status number in X.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">LISTEN</kbd></th>
-
-          <td>Sets a device as a listener, or removes all listeners for X = 31.
-            Uses X-register.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">LOCAL</kbd></th>
-
-          <td>Sets primary device to its local operating mode.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">MANIO</kbd></th>
-
-          <td>Sets the interface to Manual mode.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">OUTA</kbd></th>
-
-          <td>Outputs an ALPHA string to primary device. Uses ALPHA register.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">PWRDN</kbd></th>
-
-          <td>Sets all devices to their low power state.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">PWRUP</kbd></th>
-
-          <td>Sets all devices to their operating power state.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">REMOTE</kbd></th>
-
-          <td>Sets primary device to its remote operating mode.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">SELECT</kbd></th>
-
-          <td>Selects a device as the primary device. Uses X-register.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">STOPIO</kbd></th>
-
-          <td>Stops I/O communication in the loop.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">TRIGGER</kbd></th>
-
-          <td>Triggers all devices set to respond (listeners).</td>
-        </tr>
-      </table>
-
-      <h2>Interface Control Flags</h2>
-
-      <table class="functions">
-        <tr>
-          <th class="fullwidth">Flags 00 through 07: Device Status</th>
-        </tr>
-        <tr>
-          <th>&nbsp;</th>
-          <td>When set by <kbd class="key">INSTAT</kbd>, indicate that corresponding
-            status bits of a device are 1's.</td>
-        </tr>
-
-        <tr>
-          <th>Flag 17:</th>
-
-          <td><b>Suppress End-of-Line</b><br/>
-            End-of-line indicator is not used. <kbd class="key">OUTA</kbd> does not send
-            CR and LF. <kbd class="key">INA</kbd> ignores CR and LF.</td>
-        </tr>
-
-        <tr>
-          <th>Flag 32</th>
-
-          <td><b>Manual Mode</b><br/>
-            Indicates interface is in Manual mode.</td>
-        </tr>
-      </table>
+          <tr>
+            <th><kbd class="function">PRPLOTP</kbd>&nbsp;*</th>
+
+            <td>
+              Plots a function noninteractively. Uses R<sub>00</sub> through
+              R<sub>11</sub>: R<sub>00</sub> (Y MIN), R<sub>01</sub> (Y MAX),
+              R<sub>03</sub> (optional plot symbol), R<sub>04</sub> (AXIS),
+              R<sub>08</sub> (X MIN), R<sub>09</sub> (X MAX), R<sub>10</sub> (X
+              INC), R<sub>11</sub> (NAME). R<sub>06</sub> contains
+              <i>x</i> value.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">PRREG</kbd></th>
+
+            <td>Prints the contents of all storage registers.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">PRREGX</kbd></th>
+
+            <td>
+              Prints the contents of registers specified by X (<i>bbb.eee</i>).
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">PR&Sigma;</kbd></th>
+
+            <td>Prints the contents of the statistics registers.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">PRSTK</kbd></th>
+
+            <td>Prints the contents of the X-, Y-, Z-, and T-registers.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">PRX</kbd></th>
+
+            <td>Prints the contents of the X-register.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">REGPLOT</kbd>&nbsp;*</th>
+
+            <td>
+              Plots a single function value (from X-register). Uses
+              R<sub>00</sub>, R<sub>01</sub>, R<sub>02</sub> (<i>nnn.aaa</i>),
+              R<sub>03</sub>.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">SKPCHR</kbd>&nbsp;*</th>
+
+            <td>
+              Accumulates skipped characters into the print buffer Uses
+              X-register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">SKPCOL</kbd>&nbsp;*</th>
+
+            <td>
+              Accumulates skipped dot columns into the print buffer. Uses
+              X-register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">STKPLOT</kbd></th>
+
+            <td>
+              Plots a single function value using X (<i>nnn.aaa</i>), Y (Y MAX),
+              Z (Y MIN), T (<i>y</i> value).
+            </td>
+          </tr>
+        </table>
+
+        <h2>Printer Flags</h2>
+
+        <table class="functions">
+          <tr>
+            <th>Flag 12:</th>
+
+            <td>
+              <b>Double Wide</b><br />
+              Prints and accumulates characters double width.
+            </td>
+          </tr>
+
+          <tr>
+            <th>Flag 13:</th>
+
+            <td>
+              <b>Lowercase</b><br />
+              Prints and accumulates characters in lowercase.
+            </td>
+          </tr>
+
+          <tr>
+            <th>Flag 21:</th>
+
+            <td>
+              <b>Printer Enable</b><br />
+              Performs printer operations normally in programs.
+              <kbd class="key">VIEW</kbd> and <kbd class="key">AVIEW</kbd> print
+              and do not halt program execution. (Automatically set when flag 55
+              is set.)
+            </td>
+          </tr>
+
+          <tr>
+            <th>Flag 55:</th>
+
+            <td>
+              <b>Printer Existence</b><br />
+              Indicates a printer is connected to the system. (Automatically set
+              when printer is first detected.)
+            </td>
+          </tr>
+
+          <tr>
+            <th class="fullwidth">
+              Flags 15 and 16: Print Mode (not used for HP 82162A Thermal
+              Printer)
+            </th>
+          </tr>
+          <tr>
+            <th>&nbsp;</th>
+            <td>
+              <table class="flags">
+                <tr>
+                  <th>Flag 15</th>
+                  <th>Flag 16</th>
+                  <th>Print Mode</th>
+                </tr>
+                <tr>
+                  <td>clear</td>
+                  <td>clear</td>
+                  <td>MAN (manual)</td>
+                </tr>
+                <tr>
+                  <td>clear</td>
+                  <td>set</td>
+                  <td>NORM (normal)</td>
+                </tr>
+                <tr>
+                  <td>set</td>
+                  <td>clear</td>
+                  <td>TRACE</td>
+                </tr>
+                <tr>
+                  <td>set</td>
+                  <td>set</td>
+                  <td>TRACE with stack option</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+        <h2>Mass Storage Operations</h2>
+
+        <table class="functions">
+          <tr>
+            <th><kbd class="function">CREATE</kbd></th>
+
+            <td>
+              Creates a new data file with specified number of registers and
+              filled with zero values. Uses ALPHA and X-registers.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">DIR</kbd></th>
+
+            <td>
+              Displays (and prints) a directory of stored files. Indicates file
+              type: PR (program), DA (data), KE (key assignment), ST (status),
+              and WA ("write-all"). Indicates file options: A (automatic), P
+              (private), and S (secure).
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">NEWM</kbd></th>
+
+            <td>
+              Prepares a new medium for storing files. Prompts for number of
+              files in directory space. Not programmable.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">PURGE</kbd></th>
+
+            <td>Removes a file from the medium. Uses ALPHA register.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">READA</kbd></th>
+
+            <td>
+              Reads a "write-all" file and sets the calculator accordingly. Uses
+              ALPHA register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">READK</kbd></th>
+
+            <td>
+              Reads a key-assignment file and reassigns keys accordingly. Uses
+              ALPHA register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">READP</kbd></th>
+
+            <td>
+              Copies a program file into program memory, replacing the last
+              program in memory. Executed in USER mode, program key assignments
+              become active also. Uses ALPHA register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">READR</kbd></th>
+
+            <td>
+              Copies a data file into the calculator's registers until all file
+              registers copied or all storage registers filled. Uses ALPHA
+              register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">READRX</kbd></th>
+
+            <td>
+              Copies part of a data file into registers specified by X
+              (<i>bbb.eee</i>). Starts at current register in data file.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">READS</kbd></th>
+
+            <td>
+              Reads a status file and sets the calculator status. Pending
+              program returns are lost. Uses ALPHA register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">READSUB</kbd></th>
+
+            <td>
+              Copies a program file into program memory, placing it after the
+              last program in memory. Executed in USER mode, program key
+              assignments become active also. Uses ALPHA register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">RENAME</kbd></th>
+
+            <td>PRenames a stored file. Uses ALPHA register.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">SEC</kbd></th>
+
+            <td>
+              Makes a stored file secured against being erased, renamed, or
+              altered. Uses ALPHA register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">SEEKR</kbd></th>
+
+            <td>
+              Positions the medium to a specified data file and register. Uses
+              ALPHA and X-registers.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">UNSEC</kbd></th>
+
+            <td>Makes a stored file not secured. Uses ALPHA register.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">VERIFY</kbd></th>
+
+            <td>
+              Verifies that a stored file can be read. Uses ALPHA register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">WRTA</kbd></th>
+
+            <td>
+              Stores a "write-all" file onto the medium. Uses ALPHA register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">WRTX</kbd></th>
+
+            <td>
+              Stores key assignments of system functions onto the medium. Uses
+              ALPHA register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">WRTP</kbd></th>
+
+            <td>
+              Stores a program and its key assignments onto the medium. Uses
+              ALPHA register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">WRTPV</kbd></th>
+
+            <td>
+              Stores a program and its key assignments onto medium and makes the
+              file private. Uses ALPHA register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">WRTR</kbd></th>
+
+            <td>
+              Copies all storage resisters into a data file. Uses ALPHA
+              register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">WRTRX</kbd></th>
+
+            <td>
+              Copies some storage registers into a data file as specified by X
+              (<i>bbb.eee</i>). Starts at current register in data file.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">WRTS</kbd></th>
+
+            <td>
+              Stores calculator status onto the medium. Uses ALPHA register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">ZERO</kbd></th>
+
+            <td>Fills a data file with zero values. Uses ALPHA register.</td>
+          </tr>
+        </table>
+
+        <h2>Mass Storage Flags</h2>
+
+        <table class="functions">
+          <tr>
+            <th>Flag 11:</th>
+
+            <td>
+              <b>Automatic Program Execution</b><br />
+              Used with <kbd class="key">WRTP</kbd>,
+              <kbd class="key">WRTPV</kbd> or <kbd class="key">WRTA</kbd>, sets
+              a program for automatic execution when copied back into the
+              calculator from the keyboard. (For <kbd class="key">WRTA</kbd>,
+              execution set to start at current position in program memory.)
+            </td>
+          </tr>
+        </table>
+
+        <h2>Interface Control Operations</h2>
+
+        <table class="functions">
+          <tr>
+            <th><kbd class="function">AUTOIO</kbd></th>
+
+            <td>Sets the interface to Auto mode.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">FINDID</kbd></th>
+
+            <td>
+              Finds the address of a specified device type and places the
+              address in X. If the device is not found, zero is returned. Uses
+              ALPHA register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">INA</kbd></th>
+
+            <td>
+              Inputs an ALPHA string of up to 24 characters from primary device.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">IND</kbd></th>
+
+            <td>Inputs a decimal number from primary device.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">INSTAT</kbd></th>
+
+            <td>
+              Inputs status information from pri- mary device, sets or clears
+              flags 00 through 07 accordingly, and places decimal status number
+              in X.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">LISTEN</kbd></th>
+
+            <td>
+              Sets a device as a listener, or removes all listeners for X = 31.
+              Uses X-register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">LOCAL</kbd></th>
+
+            <td>Sets primary device to its local operating mode.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">MANIO</kbd></th>
+
+            <td>Sets the interface to Manual mode.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">OUTA</kbd></th>
+
+            <td>
+              Outputs an ALPHA string to primary device. Uses ALPHA register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">PWRDN</kbd></th>
+
+            <td>Sets all devices to their low power state.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">PWRUP</kbd></th>
+
+            <td>Sets all devices to their operating power state.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">REMOTE</kbd></th>
+
+            <td>Sets primary device to its remote operating mode.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">SELECT</kbd></th>
+
+            <td>Selects a device as the primary device. Uses X-register.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">STOPIO</kbd></th>
+
+            <td>Stops I/O communication in the loop.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">TRIGGER</kbd></th>
+
+            <td>Triggers all devices set to respond (listeners).</td>
+          </tr>
+        </table>
+
+        <h2>Interface Control Flags</h2>
+
+        <table class="functions">
+          <tr>
+            <th class="fullwidth">Flags 00 through 07: Device Status</th>
+          </tr>
+          <tr>
+            <th>&nbsp;</th>
+            <td>
+              When set by <kbd class="key">INSTAT</kbd>, indicate that
+              corresponding status bits of a device are 1's.
+            </td>
+          </tr>
+
+          <tr>
+            <th>Flag 17:</th>
+
+            <td>
+              <b>Suppress End-of-Line</b><br />
+              End-of-line indicator is not used.
+              <kbd class="key">OUTA</kbd> does not send CR and LF.
+              <kbd class="key">INA</kbd> ignores CR and LF.
+            </td>
+          </tr>
+
+          <tr>
+            <th>Flag 32</th>
+
+            <td>
+              <b>Manual Mode</b><br />
+              Indicates interface is in Manual mode.
+            </td>
+          </tr>
+        </table>
+      </div>
     </div>
-  </div><script type="text/javascript">
-    function onTopnavClick() {
+    <script type="text/javascript">
+      function onTopnavClick() {
         var x = document.getElementById("mytopnav");
         if (x.className === "topnav") {
           x.className += " responsive";
@@ -603,6 +742,6 @@
           x.className = "topnav";
         }
       }
-  </script>
-</body>
+    </script>
+  </body>
 </html>

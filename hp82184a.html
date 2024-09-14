@@ -1,0 +1,1007 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+
+<html lang="en-US">
+  <head>
+    <meta
+      name="generator"
+      content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 16.4), see www.w3.org"
+    />
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>HP-41 QREF</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="style/styles.css" />
+  </head>
+
+  <body>
+    <div class="sticky no-print">
+      <div class="topnav" id="mytopnav">
+        <a href="index.html">HOME</a>
+        <a href="hp82180a.html">XFN</a>
+        <a href="hp82182a.html">TIME</a>
+        <a href="hp82160a.html">HPIL</a>
+        <a href="hp82183a.html">EXT I/O</a>
+        <a href="hp82184a.html" class="active">PLOT</a>
+        <!--
+        <a href="ccd.html">CCD</a>
+        -->
+        <a href="hepax.html">HEPAX</a>
+        <!--
+        <a href="ppc.html">PPC</a>
+        -->
+        <a href="javascript:void(0);" class="icon" onclick="onTopnavClick()"
+          >&#9776;</a
+        >
+      </div>
+    </div>
+
+    <div class="main">
+      <h1>HP 82184A Plotter Module</h1>
+
+      <div class="content">
+        <p>
+          <a
+            href="https://literature.hpcalc.org/community/hp82184a-om-en.pdf"
+            target="_blank"
+            >Manual</a
+          >
+          from
+          <a href="https://literature.hpcalc.org" target="_blank"
+            >HP Calculator Literature</a
+          >
+        </p>
+        <h2>General Plotting Functions</h2>
+
+        <table class="functions">
+          <tr>
+            <th><kbd class="function">CLIPUU</kbd></th>
+            <td>
+              Specifies plot bounds in user units, regardless of plotting mode.
+              Interprets stack values as:
+              <table class="stack">
+                <tr>
+                  <td>T</td>
+                  <td class="border"><i>x-minimum</i></td>
+                </tr>
+                <tr>
+                  <td>Z</td>
+                  <td class="border"><i>x-maximum</i></td>
+                </tr>
+                <tr>
+                  <td>Y</td>
+                  <td class="border"><i>y-minimum</i></td>
+                </tr>
+                <tr>
+                  <td>X</td>
+                  <td class="border"><i>y-maximum</i></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">CSIZE</kbd></th>
+            <td>Sets the character space height in GU's.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">CSIZEO</kbd></th>
+            <td>
+              Sets the character space height in GU's (X-register), aspect ratio
+              (Y-register), and slant &ndash; in current angular mode &ndash;
+              (Z-register).
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">DGTIZE</kbd></th>
+            <td>
+              Enters the x- and y-coordinates of the pen's position into the X-
+              and Y-registers when the plotter's ENTER key is pressed.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">DRAW</kbd></th>
+            <td>
+              Draws a line from last pen position specified by plotter module to
+              position specified by (&#x1D465;,&#x1D466;).
+
+              <table class="stack">
+                <tr>
+                  <td>Y</td>
+                  <td class="border"><i>y</i></td>
+                  <td
+                    rowspan="2"
+                    style="white-space: nowrap; vertical-align: middle"
+                  >
+                    <span
+                      style="
+                        font-size: 2.5em;
+                        color: #0099cc;
+                        vertical-align: top;
+                      "
+                      >}</span
+                    >
+                    <span style="vertical-align: middle"
+                      >Current Units (UU's or GU's)</span
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td>X</td>
+                  <td class="border"><i>x</i></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">FRAME</kbd></th>
+
+            <td>
+              Draws a box around the active plotting boundaries (graphic limits
+              or plotting bounds).
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">GCLEAR</kbd></th>
+
+            <td>Advances page on plotters that have a page feed mechanism.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">IDRAW</kbd></th>
+
+            <td>
+              Draws a line from the last pen position specified by a plotter
+              module function to a point &#x1D465; and &#x1D466; units from that
+              position.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">IMOVE</kbd></th>
+
+            <td>
+              Moves the pen from the position specified by the last plotter
+              module function to a point &#x1D465; and &#x1D466; units from that
+              position.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">LABEL</kbd></th>
+
+            <td>
+              Prints the contents of the ALPHA register at the last pen position
+              specified by the HP-41.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">LDIR</kbd></th>
+
+            <td>
+              Sets the angle of rotation from 0&deg; for printing labels. A
+              positive value specifies counterclock-wise rotation.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">LIMIT</kbd></th>
+
+            <td>
+              Sets graphic limits in millimeters, according to values in stack.
+              Interprets values in stack in same way as shown for
+              <kbd class="function">CLIPUU</kbd>. Also sets same default
+              conditions as are set by <kbd class="function">PINIT</kbd>.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">LOCATD</kbd></th>
+
+            <td>
+              Specifies plotting bounds by digitizing the two opposite corners.
+              When <span class="bluebold">ENTER POINT</span> is displayed, move
+              pen to lower-left point and press plotter's ENTER key. When
+              <span class="bluebold">ENTER POINT</span> re-appears, move pen to
+              upper-right point and press ENTER key again.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">LOCATE</kbd></th>
+
+            <td>
+              Specifies plot bounds in graphic units, regardless of current
+              plotting mode. Interprets values in stack in same way as shown for
+              <kbd class="function">CLIPUU</kbd>.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">LORG</kbd></th>
+
+            <td>Sets the label origin position (1 through 9).</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">LTYPE</kbd></th>
+
+            <td>
+              Uses a line type number (integer value 1 through 8) to select one
+              of eight line types.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">LTYPEO</kbd></th>
+
+            <td>
+              Operates same as except that the number in the Y-register
+              specifies the length of the repeat pattern as a percentage of the
+              length of the diagonal between P1 and P2.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">LXAXIS</kbd></th>
+
+            <td>
+              Draws &#x1D465;-axis between specified minimum and maximum
+              &#x1D465;-values and at the specified &#x1D466;-intercept. Labels
+              tic marks below the current plot bounds. A negative tic-spacing
+              parameter specifies horizontal labels.
+              <table class="stack">
+                <tr>
+                  <td>T</td>
+                  <td class="border"><i>x-maximum</i></td>
+                </tr>
+                <tr>
+                  <td>Z</td>
+                  <td class="border"><i>x-minimum</i></td>
+                </tr>
+                <tr>
+                  <td>Y</td>
+                  <td class="border"><i>tic spacing</i></td>
+                </tr>
+                <tr>
+                  <td>X</td>
+                  <td class="border"><i>y-intercept</i></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">LYAXIS</kbd></th>
+
+            <td>
+              Draws &#x1D466;-axis between specified minimum and maximum
+              &#x1D466;-values and at the specified &#x1D465;-intercept. Labels
+              tic marks to the left of the current plot bounds. Labels are
+              always printed horizontally.
+              <table class="stack">
+                <tr>
+                  <td>T</td>
+                  <td class="border"><i>y-maximum</i></td>
+                </tr>
+                <tr>
+                  <td>Z</td>
+                  <td class="border"><i>y-minimum</i></td>
+                </tr>
+                <tr>
+                  <td>Y</td>
+                  <td class="border"><i>tic spacing</i></td>
+                </tr>
+                <tr>
+                  <td>X</td>
+                  <td class="border"><i>y-intercept</i></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">MOVE</kbd></th>
+
+            <td>
+              Moves the pen to specified (&#x1D465;,&#x1D466;) coordinate
+              without drawing a line. Interprets stack in same way as shown for
+              <kbd class="function">DRAW</kbd>.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">PCLBUF</kbd></th>
+
+            <td>
+              Clears I/0 buffer created by <kbd class="function">PINIT</kbd> and
+              returns 26 memory registers to available program memory.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">PDIR</kbd></th>
+
+            <td>
+              Rotates the &#x1D465;- and &#x1D466;-axes to the angle specified
+              in the X-register. Used only to rotate plot direction for
+              incremental plotting (<kbd class="function">IMOVE</kbd>,
+              <kbd class="function">IDRAW</kbd>, and
+              <kbd class="function">IPLOT</kbd>) and relative plotting
+              <kbd class="function">RPLOT</kbd>. Does not affect pen movement
+              specified in absolute coordinates. PDIR angles are in reference to
+              the original default angle (0&deg;).
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">PEN</kbd></th>
+
+            <td>
+              Selects pen specified by integer portion of a value in X-register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">PENDN</kbd></th>
+
+            <td>Lowers pen to plotting surface.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">PENUP</kbd></th>
+
+            <td>Lifts pen from plotting surface.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">PINIT</kbd></th>
+
+            <td>
+              When I/O buffer does not exist, uses 26 memory registers to create
+              it. Also performs the following:
+              <ul>
+                <li>
+                  Sets plot bounds equal to graphic limits currently maintained
+                  by plotter.
+                </li>
+                <li>Sets UU's equal to GU's and sets to UU mode.</li>
+                <li>Selects pen 1; sets line type 1.</li>
+                <li>Sets 3 GU character space height.</li>
+                <li>Sets label origin to 1 and label direction to 0&deg;.</li>
+                <li>
+                  Sets &#x1D465;- and &#x1D466;-axes tic lengths to default
+                  values for your plotter.
+                </li>
+                <li>Sets plotting rotation to 0&deg;.</li>
+                <li>
+                  If I/O buffer did not exist before executing
+                  <kbd class="function">PINIT</kbd>, sets bar code plotting
+                  parameters to default values. Otherwise does not affect
+                  current bar code plotting parameters.
+                </li>
+              </ul>
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">PRCL</kbd></th>
+
+            <td>
+              Recalls contents of the buffer register specified by a number in
+              the X-register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">RATIO</kbd></th>
+
+            <td>
+              Calculates for the current graphic limits the ratio of the
+              &#x1D465;-axis length to the &#x1D466;-axis length.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">SCALE</kbd></th>
+
+            <td>
+              Sets user scale for plot bounds and sets plotter module to UU
+              mode. Interprets values in stack in same way as shown for
+              <kbd class="function">CLIPUU</kbd>.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">SETGU</kbd></th>
+
+            <td>Switches plotter module to Graphic Units (GU's) mode.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">SETUU</kbd></th>
+
+            <td>Switches plotter module to User Units (UU's) mode.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">TICLEN</kbd></th>
+
+            <td>
+              Sets vertical and horizontal tic lengths to specified percentage
+              of corresponding dimensions of graphic limits (GU's only).
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">UNCLIP</kbd></th>
+
+            <td>
+              Resets the plot bounds to the graphic limits without changing the
+              current user scale.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">WHERE</kbd></th>
+
+            <td>
+              Enters in the X- and Y-registers the corresponding coordinates (in
+              current units) of the point specified by the last HP-41 pen
+              movement function. Places current pen status in Z-register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">XAXIS</kbd></th>
+
+            <td>
+              Draws a horizontal axis at the specified &#x1D466;--intercept
+              (UU's or GU's).
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">XAXISO</kbd></th>
+
+            <td>
+              Draws &#x1D465;-axis between the specified minimum and maximum
+              &#x1D465;-values and at the specified &#x1D466;-intercept, with
+              tic marks at specified intervals. Interprets parameters in current
+              units and in same way as shown under
+              <kbd class="function">LXAXIS</kbd>.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">YAXIS</kbd></th>
+
+            <td>
+              Draws a vertical axis at the specified &#x1D465;-intercept for
+              current plotting mode.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">YAXISO</kbd></th>
+
+            <td>
+              Draws a &#x1D466;-axis between minimum and maximum
+              &#x1D466;-values at the specified &#x1D465;-intercept, with tic
+              marks at specified intervals. Interprets parameters in current
+              units and in same way as shown under
+              <kbd class="function">LXAXIS</kbd>.
+            </td>
+          </tr>
+        </table>
+
+        <h2>Plot-Option Functions</h2>
+
+        <p>
+          The following four functions: (1) Use values in the X- and Y-registers
+          to define next pen position &ndash; in current units &ndash; (UU's or
+          GU's); (2) move pen from the last position specified by a plotter
+          module function to new position using existing pen status &ndash; "up"
+          or "down"; (3) set pen status to "down" when pen reaches new point
+          &ndash; except as provided by <kbd class="function">PLREGX</kbd>.
+        </p>
+
+        <table class="functions">
+          <tr>
+            <th><kbd class="function">PLOT</kbd></th>
+            <td>
+              Moves pen to or draws a line to the point specified by (&#x1D465;,
+              &#x1D466;) coordinates.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">IPLOT</kbd></th>
+            <td>
+              Same as <kbd class="function">PLOT</kbd> except that &#x1D465; and
+              &#x1D466; specify increments from last pen position specified by a
+              plotter module function.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">RPLOT</kbd></th>
+            <td>
+              Same as <kbd class="function">PLOT</kbd> except that &#x1D465; and
+              &#x1D466; specify increments from the last pen position specified
+              by a plotter module function other than
+              <kbd class="function">RPLOT</kbd>.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">PLREGX</kbd></th>
+            <td>
+              Moves pen or draws line to each point specified by the coordinates
+              in the series of data storage registers R<sub><i>iii</i></sub>
+              through R<sub><i>fff</i></sub
+              >, as specified by the number <i>iii.fff</i> in the X-register.
+              R<sub><i>iii</i></sub> specifies &#x1D465;<sub>0</sub>; R<sub
+                ><i>iii</i>+1</sub
+              >
+              specifies &#x1D466;<sub>0</sub>, and so on. If
+              <kbd class="function">PLREGX</kbd> finds an Alpha character in
+              either data register of any pair included in R<sub
+                ><i>iii</i></sub
+              >
+              through R<sub><i>fff</i></sub
+              >, the pen status is switched to "up". It remains so until a
+              subsequent pair of data registers containing only numeric data is
+              encountered.
+            </td>
+          </tr>
+        </table>
+
+        <h2>Utility Plotting Program</h2>
+
+        <table class="functions">
+          <tr>
+            <th><kbd class="function">NEWPLOT</kbd></th>
+            <td>
+              Prepares for plotting by prompting for six parameters,
+              automatically assigning six default parameters, and transferring
+              execution to <kbd class="function">REPLOT</kbd>. Uses
+              R<sub>00</sub>, through R<sub>11</sub> &ndash; which form the
+              <i>plotting data base</i>.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">REPLOT</kbd></th>
+            <td>
+              Prompts you to either automatically generate a complete plot (by
+              pressing <kbd class="key">R/S</kbd>) or edit contents of any
+              register <i>nn</i> (by pressing <i>nn</i>
+              <kbd class="key">R/S</kbd>).
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">PLINIT</kbd></th>
+            <td>
+              Initializes your plotter according to parameters in plotting data
+              base.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">PLTUXY</kbd></th>
+            <td>
+              Plots a function or data specified by parameters in plotting data
+              base.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">PLANOT</kbd></th>
+            <td>
+              Frames plotting area then annotates plot according to parameters
+              in plotting data base.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">Y?</kbd></th>
+            <td>Prompts you to key in the next &#x1D466;-coordinate.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">X?</kbd></th>
+            <td>Prompts you to key in the next &#x1D465;-coordinate.</td>
+          </tr>
+          <tr>
+            <th></th>
+            <td>
+              <b>Utility Plotting Program User Parameters</b>
+              <table class="params">
+                <thead>
+                  <tr>
+                    <th>Storage</th>
+                    <th>Parameter</th>
+                    <th>Format</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>R<sub>08</sub></td>
+                    <td><b>NAME?</b></td>
+                    <td class="left">
+                      <b><i>label</i></b> or <b><i>bbb.eeet</i></b>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>R<sub>00</sub></td>
+                    <td><b>XMIN</b></td>
+                    <td class="left">
+                      <b><i>n</i></b>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>R<sub>01</sub></td>
+                    <td><b>XMAX</b></td>
+                    <td class="left">
+                      <b><i>n</i></b>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>R<sub>05</sub></td>
+                    <td><b>XINC</b></td>
+                    <td class="left">
+                      <b><i>&ndash;n, int</i></b> or <b><i>label</i></b>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>R<sub>04</sub></td>
+                    <td><b>YMIN</b></td>
+                    <td class="left">
+                      <b><i>n</i></b>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>R<sub>07</sub></td>
+                    <td><b>XMAX</b></td>
+                    <td class="left">
+                      <b><i>n</i></b>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>R<sub>02</sub></td>
+                    <td><b>PLTPRM</b></td>
+                    <td class="left">
+                      <b><i>ccclp.bbbt</i></b> or <b><i>label</i></b>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>R<sub>02</sub></td>
+                    <td><b>ANNOT</b></td>
+                    <td class="left">
+                      <b><i>&pm;F<sub>x</sub>XXxx.F<sub>y</sub>YYyy</i></b>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>R<sub>06</sub></td>
+                    <td><b>XAXAT</b></td>
+                    <td class="left">
+                      <b><i>n</i></b>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>R<sub>09</sub></td>
+                    <td><b>YAXAT</b></td>
+                    <td class="left">
+                      <b><i>n</i></b>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+        <h2>Bar Code Functions</h2>
+
+        <table class="functions">
+          <tr>
+            <th><kbd class="function">BC</kbd></th>
+            <td>
+              Uses bit pattern in ALPHA register to plot a single row of HP-41
+              barcode.
+            </td>
+          </tr>
+          <tr>
+            <th><kbd class="function">BCA</kbd></th>
+            <td>
+              Converts data in ALPHA register to an Alpha-replace bar code bit
+              pattern. Places value in X-register to indicate number of bytes in
+              bit pattern.
+            </td>
+          </tr>
+          <tr>
+            <th><kbd class="function">BCAA</kbd></th>
+            <td>
+              Operates in same way as <kbd class="function">BCA</kbd> except
+              that bit pattern is for Alpha-Append bar code.
+            </td>
+          </tr>
+          <tr>
+            <th><kbd class="function">BCCKSM</kbd></th>
+            <td>
+              Computes checksum of bit pattern in ALPHA register and places
+              checksum in byte specified by <b><i>bb</i></b> (in X-register),
+              counting from the right. For HP-41 bar code:
+              <table class="keyboard">
+                <tr>
+                  <td class="nowrap2">One-Byte Paper Keyboard:</td>
+                  <td class="nowrap2">
+                    <b><i>bb</i></b> =
+                  </td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td class="nowrap2">Two-Byte Paper Keyboard:</td>
+                  <td class="nowrap2">
+                    <b><i>bb</i></b> =
+                  </td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td class="nowrap2">Direct Execution:</td>
+                  <td class="nowrap2">
+                    <b><i>bb</i></b> =
+                  </td>
+                  <td>no. of bytes in ALPHA + 1</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <th><kbd class="function">BCO</kbd></th>
+            <td>
+              <b>Plotter Option.</b> Operates the same as
+              <kbd class="function">BC</kbd> except that (1) HP-41 directional
+              bars are not automatically added to row; (2) you specify how many
+              rightmost bits to plot from first and last bytes; (3) enables you
+              to interpret bit patterns in various ways, depending upon current
+              bar code type. (Refer to <kbd class="function">BCSIZE</kbd>.)
+              Positive number in X-register specifies plotter option.
+
+              <table class="stack">
+                <tr>
+                  <td>Z</td>
+                  <td class="border2"><i>number of bits</i></td>
+                  <td class="comment"></td>
+                  <td class="comment">(Leftmost Byte)</td>
+                </tr>
+                <tr>
+                  <td>Y</td>
+                  <td class="border2"><i>number of bits</i></td>
+                  <td class="comment"></td>
+                  <td class="comment">(Rightmost Byte)</td>
+                </tr>
+                <tr>
+                  <td>X</td>
+                  <td class="border2"><i>bb</i></td>
+                  <td class="comment"></td>
+                  <td rowspan="2" class="comment">
+                    Bytes in Row (Includes Leading and Trailing Bytes)
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td class="comment"></td>
+                  <td class="comment"></td>
+                </tr>
+              </table>
+
+              <p>
+                <b>Printer Option.</b> Prints on HP 82162A Thermal Printer a row
+                of HP-41 bar code corresponding to bit pattern in ALPHA
+                register. Negative number (&ndash;<b><i>bb</i></b
+                >) in X-register specifies printer option; |&ndash;<b
+                  ><i>bb</i></b
+                >| specifies number of bytes in row. To use after
+                <kbd class="function">BCA</kbd>,
+                <kbd class="function">BCAA</kbd>,
+                <kbd class="function">BCX</kbd>, or
+                <kbd class="function">BCXS</kbd>, just pressed
+                <kbd class="key">CHS</kbd>
+                and execute <kbd class="function">BCO</kbd>. To use after
+                <kbd class="function">BCP</kbd> press
+                <kbd class="key">RCL</kbd>
+                <kbd class="key">.</kbd>
+                <kbd class="key">T</kbd>
+                <kbd class="key">CHS</kbd>
+                <kbd class="function">BCO</kbd>.
+              </p>
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">BCP</kbd></th>
+            <td>
+              Uses program name in Y-register and row number/bit pattern (<b
+                ><i>rrr.bb</i></b
+              >) in X-register to place in ALPHA register a bit pattern for
+              specified program row. Negative rrr.bb specifies "private" bar
+              code. Places following values in stack:
+
+              <table class="stack">
+                <tr>
+                  <td>T</td>
+                  <td class="border2"><i>bb</i></td>
+                  <td class="comment"></td>
+                  <td class="comment">Number of Bytes in Row</td>
+                </tr>
+                <tr>
+                  <td>Z</td>
+                  <td class="border2"><i>fff.lll</i></td>
+                  <td class="comment"></td>
+                  <td class="comment">LinesCoded in Row</td>
+                </tr>
+                <tr>
+                  <td>Y</td>
+                  <td class="border2"><i>name</i></td>
+                  <td class="comment"></td>
+                  <td class="comment">Program Name</td>
+                </tr>
+                <tr>
+                  <td>X</td>
+                  <td class="border2"><i>&pm;rrr.bb</i></td>
+                  <td class="comment"></td>
+                  <td class="comment">Next Row Number and Length</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">BCREGX</kbd></th>
+            <td>
+              Transforms the decimal values in a block of data registers into a
+              bit pattern in ALPHA register. Each register corresponds to one
+              byte. Uses <b><i>iii.fff</i></b> in X-register to specify first
+              and last data registers. R<sub><i>iii</i></sub> corresponds to
+              leftmost byte in bit pattern. Does not compute checksum.
+            </td>
+          </tr>
+          <tr>
+            <th><kbd class="function">BCSIZE</kbd></th>
+            <td>
+              Uses absolute values of numbers in X- and Y-registers to adjust
+              bar/space proportions (in APU's) and to specify bar code type (0
+              through 3).
+
+              <table class="bcsize">
+                <tr>
+                  <th><i>Y:</i></th>
+                  <th><i>nn</i></th>
+                  <th>.</th>
+                  <th><i>t</i></th>
+                  <th><i>ww</i></th>
+                  <th><i>ss</i></th>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><span class="cbrace90">}</span></td>
+                  <td></td>
+                  <td><span class="cbrace90">}</span></td>
+                  <td><span class="cbrace90">}</span></td>
+                  <td><span class="cbrace90">}</span></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>Narrow Bar Width</td>
+                  <td></td>
+                  <td>Bar Code Type<br />(0 = HP-41)</td>
+                  <td>Wide Bar Width</td>
+                  <td>Space Width</td>
+                </tr>
+                <tr>
+                  <th><i>X:</i></th>
+                  <th><i>pp</i></th>
+                  <th>.</th>
+                  <th><i>hhh</i></th>
+                  <th><i>aa</i></th>
+                  <th></th>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><span class="cbrace90">}</span></td>
+                  <td></td>
+                  <td><span class="cbrace90">}</span></td>
+                  <td><span class="cbrace90">}</span></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>Pen Width</td>
+                  <td></td>
+                  <td>Bar Height</td>
+                  <td colspan="2">
+                    Alternate Space Width (Non HP-41 Bar Code Only)
+                  </td>
+                </tr>
+              </table>
+
+              Using zeros in place of any parameter element sets that element to
+              its default value. Default values are:
+
+              <table class="params">
+                <thead>
+                  <tr>
+                    <th>pp</th>
+                    <th>.</th>
+                    <th>hhh</th>
+                    <th>aa</th>
+                    <th class="lb">nn</th>
+                    <th>.</th>
+                    <th>t</th>
+                    <th>ww</th>
+                    <th>ss</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>12</td>
+                    <td>.</td>
+                    <td>350</td>
+                    <td>00</td>
+                    <td class="lb">18</td>
+                    <td>.</td>
+                    <td>0</td>
+                    <td>30</td>
+                    <td>21</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <th><kbd class="function">BCX</kbd></th>
+            <td>
+              Places in ALPHA register a bit pattern for non-sequenced bar code
+              representing data in X-register. Places value in X-register to
+              indicate number of bytes in bit pattern.
+            </td>
+          </tr>
+          <tr>
+            <th><kbd class="function">BCXS</kbd></th>
+            <td>
+              Places in ALPHA register a bit pattern for sequenced bar code
+              representing data in X-register and sequence number in Y-register.
+              Places value in X-register to indicate number of bytes in bit
+              pattern.
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <script type="text/javascript">
+      function onTopnavClick() {
+        var x = document.getElementById("mytopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+    </script>
+  </body>
+</html>

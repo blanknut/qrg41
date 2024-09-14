@@ -1,508 +1,597 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 
 <html lang="en-US">
-<head>
-  <meta name="generator" content=
-  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 16.4), see www.w3.org">
-  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta
+      name="generator"
+      content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 16.4), see www.w3.org"
+    />
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>HP-41 QREF</title>
-  <link href=
-  "https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&amp;display=swap"
-  rel="stylesheet" type="text/css">
-  <link rel="stylesheet" type="text/css" href="style/styles.css">
-</head>
+    <title>HP-41 QREF</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="style/styles.css" />
+  </head>
 
-<body>
-  <div class="sticky no-print">
-    <div class="topnav" id="mytopnav">
-      <a href="index.html">HOME</a>
-      <a href="hp82180a.html">XFN</a>
-      <a href="hp82182a.html">TIME</a>
-      <a href="hp82160a.html">HPIL</a>
-      <a href="hp82183a.html">EXT I/O</a>
-      <a href="hepax.html" class="active">HEPAX</a>
-      <a href="javascript:void(0);" class="icon" onclick="onTopnavClick()">&#9776;</a>
+  <body>
+    <div class="sticky no-print">
+      <div class="topnav" id="mytopnav">
+        <a href="index.html">HOME</a>
+        <a href="hp82180a.html">XFN</a>
+        <a href="hp82182a.html">TIME</a>
+        <a href="hp82160a.html">HPIL</a>
+        <a href="hp82183a.html">EXT I/O</a>
+        <a href="hp82184a.html">PLOT</a>
+        <!--
+        <a href="ccd.html">CCD</a>
+        -->
+        <a href="hepax.html" class="active">HEPAX</a>
+        <!--
+        <a href="ppc.html">PPC</a>
+        -->
+        <a href="javascript:void(0);" class="icon" onclick="onTopnavClick()"
+          >&#9776;</a
+        >
+      </div>
     </div>
-  </div>
 
-  <div class="main">
-    <h1>HEPAX Module</h1>
+    <div class="main">
+      <h1>HEPAX Module</h1>
 
-    <div class="content">
-      <p><img class="img-left zoom" src="images/hepax.jpg" alt="HEPAX Modules" width="120px"/>
-        The HEPAX module &ndash; <b>HE</b>wlett-<b>PA</b>ckard 41 e<b>X</b>pansion module &ndash;
-        is a very powerful expansion of your HP-41 system. In effect, it lets you create your own
-        application modules, you can use data and text files exactly like in the Extended Functions
-        module, you get all the functions of the XF module and you can save key assignments and entire
-        calculator memory exactly like with the HP-IL module and a mass storage device.</p>
+      <div class="content">
+        <p>
+          Manual
+          <a
+            href="https://literature.hpcalc.org/community/hepax-om-vol1-en-remake.pdf"
+            target="_blank"
+            >Vol I</a
+          >,
+          <a
+            href="https://literature.hpcalc.org/community/hepax-om-vol2-en-remake.pdf"
+            target="_blank"
+            >Vol II</a
+          >
+          from
+          <a href="https://literature.hpcalc.org" target="_blank"
+            >HP Calculator Literature</a
+          >
+        </p>
+        <p>
+          <img
+            class="img-left zoom"
+            src="images/hepax.jpg"
+            alt="HEPAX Modules"
+            width="120px"
+          />
+          The HEPAX module &ndash; <b>HE</b>wlett-<b>PA</b>ckard 41
+          e<b>X</b>pansion module &ndash; is a very powerful expansion of your
+          HP-41 system. In effect, it lets you create your own application
+          modules, you can use data and text files exactly like in the Extended
+          Functions module, you get all the functions of the XF module and you
+          can save key assignments and entire calculator memory exactly like
+          with the HP-IL module and a mass storage device.
+        </p>
 
-      <h2>File System Functions</h2>
-
-      <table class="functions">
-        <tr>
-          <th><kbd class="function">HAPPCHR</kbd></th>
-
-          <td>Appends the characters in the ALPHA register at the end of the record at
-            the pointer in the current HEPAX text file.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">HAPPREC</kbd></th>
-
-          <td>Appends the contents of the ALPHA register as a new record at the end of
-            the current HEPAX text file.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">HARCLRC</kbd></th>
-
-          <td>Appends the record at the pointer in the current HEPAX text file to the
-             ALPHA register.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">HASROOM</kbd></th>
-
-          <td>Returns the number of characters left in a HEPAX text file.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">HCLFL</kbd></th>
-
-          <td>Clears the contents of a HEPAX data or text file.
-            The file is not deleted.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">XXX</kbd></th>
-
-          <td>Appends the record at the pointer in the current HEPAX text file to the
-             ALPHA register.</td>
-        </tr>
-
-       <tr>
-          <th><kbd class="function">HCRFLAS</kbd></th>
-
-          <td>Creates a HEPAX text file.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">HCRFLD</kbd></th>
-
-          <td>Creates a HEPAX data file.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">HDELCHR</kbd></th>
-
-          <td>Deletes a number of characters from the current HEPAX text file,
-            starting at the pointer.
-          </td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">HDELREC</kbd></th>
-
-          <td>Deletes the record at the pointer from the current HEPAX text file.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">HEPDIR</kbd></th>
-
-          <td>Lists all files in the HEPAX file system.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">HEPDIRX</kbd></th>
-
-          <td>Lists one files in the HEPAX file system.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">HEPROOM</kbd></th>
-
-          <td>Returns the number of registers available in the HEPAX file system.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">HFLSIZE</kbd></th>
-
-          <td>Returns the size of a HEPAX file.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">HGETA</kbd></th>
-
-          <td>Recalls the contents of entire calculator main memory from a
-            HEPAX "write-all" file.</td>
-        </tr>
-    </table>
-
-      <h2>The Extended Functions Multi-function</h2>
-      <p>To execute an Extended Functions Multi-function, execute the <kbd class="function">XF</kbd>
-        function and enter the multi-function number or execute the <kbd class="function">XFA</kbd>
-        function and press <kbd class="key">ALPHA</kbd>, enter the multi-function name and press
-        <kbd class="key">ALPHA</kbd>.</p>
+        <h2>File System Functions</h2>
 
         <table class="functions">
-        <tr>
-          <th><i>Name</i></th>
-          <td><b><i>Number</i></b></td>
-          <td><b><i>Function</i></b></td>
-        </tr>
-
-        <tr>
-          <th>ALENG</th>
-          <td>000</td>
-          <td>Returns the length of the string in ALPHA.</td>
-        </tr>
-
-        <tr>
-          <th>ANUM</th>
-          <td>001</td>
-          <td>Converts the string in ALPHA to a numerical value in X.</td>
-        </tr>
-
-        <tr>
-          <th>AROT</th>
-          <td>002</td>
-          <td>Rotates contents of ALPHA.</td>
-        </tr>
-
-        <tr>
-          <th>ATOX</th>
-          <td>003</td>
-          <td>Converts a character in ALPHA to a character code in X.</td>
-        </tr>
-
-        <tr>
-          <th>CLKEYS</th>
-          <td>004</td>
-          <td>Clears all key assignments.</td>
-        </tr>
-
-        <tr>
-          <th>CLRGX</th>
-          <td>005</td>
-          <td>Clears registers as specified by X.</td>
-        </tr>
-
-        <tr>
-          <th>GETKEY</th>
-          <td>006</td>
-          <td>Gets keycode depending on key pressed.</td>
-        </tr>
-
-        <tr>
-          <th>GETKEYX</th>
-          <td>007</td>
-          <td>Gets keycode within time specified by X.</td>
-        </tr>
-
-        <tr>
-          <th>PASN</th>
-          <td>008</td>
-          <td>Programmable assignment.</td>
-        </tr>
-
-        <tr>
-          <th>PCLPS</th>
-          <td>009</td>
-          <td>Programmable clear programs.</td>
-        </tr>
-
-        <tr>
-          <th>POSA</th>
-          <td>010</td>
-          <td>Finds position of string or character in ALPHA.</td>
-        </tr>
-
-        <tr>
-          <th>PSIZE</th>
-          <td>011</td>
-          <td>Programmable SIZE.</td>
-        </tr>
-
-        <tr>
-          <th>RCLFLAG</th>
-          <td>012</td>
-          <td>Recalls the status of user flags 00-43.</td>
-        </tr>
-
-        <tr>
-          <th>REGMOVE</th>
-          <td>013</td>
-          <td>Moves a block of main memory data registers.</td>
-        </tr>
-
-        <tr>
-          <th>REGSWAP</th>
-          <td>014</td>
-          <td>Swaps two blocks of main memory data registers.</td>
-        </tr>
-
-        <tr>
-          <th>&Sigma;REG?</th>
-          <td>015</td>
-          <td>Returns the location of the statistical registers.</td>
-        </tr>
-
-        <tr>
-          <th>SIZE?</th>
-          <td>016</td>
-          <td>Returns the current SIZE.</td>
-        </tr>
-
-        <tr>
-          <th>STOFLAG</th>
-          <td>017</td>
-          <td>Restores the status of user flags 00-43.</td>
-        </tr>
-
-        <tr>
-          <th>X&lt;&gt;F</th>
-          <td>018</td>
-          <td>Exchanges the status of user flags 0-7 with the X register.</td>
-        </tr>
-
-        <tr>
-          <th>XTOA</th>
-          <td>019</td>
-          <td>Converts character code in the X register to a character in the
-            ALPHA register.</td>
-        </tr>
-
-        <tr>
-          <th>X=NN?</th>
-          <td>020</td>
-          <td>Compares X with indirect Y.</td>
-        </tr>
-
-        <tr>
-          <th>X&ne;NN?</th>
-          <td>021</td>
-          <td>Compares X with indirect Y.</td>
-        </tr>
-
-        <tr>
-          <th>X&lt;NN?</th>
-          <td>022</td>
-          <td>Compares X with indirect Y.</td>
-        </tr>
+          <tr>
+            <th><kbd class="function">HAPPCHR</kbd></th>
 
-        <tr>
-          <th>X&le;NN?</th>
-          <td>023</td>
-          <td>Compares X with indirect Y.</td>
-        </tr>
+            <td>
+              Appends the characters in the ALPHA register at the end of the
+              record at the pointer in the current HEPAX text file.
+            </td>
+          </tr>
 
-        <tr>
-          <th>X&gt;NN?</th>
-          <td>024</td>
-          <td>Compares X with indirect Y.</td>
-        </tr>
+          <tr>
+            <th><kbd class="function">HAPPREC</kbd></th>
 
-        <tr>
-          <th>X&ge;NN?</th>
-          <td>025</td>
-          <td>Compares X with indirect Y.</td>
-        </tr>
-      </table>
+            <td>
+              Appends the contents of the ALPHA register as a new record at the
+              end of the current HEPAX text file.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">HARCLRC</kbd></th>
 
-      <h2>HEPAX Advanced Functions</h2>
-
-      <table class="functions">
-        <tr>
-          <th><kbd class="function">CLRAM</kbd></th>
-
-          <td>Clears a whole or part of a 4K block of HEPAX memory.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">CODE</kbd></th>
-
-          <td>Codes the hexadecimal string in the ALPHA register and places result in the X register.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">COPYROM</kbd></th>
-
-          <td>Copies a whole or part of a 4K block of system memory to HEPAX RAM.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">DECODE</kbd></th>
-
-          <td>Decodes the contents of the X register and places result in the ALPHA register.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">DECODYX</kbd></th>
-
-          <td>Decodes a number of nybbles as DECODE.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">DISASM</kbd></th>
-
-          <td>Disassembles HP-41 M-Code.</td>
-        </tr>
-
-        <tr>
-          <th>"DISSST"</th>
-
-          <td>FOCAL program that disassembles HP-41 M-code line by line. Program listing
-            on page 67 in the Owner's Manual.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">HEXEDIT</kbd></th>
-
-          <td>Edits HEPAX memory word by word.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">HPROMPT</kbd></th>
-
-          <td>Prompts for a number of hexadecimal digits.</td>
-        </tr>
-
-        <tr>
-          <th>"JUMP"</th>
-
-          <td>FOCAL program that calculates HP-41 M-Code absolute jump instructions.
-            Program listing on page 127 in the Owner's Manual.
-          </td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">RAMTOG</kbd></th>
-
-          <td>Toggles write protection status of a ROM image.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">READROM</kbd></th>
-
-          <td>Reads a number of ROM images from Mass Storage.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">WRTROM</kbd></th>
-
-          <td>Writes a number of ROM images to Mass Storage.</td>
-        </tr>
-      </table>
-
-      <h2>The HEPAX Multi-function</h2>
-
-      <p>To execute a HEPAX multi-function, execute the <kbd class="function">HEPAX</kbd>
-        function and enter the multi-function number or execute the <kbd class="function">HEPAXA</kbd>
-        function and press <kbd class="key">ALPHA</kbd>, enter the multi-function name and press
-        <kbd class="key">ALPHA</kbd>.</p>
-
-      <table class="functions">
-        <tr>
-          <th><i>Name</i></th>
-          <td><b><i>Number</i></b></td>
-          <td><b><i>Function</i></b></td>
-        </tr>
-
-        <tr>
-          <th>AND</th>
-          <td>001</td>
-          <td>Logical X AND Y.</td>
-        </tr>
-
-        <tr>
-          <th>BCAT</th>
-          <td>002</td>
-          <td>Block catalog.</td>
-        </tr>
-
-        <tr>
-          <th>BCD-BIN</th>
-          <td>003</td>
-          <td>Converts number in X from BCD to binary.</td>
-        </tr>
-
-        <tr>
-          <th>BIN-BCD</th>
-          <td>004</td>
-          <td>Converts number in X from binary to BCD.</td>
-        </tr>
-
-        <tr>
-          <th>CTRAST</th>
-          <td>005</td>
-          <td>Sets display contrast ("Halfnut" calculators only).</td>
-        </tr>
-
-        <tr>
-          <th>DELETE</th>
-          <td>006</td>
-          <td>Works like DELETE of the hexadecimal editor.</td>
-        </tr>
-
-        <tr>
-          <th>INSERT</th>
-          <td>007</td>
-          <td>Works like INSERT of the hexadecimal editor.</td>
-        </tr>
-
-        <tr>
-          <th>NOT</th>
-          <td>008</td>
-          <td>Complement of X.</td>
-        </tr>
-
-        <tr>
-          <th>OR</th>
-          <td>009</td>
-          <td>Logical X OR Y.</td>
-        </tr>
-
-        <tr>
-          <th>ROTYX</th>
-          <td>010</td>
-          <td>Rotates Y register X nybbles.</td>
-        </tr>
-
-        <tr>
-          <th>SHIFTYX</th>
-          <td>011</td>
-          <td>Shifts Y register X bits.</td>
-        </tr>
-
-        <tr>
-          <th>XOR</th>
-          <td>012</td>
-          <td>Logical X exclusive-or Y.</td>
-        </tr>
-
-        <tr>
-          <th>X+Y</th>
-          <td>013</td>
-          <td>Bitwise addition.</td>
-        </tr>
-
-        <tr>
-          <th>X-$</th>
-          <td>014</td>
-          <td>Converts X register to alpha string.</td>
-        </tr>
-
-        <tr>
-          <th>Y-X</th>
-          <td>015</td>
-          <td>Bitwise subtraction.</td>
-        </tr>
-      </table>
+            <td>
+              Appends the record at the pointer in the current HEPAX text file
+              to the ALPHA register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">HASROOM</kbd></th>
+
+            <td>Returns the number of characters left in a HEPAX text file.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">HCLFL</kbd></th>
+
+            <td>
+              Clears the contents of a HEPAX data or text file. The file is not
+              deleted.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">XXX</kbd></th>
+
+            <td>
+              Appends the record at the pointer in the current HEPAX text file
+              to the ALPHA register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">HCRFLAS</kbd></th>
+
+            <td>Creates a HEPAX text file.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">HCRFLD</kbd></th>
+
+            <td>Creates a HEPAX data file.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">HDELCHR</kbd></th>
+
+            <td>
+              Deletes a number of characters from the current HEPAX text file,
+              starting at the pointer.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">HDELREC</kbd></th>
+
+            <td>
+              Deletes the record at the pointer from the current HEPAX text
+              file.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">HEPDIR</kbd></th>
+
+            <td>Lists all files in the HEPAX file system.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">HEPDIRX</kbd></th>
+
+            <td>Lists one files in the HEPAX file system.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">HEPROOM</kbd></th>
+
+            <td>
+              Returns the number of registers available in the HEPAX file
+              system.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">HFLSIZE</kbd></th>
+
+            <td>Returns the size of a HEPAX file.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">HGETA</kbd></th>
+
+            <td>
+              Recalls the contents of entire calculator main memory from a HEPAX
+              "write-all" file.
+            </td>
+          </tr>
+        </table>
+
+        <h2>The Extended Functions Multi-function</h2>
+        <p>
+          To execute an Extended Functions Multi-function, execute the
+          <kbd class="function">XF</kbd> function and enter the multi-function
+          number or execute the <kbd class="function">XFA</kbd> function and
+          press <kbd class="key">ALPHA</kbd>, enter the multi-function name and
+          press <kbd class="key">ALPHA</kbd>.
+        </p>
+
+        <table class="functions">
+          <tr>
+            <th><i>Name</i></th>
+            <td>
+              <b><i>Number</i></b>
+            </td>
+            <td>
+              <b><i>Function</i></b>
+            </td>
+          </tr>
+
+          <tr>
+            <th>ALENG</th>
+            <td>000</td>
+            <td>Returns the length of the string in ALPHA.</td>
+          </tr>
+
+          <tr>
+            <th>ANUM</th>
+            <td>001</td>
+            <td>Converts the string in ALPHA to a numerical value in X.</td>
+          </tr>
+
+          <tr>
+            <th>AROT</th>
+            <td>002</td>
+            <td>Rotates contents of ALPHA.</td>
+          </tr>
+
+          <tr>
+            <th>ATOX</th>
+            <td>003</td>
+            <td>Converts a character in ALPHA to a character code in X.</td>
+          </tr>
+
+          <tr>
+            <th>CLKEYS</th>
+            <td>004</td>
+            <td>Clears all key assignments.</td>
+          </tr>
+
+          <tr>
+            <th>CLRGX</th>
+            <td>005</td>
+            <td>Clears registers as specified by X.</td>
+          </tr>
+
+          <tr>
+            <th>GETKEY</th>
+            <td>006</td>
+            <td>Gets keycode depending on key pressed.</td>
+          </tr>
+
+          <tr>
+            <th>GETKEYX</th>
+            <td>007</td>
+            <td>Gets keycode within time specified by X.</td>
+          </tr>
+
+          <tr>
+            <th>PASN</th>
+            <td>008</td>
+            <td>Programmable assignment.</td>
+          </tr>
+
+          <tr>
+            <th>PCLPS</th>
+            <td>009</td>
+            <td>Programmable clear programs.</td>
+          </tr>
+
+          <tr>
+            <th>POSA</th>
+            <td>010</td>
+            <td>Finds position of string or character in ALPHA.</td>
+          </tr>
+
+          <tr>
+            <th>PSIZE</th>
+            <td>011</td>
+            <td>Programmable SIZE.</td>
+          </tr>
+
+          <tr>
+            <th>RCLFLAG</th>
+            <td>012</td>
+            <td>Recalls the status of user flags 00-43.</td>
+          </tr>
+
+          <tr>
+            <th>REGMOVE</th>
+            <td>013</td>
+            <td>Moves a block of main memory data registers.</td>
+          </tr>
+
+          <tr>
+            <th>REGSWAP</th>
+            <td>014</td>
+            <td>Swaps two blocks of main memory data registers.</td>
+          </tr>
+
+          <tr>
+            <th>&Sigma;REG?</th>
+            <td>015</td>
+            <td>Returns the location of the statistical registers.</td>
+          </tr>
+
+          <tr>
+            <th>SIZE?</th>
+            <td>016</td>
+            <td>Returns the current SIZE.</td>
+          </tr>
+
+          <tr>
+            <th>STOFLAG</th>
+            <td>017</td>
+            <td>Restores the status of user flags 00-43.</td>
+          </tr>
+
+          <tr>
+            <th>X&lt;&gt;F</th>
+            <td>018</td>
+            <td>Exchanges the status of user flags 0-7 with the X register.</td>
+          </tr>
+
+          <tr>
+            <th>XTOA</th>
+            <td>019</td>
+            <td>
+              Converts character code in the X register to a character in the
+              ALPHA register.
+            </td>
+          </tr>
+
+          <tr>
+            <th>X=NN?</th>
+            <td>020</td>
+            <td>Compares X with indirect Y.</td>
+          </tr>
+
+          <tr>
+            <th>X&ne;NN?</th>
+            <td>021</td>
+            <td>Compares X with indirect Y.</td>
+          </tr>
+
+          <tr>
+            <th>X&lt;NN?</th>
+            <td>022</td>
+            <td>Compares X with indirect Y.</td>
+          </tr>
+
+          <tr>
+            <th>X&le;NN?</th>
+            <td>023</td>
+            <td>Compares X with indirect Y.</td>
+          </tr>
+
+          <tr>
+            <th>X&gt;NN?</th>
+            <td>024</td>
+            <td>Compares X with indirect Y.</td>
+          </tr>
+
+          <tr>
+            <th>X&ge;NN?</th>
+            <td>025</td>
+            <td>Compares X with indirect Y.</td>
+          </tr>
+        </table>
+
+        <h2>HEPAX Advanced Functions</h2>
+
+        <table class="functions">
+          <tr>
+            <th><kbd class="function">CLRAM</kbd></th>
+
+            <td>Clears a whole or part of a 4K block of HEPAX memory.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">CODE</kbd></th>
+
+            <td>
+              Codes the hexadecimal string in the ALPHA register and places
+              result in the X register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">COPYROM</kbd></th>
+
+            <td>
+              Copies a whole or part of a 4K block of system memory to HEPAX
+              RAM.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">DECODE</kbd></th>
+
+            <td>
+              Decodes the contents of the X register and places result in the
+              ALPHA register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">DECODYX</kbd></th>
+
+            <td>Decodes a number of nybbles as DECODE.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">DISASM</kbd></th>
+
+            <td>Disassembles HP-41 M-Code.</td>
+          </tr>
+
+          <tr>
+            <th>"DISSST"</th>
+
+            <td>
+              FOCAL program that disassembles HP-41 M-code line by line. Program
+              listing on page 67 in the Owner's Manual.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">HEXEDIT</kbd></th>
+
+            <td>Edits HEPAX memory word by word.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">HPROMPT</kbd></th>
+
+            <td>Prompts for a number of hexadecimal digits.</td>
+          </tr>
+
+          <tr>
+            <th>"JUMP"</th>
+
+            <td>
+              FOCAL program that calculates HP-41 M-Code absolute jump
+              instructions. Program listing on page 127 in the Owner's Manual.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">RAMTOG</kbd></th>
+
+            <td>Toggles write protection status of a ROM image.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">READROM</kbd></th>
+
+            <td>Reads a number of ROM images from Mass Storage.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">WRTROM</kbd></th>
+
+            <td>Writes a number of ROM images to Mass Storage.</td>
+          </tr>
+        </table>
+
+        <h2>The HEPAX Multi-function</h2>
+
+        <p>
+          To execute a HEPAX multi-function, execute the
+          <kbd class="function">HEPAX</kbd> function and enter the
+          multi-function number or execute the
+          <kbd class="function">HEPAXA</kbd> function and press
+          <kbd class="key">ALPHA</kbd>, enter the multi-function name and press
+          <kbd class="key">ALPHA</kbd>.
+        </p>
+
+        <table class="functions">
+          <tr>
+            <th><i>Name</i></th>
+            <td>
+              <b><i>Number</i></b>
+            </td>
+            <td>
+              <b><i>Function</i></b>
+            </td>
+          </tr>
+
+          <tr>
+            <th>AND</th>
+            <td>001</td>
+            <td>Logical X AND Y.</td>
+          </tr>
+
+          <tr>
+            <th>BCAT</th>
+            <td>002</td>
+            <td>Block catalog.</td>
+          </tr>
+
+          <tr>
+            <th>BCD-BIN</th>
+            <td>003</td>
+            <td>Converts number in X from BCD to binary.</td>
+          </tr>
+
+          <tr>
+            <th>BIN-BCD</th>
+            <td>004</td>
+            <td>Converts number in X from binary to BCD.</td>
+          </tr>
+
+          <tr>
+            <th>CTRAST</th>
+            <td>005</td>
+            <td>Sets display contrast ("Halfnut" calculators only).</td>
+          </tr>
+
+          <tr>
+            <th>DELETE</th>
+            <td>006</td>
+            <td>Works like DELETE of the hexadecimal editor.</td>
+          </tr>
+
+          <tr>
+            <th>INSERT</th>
+            <td>007</td>
+            <td>Works like INSERT of the hexadecimal editor.</td>
+          </tr>
+
+          <tr>
+            <th>NOT</th>
+            <td>008</td>
+            <td>Complement of X.</td>
+          </tr>
+
+          <tr>
+            <th>OR</th>
+            <td>009</td>
+            <td>Logical X OR Y.</td>
+          </tr>
+
+          <tr>
+            <th>ROTYX</th>
+            <td>010</td>
+            <td>Rotates Y register X nybbles.</td>
+          </tr>
+
+          <tr>
+            <th>SHIFTYX</th>
+            <td>011</td>
+            <td>Shifts Y register X bits.</td>
+          </tr>
+
+          <tr>
+            <th>XOR</th>
+            <td>012</td>
+            <td>Logical X exclusive-or Y.</td>
+          </tr>
+
+          <tr>
+            <th>X+Y</th>
+            <td>013</td>
+            <td>Bitwise addition.</td>
+          </tr>
+
+          <tr>
+            <th>X-$</th>
+            <td>014</td>
+            <td>Converts X register to alpha string.</td>
+          </tr>
+
+          <tr>
+            <th>Y-X</th>
+            <td>015</td>
+            <td>Bitwise subtraction.</td>
+          </tr>
+        </table>
+      </div>
     </div>
-  </div><script type="text/javascript">
-    function onTopnavClick() {
+    <script type="text/javascript">
+      function onTopnavClick() {
         var x = document.getElementById("mytopnav");
         if (x.className === "topnav") {
           x.className += " responsive";
@@ -510,6 +599,6 @@
           x.className = "topnav";
         }
       }
-  </script>
-</body>
+    </script>
+  </body>
 </html>
