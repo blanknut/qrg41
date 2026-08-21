@@ -1,800 +1,918 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 
 <html lang="en-US">
-<head>
-  <meta name="generator" content=
-  "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 16.4), see www.w3.org">
-  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta
+      name="generator"
+      content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 16.4), see www.w3.org"
+    />
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>HP-41 QREF</title>
-  <link href=
-  "https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&amp;display=swap"
-  rel="stylesheet" type="text/css">
-  <link rel="stylesheet" type="text/css" href="style/styles.css">
-</head>
+    <title>HP-41 QREF</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="style/styles.css" />
+  </head>
 
-<body>
-  <div class="sticky no-print">
-    <div class="topnav" id="mytopnav">
-      <a href="index.html">HOME</a>
-      <a href="hp82180a.html" class="active">XFN</a>
-      <a href="hp82182a.html">TIME</a>
-      <a href="hp82160a.html">HPIL</a>
-      <a href="hp82183a.html">EXT I/O</a>
-      <a href="hepax.html">HEPAX</a>
-      <a href="javascript:void(0);" class="icon" onclick="onTopnavClick()">&#9776;</a>
+  <body>
+    <div class="sticky no-print">
+      <div class="topnav" id="mytopnav">
+        <a href="index.html">HOME</a>
+        <a href="hp82180a.html" class="active">XFN</a>
+        <a href="hp82182a.html">TIME</a>
+        <a href="hp82160a.html">HPIL</a>
+        <a href="hp82183a.html">EXT I/O</a>
+        <a href="hp82184a.html">PLOT</a>
+        <!--
+      <a href="ccd.html">CCD</a>
+      -->
+        <a href="hepax.html">HEPAX</a>
+        <!--
+      <a href="ppc.html">PPC</a>
+      -->
+        <a href="javascript:void(0);" class="icon" onclick="onTopnavClick()"
+          >&#9776;</a
+        >
+      </div>
     </div>
-  </div>
-
-  <div class="main">
-    <h1>HP 82180A Extended Functions/Memory Module</h1>
 
-    <div class="content">
-      <p><img class="img-left zoom" src="images/hp82180a.jpg" alt="HP 82180A" width="80px"/>
-      While the HP 82180A Extended Functions/Memory Module is plugged into
-      the calculator, the following functions are available for your use. This
-      module also provides you with 127 registers of extended memory and
-      enables you to utilize one or two HP82l81A Extended Memory Modules to
-      increase the size of extended memory.</p>
+    <div class="main">
+      <h1>HP 82180A Extended Functions/Memory Module</h1>
+
+      <div class="content">
+        <p>
+          <a
+            href="https://literature.hpcalc.org/community/hp82180a-om-en.pdf"
+            target="_blank"
+            >Manual</a
+          >
+          from
+          <a href="https://literature.hpcalc.org" target="_blank"
+            >HP Calculator Literature</a
+          >
+        </p>
+        <p>
+          <img
+            class="img-left zoom"
+            src="images/hp82180a.jpg"
+            alt="HP 82180A"
+            width="80px"
+          />
+          While the HP 82180A Extended Functions/<wbr> Module is plugged into
+          the calculator, the following functions are available for your use.
+          This module also provides you with 127 registers of extended memory
+          and enables you to utilize one or two HP82l81A Extended Memory Modules
+          to increase the size of extended memory.
+        </p>
+
+        <h2>Extended Functions</h2>
+
+        <table class="functions">
+          <tr>
+            <th><kbd class="function">ALENG</kbd></th>
+
+            <td>
+              Returns the length of the string in the ALPHA register to the
+              X-register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">ANUM</kbd></th>
+
+            <td>
+              Searches the ALPHA register for an ALPHA-formatted number and
+              returns the numerical value to the X-register. (The X-register is
+              unaffected if there is no number in the ALPHA register.)
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">AROT</kbd></th>
+
+            <td>
+              Rotates the contents of the ALPHA register by the number of
+              characters indicated by the number in the X-register. Rotates left
+              for positive numbers, right for negative.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">ATOX</kbd></th>
+
+            <td>
+              Moves leftmost character out of the ALPHA register and places its
+              character code in the X-register. (Refer to back page, Displayable
+              Characters and Their Corresponding Codes.)
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">CLKEYS</kbd></th>
+
+            <td>Clears all key assignments.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">GETKEY</kbd></th>
+
+            <td>
+              Halts program execution until either a key is pressed or
+              approximately 10 seconds elapse. Puts keycode in X-register if key
+              is pressed; puts zero in X-register if no key is pressed within
+              the time period.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">PASN</kbd></th>
+
+            <td>
+              Assigns function or program name to specified key. Requires
+              function or program name in the ALPHA register, keycode in the
+              X-register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">PCLPS</kbd></th>
+
+            <td>
+              Clears program named in the ALPHA register (or current program if
+              the ALPHA register is empty) and all programs that follow.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">POSA</kbd></th>
+
+            <td>
+              Scans the ALPHA register for the character or characters in the X-
+              register. If the X-register contains a numeric character code, a
+              single character is searched for. If the X-register contains ALPHA
+              data, that string is searched for. Returns position of first
+              character to the X-register, or -1 if no match is found. (Refer to
+              back page, Displayable Characters and Their Corresponding Codes.)
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">PSIZE</kbd></th>
+
+            <td>
+              Allocates registers to data storage. Requires number of data
+              registers in the X-register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">RCLFLAG</kbd></th>
+
+            <td>
+              Recalls data representing the status of flags 00 through 43 to the
+              X-register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">REGMOVE</kbd></th>
+
+            <td>
+              Copies <i>nnn</i> main memory registers in block starting at
+              register <i>sss</i> to block starting at register <i>ddd</i>.
+              Requires index in form <i>sss.dddnnn</i> in X-register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">REGSWAP</kbd></th>
+
+            <td>
+              Swaps <i>nnn</i> main memory registers beginning at register
+              <i>sss</i> with <i>nnn</i> registers beginning at register
+              <i>ddd</i>. Requires index in form <i>sss.dddnnn</i> in
+              X-register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">STOFLAG</kbd></th>
+
+            <td>
+              Uses data in X-register from <kbd class="key">RCLFLAG</kbd> to
+              restore flags 00 through 43, or the flag data in Y-register to
+              restore a block of flags specified by a number in the form
+              <i>bb.ee</i> in the X-register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">X&lt;&gt;F</kbd></th>
+
+            <td>
+              Exchanges the contents of the X-register with the status of flags
+              0-7.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">XTOA</kbd></th>
+
+            <td>
+              Converts the character code in the X-register to the corresponding
+              character and appends the character to the ALPHA register. (Refer
+              to back page, Displayable Characters and Their Corresponding
+              Codes.)
+            </td>
+          </tr>
+        </table>
+
+        <h2>Extended Memory</h2>
+
+        <table class="functions">
+          <tr>
+            <th><kbd class="function">APPCHR</kbd></th>
+
+            <td>
+              Appends contents of the ALPHA register at the end of the current
+              record in the working ASCII file.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">APPREC</kbd></th>
+
+            <td>
+              Appends contents of the ALPHA register to the working ASCII file
+              as a new record.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">ARCLREC</kbd></th>
+
+            <td>
+              Appends a record or portion of a record from the working file to
+              the contents of the ALPHA register. Stops when the ALPHA register
+              is full or when the end of the record is reached.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">CRFL</kbd></th>
+
+            <td>
+              Clears a data file or ASCII file. Requires file name in the ALPHA
+              register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">CRFLAS</kbd></th>
+
+            <td>
+              Creates an ASCII file. Requires file name in the ALPHA register
+              and file length (registers) in the X-register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">CRFLD</kbd></th>
+
+            <td>
+              Creates a data file. Requires file name in the ALPHA register and
+              file length in the X-register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">DELCHR</kbd></th>
+
+            <td>
+              Deletes the number of characters indicated by the X-register from
+              the current record, starting from the character pointer.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">DELREC</kbd></th>
+
+            <td>Deletes the current record in the working ASCII file.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">EMDIR</kbd></th>
+
+            <td>
+              Displays a list of the files in extended memory and returns the
+              number of registers that remain unused.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">FLSIZE</kbd></th>
+
+            <td>
+              Returns the number of registers in a file. Requires file name in
+              the ALPHA register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">GETAS</kbd></th>
+
+            <td>
+              Copies an ASCII file from an HP-IL mass storage device to extended
+              memory. Requires the source file name and (if different) the
+              destination file name, in the ALPHA register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">GETP</kbd></th>
+
+            <td>
+              Replaces the last program in main memory with the contents of the
+              program file named in the ALPHA register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">GETR</kbd></th>
+
+            <td>
+              Copies an entire data file into main memory, beginning with
+              register 00. Requires file name in the ALPHA register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">GETREC</kbd></th>
+
+            <td>
+              Clears the ALPHA register and copies up to 24 characters from the
+              current record in the working ASCII file to the ALPHA register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">GETRX</kbd></th>
+
+            <td>
+              Copies registers from the working data file to a block of main
+              memory specified by a number in the form <i>bbb.eee</i>in the
+              X-register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">GETSUB</kbd></th>
+
+            <td>
+              Copies the program file named in the ALPHA register to the end of
+              program storage in main memory.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">GETX</kbd></th>
+
+            <td>
+              Copies the current register in the working data file to the
+              X-register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">INSCHR</kbd></th>
+
+            <td>
+              Inserts the contents of the ALPHA register into the current record
+              ahead of the current character position.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">INSREC</kbd></th>
+
+            <td>
+              Inserts the contents of the ALPHA register ahead of the current
+              record as a new record.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">POSFL</kbd></th>
+
+            <td>
+              Scans the working ASCII file for a match with the string in the
+              ALPHA register. Returns pointer index (<i>rrr.eee</i>) to the
+              X-register if a match is found, -1 if no match is found.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">PURFL</kbd></th>
+
+            <td>Purges the file named in the ALPHA register.</td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">RCLPT</kbd></th>
+
+            <td>
+              Recalls the pointer index from the working file to the X-register.
+              The pointer index is in the form <i>rrr</i> (register number) for
+              data files, <i>rrr.ccc</i> (record number and character position)
+              for ASCII files, or <i>bbbb</i> (number of bytes) for length of
+              program file.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">RCLPTA</kbd></th>
+
+            <td>
+              Recalls the pointer index or length of program from the file named
+              in the ALPHA register to the X-register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">SAVEAS</kbd></th>
+
+            <td>
+              Copies an ASCII file from extended memory to an HP-IL mass storage
+              device. Requires the source file name and (if different) the
+              destination file name in the ALPHA register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">SAVEP</kbd></th>
+
+            <td>
+              Copies the program named in the ALPHA register to extended memory.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">SAVER</kbd></th>
+
+            <td>
+              Copies all the data registers in main memory to the data file
+              named in the ALPHA register.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">SAVERX</kbd></th>
+
+            <td>
+              Copies the block of main memory data registers specified by the
+              number in the X-register (<i>bbb.eee</i>) to the working data
+              file, starting at the current pointer position.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">SAVEX</kbd></th>
+
+            <td>
+              Copies the contents of the X-register to the working file at the
+              current pointer position.
+            </td>
+          </tr>
+
+          <tr>
+            <th><kbd class="function">SEEKPT</kbd></th>
+
+            <td>
+              Positions the pointer or pointers in the working file using an
+              index number in the X-register. Requires index in the form
+              <i>rrr</i> (register number) for data files or
+              <i>rrr.ccc</i> (record number and character position) for ASCII
+              files.
+            </td>
+          </tr>
 
-      <h2>Extended Functions</h2>
+          <tr>
+            <th><kbd class="function">SEEKPTA</kbd></th>
 
-      <table class="functions">
-        <tr>
-          <th><kbd class="function">ALENG</kbd></th>
-
-          <td>Returns the length of the string in the ALPHA register to the
-          X-register.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">ANUM</kbd></th>
-
-          <td>Searches the ALPHA register for an ALPHA-formatted number and
-          returns the numerical value to the X-register. (The X-register is
-          unaffected if there is no number in the ALPHA register.)</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">AROT</kbd></th>
-
-          <td>Rotates the contents of the ALPHA register by the number of
-          characters indicated by the number in the X-register. Rotates left
-          for positive numbers, right for negative.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">ATOX</kbd></th>
-
-          <td>Moves leftmost character out of the ALPHA register and places its
-          character code in the X-register. (Refer to back page, Displayable
-          Characters and Their Corresponding Codes.)</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">CLKEYS</kbd></th>
-
-          <td>Clears all key assignments.</td>
-        </tr>
+            <td>
+              Positions the pointer or pointers in the file named In the ALPHA
+              register using an index number in the X-register. Requires index
+              in the form <i>rrr</i> (register number) for data files or
+              <i>rrr.ccc</i> (record number and character position) for ASCII
+              files.
+            </td>
+          </tr>
+        </table>
 
-        <tr>
-          <th><kbd class="function">GETKEY</kbd></th>
-
-          <td>Halts program execution until either a key is pressed or
-          approximately 10 seconds elapse. Puts keycode in X-register if key is
-          pressed; puts zero in X-register if no key is pressed within the time
-          period.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">PASN</kbd></th>
+        <h2>Displayable Characters and Their Corresponding Codes</h2>
 
-          <td>Assigns function or program name to specified key. Requires
-          function or program name in the ALPHA register, keycode in the
-          X-register.</td>
-        </tr>
-
-        <tr>
-          <th><kbd class="function">PCLPS</kbd></th>
+        <table class="chars center">
+          <tr>
+            <th>Char.</th>
 
-          <td>Clears program named in the ALPHA register (or current program if
-          the ALPHA register is empty) and all programs that follow.</td>
-        </tr>
+            <th>Code</th>
 
-        <tr>
-          <th><kbd class="function">POSA</kbd></th>
+            <th>Char.</th>
 
-          <td>Scans the ALPHA register for the character or characters in the
-          X- register. If the X-register contains a numeric character code, a
-          single character is searched for. If the X-register contains ALPHA
-          data, that string is searched for. Returns position of first
-          character to the X-register, or -1 if no match is found. (Refer to
-          back page, Displayable Characters and Their Corresponding
-          Codes.)</td>
-        </tr>
+            <th>Code</th>
 
-        <tr>
-          <th><kbd class="function">PSIZE</kbd></th>
+            <th>Char.</th>
 
-          <td>Allocates registers to data storage. Requires number of data
-          registers in the X-register.</td>
-        </tr>
+            <th>Code</th>
+          </tr>
 
-        <tr>
-          <th><kbd class="function">RCLFLAG</kbd></th>
+          <tr>
+            <td><span class="hp41chars">&ntilde;</span></td>
 
-          <td>Recalls data representing the status of flags 00 through 43 to
-          the X-register.</td>
-        </tr>
+            <td>0</td>
 
-        <tr>
-          <th><kbd class="function">REGMOVE</kbd></th>
+            <td>3</td>
 
-          <td>Copies <i>nnn</i> main memory registers in block starting at
-          register <i>sss</i> to block starting at register <i>ddd</i>.
-          Requires index in form <i>sss.dddnnn</i> in X-register.</td>
-        </tr>
+            <td>51</td>
 
-        <tr>
-          <th><kbd class="function">REGSWAP</kbd></th>
+            <td>N</td>
 
-          <td>Swaps <i>nnn</i> main memory registers beginning at register
-          <i>sss</i> with <i>nnn</i> registers beginning at register
-          <i>ddd</i>. Requires index in form <i>sss.dddnnn</i> in
-          X-register.</td>
-        </tr>
+            <td>78</td>
+          </tr>
 
-        <tr>
-          <th><kbd class="function">STOFLAG</kbd></th>
+          <tr>
+            <td><span class="hp41chars">&otilde;</span></td>
 
-          <td>Uses data in X-register from <kbd class="key">RCLFLAG</kbd> to
-          restore flags 00 through 43, or the flag data in Y-register to
-          restore a block of flags specified by a number in the form
-          <i>bb.ee</i> in the X-register.</td>
-        </tr>
+            <td>1</td>
 
-        <tr>
-          <th><kbd class="function">X&lt;&gt;F</kbd></th>
+            <td>4</td>
 
-          <td>Exchanges the contents of the X-register with the status of flags
-          0-7.</td>
-        </tr>
+            <td>52</td>
 
-        <tr>
-          <th><kbd class="function">XTOA</kbd></th>
+            <td>O</td>
 
-          <td>Converts the character code in the X-register to the
-          corresponding character and appends the character to the ALPHA
-          register. (Refer to back page, Displayable Characters and Their
-          Corresponding Codes.)</td>
-        </tr>
-      </table>
+            <td>79</td>
+          </tr>
 
-      <h2>Extended Memory</h2>
+          <tr>
+            <td><span class="hp41chars">&acirc;</span></td>
 
-      <table class="functions">
-        <tr>
-          <th><kbd class="function">APPCHR</kbd></th>
+            <td>4</td>
 
-          <td>Appends contents of the ALPHA register at the end of the current
-          record in the working ASCII file.</td>
-        </tr>
+            <td>5</td>
 
-        <tr>
-          <th><kbd class="function">APPREC</kbd></th>
+            <td>53</td>
 
-          <td>Appends contents of the ALPHA register to the working ASCII file
-          as a new record.</td>
-        </tr>
+            <td>P</td>
 
-        <tr>
-          <th><kbd class="function">ARCLREC</kbd></th>
+            <td>80</td>
+          </tr>
 
-          <td>Appends a record or portion of a record from the working file to
-          the contents of the ALPHA register. Stops when the ALPHA register is
-          full or when the end of the record is reached.</td>
-        </tr>
+          <tr>
+            <td><span class="hp41chars">&auml;</span></td>
 
-        <tr>
-          <th><kbd class="function">CRFL</kbd></th>
+            <td>5</td>
 
-          <td>Clears a data file or ASCII file. Requires file name in the ALPHA
-          register.</td>
-        </tr>
+            <td>6</td>
 
-        <tr>
-          <th><kbd class="function">CRFLAS</kbd></th>
+            <td>54</td>
 
-          <td>Creates an ASCII file. Requires file name in the ALPHA register
-          and file length (registers) in the X-register.</td>
-        </tr>
+            <td>Q</td>
 
-        <tr>
-          <th><kbd class="function">CRFLD</kbd></th>
+            <td>81</td>
+          </tr>
 
-          <td>Creates a data file. Requires file name in the ALPHA register and
-          file length in the X-register.</td>
-        </tr>
+          <tr>
+            <td><span class="hp41chars">&para;</span></td>
 
-        <tr>
-          <th><kbd class="function">DELCHR</kbd></th>
+            <td>6</td>
 
-          <td>Deletes the number of characters indicated by the X-register from
-          the current record, starting from the character pointer.</td>
-        </tr>
+            <td>7</td>
 
-        <tr>
-          <th><kbd class="function">DELREC</kbd></th>
+            <td>55</td>
 
-          <td>Deletes the current record in the working ASCII file.</td>
-        </tr>
+            <td>R</td>
 
-        <tr>
-          <th><kbd class="function">EMDIR</kbd></th>
+            <td>82</td>
+          </tr>
 
-          <td>Displays a list of the files in extended memory and returns the
-          number of registers that remain unused.</td>
-        </tr>
+          <tr>
+            <td><span class="hp41chars">&aring;</span></td>
 
-        <tr>
-          <th><kbd class="function">FLSIZE</kbd></th>
+            <td>12</td>
 
-          <td>Returns the number of registers in a file. Requires file name in
-          the ALPHA register.</td>
-        </tr>
+            <td>8</td>
 
-        <tr>
-          <th><kbd class="function">GETAS</kbd></th>
+            <td>56</td>
 
-          <td>Copies an ASCII file from an HP-IL mass storage device to
-          extended memory. Requires the source file name and (if different) the
-          destination file name, in the ALPHA register.</td>
-        </tr>
+            <td>S</td>
 
-        <tr>
-          <th><kbd class="function">GETP</kbd></th>
+            <td>83</td>
+          </tr>
 
-          <td>Replaces the last program in main memory with the contents of the
-          program file named in the ALPHA register.</td>
-        </tr>
+          <tr>
+            <td><span class="hp41chars">&uuml;</span></td>
 
-        <tr>
-          <th><kbd class="function">GETR</kbd></th>
+            <td>13</td>
 
-          <td>Copies an entire data file into main memory, beginning with
-          register 00. Requires file name in the ALPHA register.</td>
-        </tr>
+            <td>9</td>
 
-        <tr>
-          <th><kbd class="function">GETREC</kbd></th>
+            <td>57</td>
 
-          <td>Clears the ALPHA register and copies up to 24 characters from the
-          current record in the working ASCII file to the ALPHA register.</td>
-        </tr>
+            <td>T</td>
 
-        <tr>
-          <th><kbd class="function">GETRX</kbd></th>
+            <td>84</td>
+          </tr>
 
-          <td>Copies registers from the working data file to a block of main
-          memory specified by a number in the form <i>bbb.eee</i>in the
-          X-register.</td>
-        </tr>
+          <tr>
+            <td>&ne;</td>
 
-        <tr>
-          <th><kbd class="function">GETSUB</kbd></th>
+            <td>29</td>
 
-          <td>Copies the program file named in the ALPHA register to the end of
-          program storage in main memory.</td>
-        </tr>
+            <td>:</td>
 
-        <tr>
-          <th><kbd class="function">GETX</kbd></th>
+            <td>58</td>
 
-          <td>Copies the current register in the working data file to the
-          X-register.</td>
-        </tr>
+            <td>U</td>
 
-        <tr>
-          <th><kbd class="function">INSCHR</kbd></th>
+            <td>85</td>
+          </tr>
 
-          <td>Inserts the contents of the ALPHA register into the current
-          record ahead of the current character position.</td>
-        </tr>
+          <tr>
+            <td>space</td>
 
-        <tr>
-          <th><kbd class="function">INSREC</kbd></th>
+            <td>32</td>
 
-          <td>Inserts the contents of the ALPHA register ahead of the current
-          record as a new record.</td>
-        </tr>
+            <td>;</td>
 
-        <tr>
-          <th><kbd class="function">POSFL</kbd></th>
+            <td>59</td>
 
-          <td>Scans the working ASCII file for a match with the string in the
-          ALPHA register. Returns pointer index (<i>rrr.eee</i>) to the
-          X-register if a match is found, -1 if no match is found.</td>
-        </tr>
+            <td>V</td>
 
-        <tr>
-          <th><kbd class="function">PURFL</kbd></th>
+            <td>86</td>
+          </tr>
 
-          <td>Purges the file named in the ALPHA register.</td>
-        </tr>
+          <tr>
+            <td>&brvbar;</td>
 
-        <tr>
-          <th><kbd class="function">RCLPT</kbd></th>
+            <td>33</td>
 
-          <td>Recalls the pointer index from the working file to the
-          X-register. The pointer index is in the form <i>rrr</i> (register
-          number) for data files, <i>rrr.ccc</i> (record number and character
-          position) for ASCII files, or <i>bbbb</i> (number of bytes) for
-          length of program file.</td>
-        </tr>
+            <td>&lt;</td>
 
-        <tr>
-          <th><kbd class="function">RCLPTA</kbd></th>
+            <td>60</td>
 
-          <td>Recalls the pointer index or length of program from the file
-          named in the ALPHA register to the X-register.</td>
-        </tr>
+            <td>W</td>
 
-        <tr>
-          <th><kbd class="function">SAVEAS</kbd></th>
+            <td>87</td>
+          </tr>
 
-          <td>Copies an ASCII file from extended memory to an HP-IL mass
-          storage device. Requires the source file name and (if different) the
-          destination file name in the ALPHA register.</td>
-        </tr>
+          <tr>
+            <td>"</td>
 
-        <tr>
-          <th><kbd class="function">SAVEP</kbd></th>
+            <td>34</td>
 
-          <td>Copies the program named in the ALPHA register to extended
-          memory.</td>
-        </tr>
+            <td>=</td>
 
-        <tr>
-          <th><kbd class="function">SAVER</kbd></th>
+            <td>61</td>
 
-          <td>Copies all the data registers in main memory to the data file
-          named in the ALPHA register.</td>
-        </tr>
+            <td>X</td>
 
-        <tr>
-          <th><kbd class="function">SAVERX</kbd></th>
+            <td>88</td>
+          </tr>
 
-          <td>Copies the block of main memory data registers specified by the
-          number in the X-register (<i>bbb.eee</i>) to the working data file,
-          starting at the current pointer position.</td>
-        </tr>
+          <tr>
+            <td>#</td>
 
-        <tr>
-          <th><kbd class="function">SAVEX</kbd></th>
+            <td>35</td>
 
-          <td>Copies the contents of the X-register to the working file at the
-          current pointer position.</td>
-        </tr>
+            <td>&gt;</td>
 
-        <tr>
-          <th><kbd class="function">SEEKPT</kbd></th>
+            <td>62</td>
 
-          <td>Positions the pointer or pointers in the working file using an
-          index number in the X-register. Requires index in the form <i>rrr</i>
-          (register number) for data files or <i>rrr.ccc</i> (record number and
-          character position) for ASCII files.</td>
-        </tr>
+            <td>Y</td>
 
-        <tr>
-          <th><kbd class="function">SEEKPTA</kbd></th>
+            <td>89</td>
+          </tr>
 
-          <td>Positions the pointer or pointers in the file named In the ALPHA
-          register using an index number in the X-register. Requires index in
-          the form <i>rrr</i> (register number) for data files or
-          <i>rrr.ccc</i> (record number and character position) for ASCII
-          files.</td>
-        </tr>
-      </table>
+          <tr>
+            <td>$</td>
 
-      <h2>Displayable Characters and Their Corresponding Codes</h2>
+            <td>36</td>
 
-      <table class="chars center">
-        <tr>
-          <th>Char.</th>
+            <td>?</td>
 
-          <th>Code</th>
+            <td>63</td>
 
-          <th>Char.</th>
+            <td>Z</td>
 
-          <th>Code</th>
+            <td>90</td>
+          </tr>
 
-          <th>Char.</th>
+          <tr>
+            <td>%</td>
 
-          <th>Code</th>
-        </tr>
+            <td>37</td>
 
-        <tr>
-          <td><span class="hp41chars">&ntilde;</span></td>
+            <td>@</td>
 
-          <td>0</td>
+            <td>64</td>
 
-          <td>3</td>
+            <td>[</td>
 
-          <td>51</td>
+            <td>91</td>
+          </tr>
 
-          <td>N</td>
+          <tr>
+            <td>&amp;</td>
 
-          <td>78</td>
-        </tr>
+            <td>38</td>
 
-        <tr>
-          <td><span class="hp41chars">&otilde;</span></td>
+            <td>A</td>
 
-          <td>1</td>
+            <td>65</td>
 
-          <td>4</td>
+            <td>\</td>
 
-          <td>52</td>
+            <td>92</td>
+          </tr>
 
-          <td>O</td>
+          <tr>
+            <td>&rsquo;</td>
 
-          <td>79</td>
-        </tr>
+            <td>39</td>
 
-        <tr>
-          <td><span class="hp41chars">&acirc;</span></td>
+            <td>B</td>
 
-          <td>4</td>
+            <td>66</td>
 
-          <td>5</td>
+            <td>]</td>
 
-          <td>53</td>
+            <td>93</td>
+          </tr>
 
-          <td>P</td>
+          <tr>
+            <td>(</td>
 
-          <td>80</td>
-        </tr>
+            <td>40</td>
 
-        <tr>
-          <td><span class="hp41chars">&auml;</span></td>
+            <td>C</td>
 
-          <td>5</td>
+            <td>67</td>
 
-          <td>6</td>
+            <td><span class="hp41chars">^</span></td>
 
-          <td>54</td>
+            <td>94</td>
+          </tr>
 
-          <td>Q</td>
+          <tr>
+            <td>)</td>
 
-          <td>81</td>
-        </tr>
+            <td>41</td>
 
-        <tr>
-          <td><span class="hp41chars">&para;</span></td>
+            <td>D</td>
 
-          <td>6</td>
+            <td>68</td>
 
-          <td>7</td>
+            <td>_</td>
 
-          <td>55</td>
+            <td>95</td>
+          </tr>
 
-          <td>R</td>
+          <tr>
+            <td>&lowast;</td>
 
-          <td>82</td>
-        </tr>
+            <td>42</td>
 
-        <tr>
-          <td><span class="hp41chars">&aring;</span></td>
+            <td>E</td>
 
-          <td>12</td>
+            <td>69</td>
 
-          <td>8</td>
+            <td><span class="hp41chars">`</span></td>
 
-          <td>56</td>
+            <td>96</td>
+          </tr>
 
-          <td>S</td>
+          <tr>
+            <td>+</td>
 
-          <td>83</td>
-        </tr>
+            <td>43</td>
 
-        <tr>
-          <td><span class="hp41chars">&uuml;</span></td>
+            <td>F</td>
 
-          <td>13</td>
+            <td>70</td>
 
-          <td>9</td>
+            <td>a</td>
 
-          <td>57</td>
+            <td>97</td>
+          </tr>
 
-          <td>T</td>
+          <tr>
+            <td>,</td>
 
-          <td>84</td>
-        </tr>
+            <td>44</td>
 
-        <tr>
-          <td>&ne;</td>
+            <td>G</td>
 
-          <td>29</td>
+            <td>71</td>
 
-          <td>:</td>
+            <td>b</td>
 
-          <td>58</td>
+            <td>98</td>
+          </tr>
 
-          <td>U</td>
+          <tr>
+            <td>-</td>
 
-          <td>85</td>
-        </tr>
+            <td>45</td>
 
-        <tr>
-          <td>space</td>
+            <td>H</td>
 
-          <td>32</td>
+            <td>72</td>
 
-          <td>;</td>
+            <td>c</td>
 
-          <td>59</td>
+            <td>99</td>
+          </tr>
 
-          <td>V</td>
+          <tr>
+            <td>.</td>
 
-          <td>86</td>
-        </tr>
+            <td>46</td>
 
-        <tr>
-          <td>&brvbar;</td>
+            <td>I</td>
 
-          <td>33</td>
+            <td>73</td>
 
-          <td>&lt;</td>
+            <td>d</td>
 
-          <td>60</td>
+            <td>100</td>
+          </tr>
 
-          <td>W</td>
+          <tr>
+            <td>/</td>
 
-          <td>87</td>
-        </tr>
+            <td>47</td>
 
-        <tr>
-          <td>"</td>
+            <td>J</td>
 
-          <td>34</td>
+            <td>74</td>
 
-          <td>=</td>
+            <td>e</td>
 
-          <td>61</td>
+            <td>101</td>
+          </tr>
 
-          <td>X</td>
+          <tr>
+            <td>0</td>
 
-          <td>88</td>
-        </tr>
+            <td>48</td>
 
-        <tr>
-          <td>#</td>
+            <td>K</td>
 
-          <td>35</td>
+            <td>75</td>
 
-          <td>&gt;</td>
+            <td><span class="hp41chars">~</span></td>
 
-          <td>62</td>
+            <td>126</td>
+          </tr>
 
-          <td>Y</td>
+          <tr>
+            <td>1</td>
 
-          <td>89</td>
-        </tr>
+            <td>49</td>
 
-        <tr>
-          <td>$</td>
+            <td>L</td>
 
-          <td>36</td>
+            <td>76</td>
 
-          <td>?</td>
+            <td><span class="hp41chars">&Ouml;</span></td>
 
-          <td>63</td>
+            <td>127</td>
+          </tr>
 
-          <td>Z</td>
+          <tr>
+            <td>2</td>
 
-          <td>90</td>
-        </tr>
+            <td>50</td>
 
-        <tr>
-          <td>%</td>
+            <td>M</td>
 
-          <td>37</td>
+            <td>77</td>
 
-          <td>@</td>
+            <td>&nbsp;</td>
 
-          <td>64</td>
-
-          <td>[</td>
-
-          <td>91</td>
-        </tr>
-
-        <tr>
-          <td>&amp;</td>
-
-          <td>38</td>
-
-          <td>A</td>
-
-          <td>65</td>
-
-          <td>\</td>
-
-          <td>92</td>
-        </tr>
-
-        <tr>
-          <td>&rsquo;</td>
-
-          <td>39</td>
-
-          <td>B</td>
-
-          <td>66</td>
-
-          <td>]</td>
-
-          <td>93</td>
-        </tr>
-
-        <tr>
-          <td>(</td>
-
-          <td>40</td>
-
-          <td>C</td>
-
-          <td>67</td>
-
-          <td><span class="hp41chars">^</span></td>
-
-          <td>94</td>
-        </tr>
-
-        <tr>
-          <td>)</td>
-
-          <td>41</td>
-
-          <td>D</td>
-
-          <td>68</td>
-
-          <td>_</td>
-
-          <td>95</td>
-        </tr>
-
-        <tr>
-          <td>&lowast;</td>
-
-          <td>42</td>
-
-          <td>E</td>
-
-          <td>69</td>
-
-          <td><span class="hp41chars">`</span></td>
-
-          <td>96</td>
-        </tr>
-
-        <tr>
-          <td>+</td>
-
-          <td>43</td>
-
-          <td>F</td>
-
-          <td>70</td>
-
-          <td>a</td>
-
-          <td>97</td>
-        </tr>
-
-        <tr>
-          <td>,</td>
-
-          <td>44</td>
-
-          <td>G</td>
-
-          <td>71</td>
-
-          <td>b</td>
-
-          <td>98</td>
-        </tr>
-
-        <tr>
-          <td>-</td>
-
-          <td>45</td>
-
-          <td>H</td>
-
-          <td>72</td>
-
-          <td>c</td>
-
-          <td>99</td>
-        </tr>
-
-        <tr>
-          <td>.</td>
-
-          <td>46</td>
-
-          <td>I</td>
-
-          <td>73</td>
-
-          <td>d</td>
-
-          <td>100</td>
-        </tr>
-
-        <tr>
-          <td>/</td>
-
-          <td>47</td>
-
-          <td>J</td>
-
-          <td>74</td>
-
-          <td>e</td>
-
-          <td>101</td>
-        </tr>
-
-        <tr>
-          <td>0</td>
-
-          <td>48</td>
-
-          <td>K</td>
-
-          <td>75</td>
-
-          <td><span class="hp41chars">~</span></td>
-
-          <td>126</td>
-        </tr>
-
-        <tr>
-          <td>1</td>
-
-          <td>49</td>
-
-          <td>L</td>
-
-          <td>76</td>
-
-          <td><span class="hp41chars">&Ouml;</span></td>
-
-          <td>127</td>
-        </tr>
-
-        <tr>
-          <td>2</td>
-
-          <td>50</td>
-
-          <td>M</td>
-
-          <td>77</td>
-
-          <td>&nbsp;</td>
-
-          <td>&nbsp;</td>
-        </tr>
-      </table>
+            <td>&nbsp;</td>
+          </tr>
+        </table>
+      </div>
     </div>
-  </div><script type="text/javascript">
-    function onTopnavClick() {
+    <script type="text/javascript">
+      function onTopnavClick() {
         var x = document.getElementById("mytopnav");
         if (x.className === "topnav") {
           x.className += " responsive";
@@ -802,6 +920,6 @@
           x.className = "topnav";
         }
       }
-  </script>
-</body>
+    </script>
+  </body>
 </html>
