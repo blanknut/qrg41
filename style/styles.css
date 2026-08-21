@@ -252,6 +252,16 @@ body {
   margin: 1em;
 }
 
+.index-main {
+  min-height: calc(100vh - 2em);
+  display: flex;
+  flex-direction: column;
+}
+
+.index-main .footer {
+  margin-top: auto;
+}
+
 .content {
   column-fill: balance;
 }
