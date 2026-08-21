@@ -1,0 +1,881 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+
+<html lang="en-US">
+  <head>
+    <meta
+      name="generator"
+      content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 16.4), see www.w3.org"
+    />
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>HP-41 QREF</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&amp;display=swap"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" type="text/css" href="style/styles.css" />
+  </head>
+
+  <body>
+    <div class="sticky no-print">
+      <div class="topnav" id="mytopnav">
+        <a href="index.html">HOME</a>
+        <a href="hp82180a.html">XFN</a>
+        <a href="hp82182a.html">TIME</a>
+        <a href="hp82160a.html">HPIL</a>
+        <a href="hp82183a.html">EXT I/O</a>
+        <a href="hp9872c-9872t.html" class="active">PLOTTER</a>
+        <!--
+      <a href="ccd.html">CCD</a>
+      -->
+        <a href="hepax.html">HEPAX</a>
+        <!--
+      <a href="ppc.html">PPC</a>
+      -->
+        <a href="javascript:void(0);" class="icon" onclick="onTopnavClick()"
+          >&#9776;</a
+        >
+      </div>
+    </div>
+
+    <div class="main">
+      <h1>HP 9872C and 9872T Graphics Plotters Reference Card</h1>
+
+      <div class="content">
+        <p>
+          <img
+            class="img-left zoom"
+            src="images/hp9872a.gif"
+            alt="HP 9872C and 9872T Graphics Plotters"
+            width="150px"
+          />
+          Quick reference for HP 9872C and HP 9872T graphics plotters. This page
+          is an HTML transcription of the 4-page reference card (Part No.
+          09872-90013, February 1982) with command names, defaults, error
+          messages, addressing data, and instruction definitions.
+        </p>
+
+        <h2>Plotter Default Conditions</h2>
+
+        <table class="standard">
+          <tr>
+            <td>Relative character direction</td>
+            <td>Horizontal (DR 1,0)</td>
+          </tr>
+
+          <tr>
+            <td>Line type</td>
+            <td>Solid line</td>
+          </tr>
+
+          <tr>
+            <td>Line pattern length</td>
+            <td>4% of the distance from P1 to P2</td>
+          </tr>
+
+          <tr>
+            <td>Input window</td>
+            <td>Mechanical limits of plotter</td>
+          </tr>
+
+          <tr>
+            <td>Relative character size</td>
+            <td>
+              0.75% of |P2<sub>x</sub> - P1<sub>x</sub>| by 1.5% of |P2<sub
+                >y</sub
+              >
+              - P1<sub>y</sub>|
+            </td>
+          </tr>
+
+          <tr>
+            <td>Automatic pen pickup</td>
+            <td>On</td>
+          </tr>
+
+          <tr>
+            <td>Pen velocity</td>
+            <td>36 cm/s</td>
+          </tr>
+
+          <tr>
+            <td>Adaptive pen velocity</td>
+            <td>Off</td>
+          </tr>
+
+          <tr>
+            <td>Symbol mode</td>
+            <td>Off</td>
+          </tr>
+
+          <tr>
+            <td>Tick length</td>
+            <td>
+              0.5% of |P2<sub>x</sub> - P1<sub>x</sub>| or |P2<sub>y</sub> -
+              P1<sub>y</sub>| for tp or tn
+            </td>
+          </tr>
+
+          <tr>
+            <td>Standard character set</td>
+            <td>Set 0</td>
+          </tr>
+
+          <tr>
+            <td>Alternate character set</td>
+            <td>Set 0</td>
+          </tr>
+
+          <tr>
+            <td>Character slant</td>
+            <td>0 degrees</td>
+          </tr>
+
+          <tr>
+            <td>Mask value</td>
+            <td>223,0,0</td>
+          </tr>
+
+          <tr>
+            <td>Digitize clear</td>
+            <td>On</td>
+          </tr>
+
+          <tr>
+            <td>Scaling</td>
+            <td>Off</td>
+          </tr>
+        </table>
+
+        <p>
+          P1 and P2 are changed only with the initialize command (IN). They are
+          not affected by device clear and the default command (DF).
+        </p>
+
+        <p>
+          On the 9872T the cutter is enabled only with the initialize command
+          (IN). It is not affected by device clear and the default command (DF).
+        </p>
+
+        <p>
+          The current pen location is moved to the lower right corner with the
+          initialize command (IN) but is unaffected by device clear and the
+          default command (DF).
+        </p>
+
+        <h2>Error Messages</h2>
+
+        <table class="functions">
+          <tr>
+            <td>error&nbsp;1</td>
+            <td>
+              <b>Instruction not recognized</b><br />
+              The plotter has received an illegal character sequence.
+            </td>
+          </tr>
+
+          <tr>
+            <td>error&nbsp;2</td>
+            <td>
+              <b>Wrong number of parameters</b><br />
+              Too many or too few parameters have been sent with an instruction.
+            </td>
+          </tr>
+
+          <tr>
+            <td>error&nbsp;3</td>
+            <td>
+              <b>Bad parameter</b><br />
+              The parameters sent to the plotter with an instruction are out of
+              range for that instruction.
+            </td>
+          </tr>
+
+          <tr>
+            <td>error&nbsp;4</td>
+            <td>
+              <b>Illegal character</b><br />
+              The character specified as a parameter is not in the allowable set
+              for that instruction.
+            </td>
+          </tr>
+
+          <tr>
+            <td>error&nbsp;5</td>
+            <td>
+              <b>Unknown character set</b><br />
+              A character set out of the range 0 through 4 has been designated
+              as either the standard or alternate character set.
+            </td>
+          </tr>
+
+          <tr>
+            <td>error&nbsp;6</td>
+            <td>
+              <b>Position overflow</b><br />
+              An attempt to draw a character or perform a CP that is located
+              outside of the plotter numeric limit of +32767.
+            </td>
+          </tr>
+
+          <tr>
+            <td>error&nbsp;8</td>
+            <td>
+              <b>Out of paper</b><br />
+              Either the advance option is off when an AH or AF is attempted or
+              the out-of-paper sensor indicates no paper after an advance.
+            </td>
+          </tr>
+        </table>
+
+        <h2>HP 9872 HP-IB Implementation</h2>
+        <ol>
+          <li>Functions implemented (ANSI/IEEE 488-1978)</li>
+          <ol type="a">
+            <li>Source Handshake (SH1)</li>
+            <li>Acceptor Handshake (AH1)</li>
+            <li>Talker (T2) Serial Poll</li>
+            <li>Listener (L2)</li>
+            <li>Service Request (SR1)</li>
+            <li>No Remote Local (RL0)</li>
+            <li>Parallel Poll (PP2)</li>
+            <li>Device Clear (DC1)</li>
+            <li>No Device Trigger (DT0)</li>
+          </ol>
+          <li>Device Clear or Selected Device Clear causes the plotter to:</li>
+          <ol type="a">
+            <li>Complete plotting of points in progress, then stop.</li>
+            <li>Reset parser to expect next instruction.</li>
+          </ol>
+          <li>
+            PPPRN for parallel poll is assigned by the rear panel address
+            switch. Listen addresses O through 7 assign DIO lines 8 - 1
+            respectively. All other listen addresses disable parallel poll.
+          </li>
+        </ol>
+
+        <h2>Address Switch Positions</h2>
+        <table class="standard">
+          <tr>
+            <td colspan="2"><b>Address Characters</b></td>
+            <td colspan="5"><b>Address Switch Settings</b></td>
+            <td colspan="2"><b>Address Codes</b></td>
+          </tr>
+          <tr>
+            <td><i>Listen</i></td>
+            <td><i>Talk</i></td>
+            <td><i>A5</i></td>
+            <td><i>A4</i></td>
+            <td><i>A3</i></td>
+            <td><i>A2</i></td>
+            <td><i>A1</i></td>
+            <td><i>Dec</i></td>
+            <td><i>Oct</i></td>
+          </tr>
+          <tr class="highlight1">
+            <td>SP</td>
+            <td>@</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr class="highlight1">
+            <td>!</td>
+            <td>A</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+
+          <tr class="highlight1">
+            <td>&quot;</td>
+            <td>B</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>2</td>
+            <td>2</td>
+          </tr>
+          <tr class="highlight1">
+            <td>#</td>
+            <td>C</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>3</td>
+            <td>3</td>
+          </tr>
+          <tr class="highlight1">
+            <td>$</td>
+            <td>D</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>4</td>
+            <td>4</td>
+          </tr>
+          <tr class="highlight2">
+            <td>%</td>
+            <td>E</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>5</td>
+            <td>5</td>
+          </tr>
+          <tr class="highlight1">
+            <td>&amp;</td>
+            <td>F</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>6</td>
+            <td>6</td>
+          </tr>
+          <tr class="highlight1">
+            <td>&lsquo;</td>
+            <td>G</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>7</td>
+            <td>7</td>
+          </tr>
+          <tr>
+            <td>(</td>
+            <td>H</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>8</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>)</td>
+            <td>I</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>9</td>
+            <td>11</td>
+          </tr>
+          <tr>
+            <td>*</td>
+            <td>J</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>10</td>
+            <td>12</td>
+          </tr>
+          <tr>
+            <td>+</td>
+            <td>K</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>11</td>
+            <td>13</td>
+          </tr>
+          <tr>
+            <td>,</td>
+            <td>L</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>12</td>
+            <td>14</td>
+          </tr>
+          <tr>
+            <td>-</td>
+            <td>M</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>13</td>
+            <td>15</td>
+          </tr>
+          <tr>
+            <td>.</td>
+            <td>N</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>14</td>
+            <td>16</td>
+          </tr>
+          <tr>
+            <td>/</td>
+            <td>O</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>15</td>
+            <td>17</td>
+          </tr>
+          <tr>
+            <td>0</td>
+            <td>P</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>16</td>
+            <td>20</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Q</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>17</td>
+            <td>21</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>R</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>18</td>
+            <td>22</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>S</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>19</td>
+            <td>23</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>T</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>20</td>
+            <td>24</td>
+          </tr>
+          <tr class="highlight3">
+            <td>5</td>
+            <td>U</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>21</td>
+            <td>25</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>V</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>22</td>
+            <td>26</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>W</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>23</td>
+            <td>27</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>X</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>24</td>
+            <td>30</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Y</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>25</td>
+            <td>31</td>
+          </tr>
+          <tr>
+            <td>:</td>
+            <td>Z</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>26</td>
+            <td>32</td>
+          </tr>
+          <tr>
+            <td>;</td>
+            <td>[</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>27</td>
+            <td>33</td>
+          </tr>
+          <tr>
+            <td>&lt;</td>
+            <td>\</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>28</td>
+            <td>34</td>
+          </tr>
+          <tr>
+            <td>=</td>
+            <td>]</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>29</td>
+            <td>35</td>
+          </tr>
+          <tr>
+            <td>&gt;</td>
+            <td>^</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>30</td>
+            <td>36</td>
+          </tr>
+          <tr class="highlight4">
+            <td>?</td>
+            <td>_</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>31</td>
+            <td>37</td>
+          </tr>
+        </table>
+
+         <div class="box highlight1"></div>
+        <p>
+          Address restricted to these codes when using parallel poll capability.
+        </p>
+        <div class="box highlight2"></div>
+        <p>Preset</p>
+        <div class="box highlight3"></div>
+        <p>Reserved HP computer address. Not available for plotter use.</p>
+        <div class="box highlight4"></div>
+        <p>Reserved universal unlisten command.</p>
+
+        <h2>Instruction Definitions</h2>
+
+        <table class="standard">
+          <tr>
+            <td><b>Instruction</b></td>
+            <td><b>Definition</b></td>
+          </tr>
+
+          <tr>
+            <td>AF or PG or PG1</td>
+            <td>Advance full page</td>
+          </tr>
+          <tr>
+            <td>AH</td>
+            <td>Advance half page</td>
+          </tr>
+          <tr>
+            <td>AP (n)</td>
+            <td>Automatic pen pickup, n = integer or no parameter</td>
+          </tr>
+          <tr>
+            <td>CAn</td>
+            <td>Designate alternate set n (integer 0 through 4)</td>
+          </tr>
+          <tr>
+            <td>CP spaces, lines</td>
+            <td>Character plot [d]</td>
+          </tr>
+          <tr>
+            <td>CS m</td>
+            <td>Designate standard set m (integer 0 through 4)</td>
+          </tr>
+          <tr>
+            <td>DC</td>
+            <td>Digitize clear</td>
+          </tr>
+          <tr>
+            <td>DF</td>
+            <td>Set default values</td>
+          </tr>
+          <tr>
+            <td>DI run, rise</td>
+            <td>Absolute direction [d]</td>
+          </tr>
+          <tr>
+            <td>DP</td>
+            <td>Digitize point</td>
+          </tr>
+          <tr>
+            <td>DR run, rise</td>
+            <td>Relative direction [d]</td>
+          </tr>
+          <tr>
+            <td>EC (n)</td>
+            <td>Enable cutter, n = integer or no parameter</td>
+          </tr>
+          <tr>
+            <td>IM e (,s(,p))</td>
+            <td>Input e, s, and p masks, parameters integers 0 through 255</td>
+          </tr>
+          <tr>
+            <td>IN</td>
+            <td>Initialize</td>
+          </tr>
+          <tr>
+            <td>IP P1<sub>x</sub>,P1<sub>y</sub>,P2<sub>x</sub>,P2<sub>y</sub></td>
+            <td>Input P1 and P2 [i]</td>
+          </tr>
+          <tr>
+            <td>IW X<sub>lo</sub>,Y<sub>lo</sub>,X<sub>hi</sub>,Y<sub>hi</sub></td>
+            <td>
+              Input window where 0 &lt; X &lt; 16000, 0 &lt; Y &lt; 11400, lo
+              &lt; hi
+            </td>
+          </tr>
+          <tr>
+            <td>LB c...c</td>
+            <td>Label some ASCII string (end with ETX character)</td>
+          </tr>
+          <tr>
+            <td>LT t (l)</td>
+            <td>Designate line type t (integer 0 through 6) and length [d]</td>
+          </tr>
+          <tr>
+            <td>OA</td>
+            <td>Output actual position and pen status [i]</td>
+          </tr>
+          <tr>
+            <td>OC</td>
+            <td>Output commanded position and pen status [i]</td>
+          </tr>
+          <tr>
+            <td>OD</td>
+            <td>Output digitized point and pen status [i]</td>
+          </tr>
+          <tr>
+            <td>OE</td>
+            <td>Output error [i]</td>
+          </tr>
+          <tr>
+            <td>OF</td>
+            <td>Output factors [i]</td>
+          </tr>
+          <tr>
+            <td>OI</td>
+            <td>Output identification [c]</td>
+          </tr>
+          <tr>
+            <td>OO</td>
+            <td>Output options [i]</td>
+          </tr>
+          <tr>
+            <td>OP</td>
+            <td>Output P1 and P2 [i]</td>
+          </tr>
+          <tr>
+            <td>OS</td>
+            <td>Output status [i]</td>
+          </tr>
+          <tr>
+            <td>PA x,y (,x,y...)</td>
+            <td>Plot absolute [i]</td>
+          </tr>
+          <tr>
+            <td>PD</td>
+            <td>Pen down</td>
+          </tr>
+          <tr>
+            <td>PG or PG1</td>
+            <td>Advance full page</td>
+          </tr>
+          <tr>
+            <td>PR x,y (,x,y...)</td>
+            <td>Plot relative [i]</td>
+          </tr>
+          <tr>
+            <td>PU</td>
+            <td>Pen up</td>
+          </tr>
+          <tr>
+            <td>SA</td>
+            <td>Select alternate character set</td>
+          </tr>
+          <tr>
+            <td>SC X<sub>min</sub>, X<sub>max</sub>, Y<sub>min</sub>, Y<sub>max</sub></td>
+            <td>Scale [i]</td>
+          </tr>
+          <tr>
+            <td>SI width, height</td>
+            <td>Absolute character size [d]</td>
+          </tr>
+          <tr>
+            <td>SL tan &Theta;</td>
+            <td>Absolute character slant (from vertical) [d]</td>
+          </tr>
+          <tr>
+            <td>SM c</td>
+            <td>Symbol mode [c]</td>
+          </tr>
+          <tr>
+            <td>SP n</td>
+            <td>Select pen n (integer 0 through 8)</td>
+          </tr>
+          <tr>
+            <td>SR width, height</td>
+            <td>Relative character size [d]</td>
+          </tr>
+          <tr>
+            <td>SS</td>
+            <td>Select standard character set</td>
+          </tr>
+          <tr>
+            <td>TL tp (,tn)</td>
+            <td>Tick length [d]</td>
+          </tr>
+          <tr>
+            <td>UC (pen,) x,y (,pen) (,x,y) (...)</td>
+            <td>User defined character [i]</td>
+          </tr>
+          <tr>
+            <td>VA</td>
+            <td>Adaptive velocity</td>
+          </tr>
+          <tr>
+            <td>VN</td>
+            <td>Normal velocity</td>
+          </tr>
+          <tr>
+            <td>VS v (,n)</td>
+            <td>
+              Select velocity v (integer 1 through 36) for pen n (integer 1
+              through 8)
+            </td>
+          </tr>
+          <tr>
+            <td>XT</td>
+            <td>X-axis tick</td>
+          </tr>
+          <tr>
+            <td>YT</td>
+            <td>Y-axis tick</td>
+          </tr>
+        </table>
+
+        <h2>Formats</h2>
+
+        <table class="functions">
+          <tr>
+            <td>[i]</td>
+            <td>
+              Integer format between +32767 (scaling off) and +16383 (scaling
+              on). No decimal.
+            </td>
+          </tr>
+
+          <tr>
+            <td>[d]</td>
+            <td>Decimal format between +127.999. Decimal is optional.</td>
+          </tr>
+
+          <tr>
+            <td>[c]</td>
+            <td>ASCII character.</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <script type="text/javascript">
+      function onTopnavClick() {
+        var x = document.getElementById("mytopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -331,6 +331,10 @@ table.index {
   background-image: url("../images/hpil.svg");
 }
 
+.plotter-icon {
+  background-image: url("../images/plotter.svg");
+}
+
 .hepax-icon {
   background-image: url("../images/hepax.svg");
 }
@@ -409,6 +413,33 @@ table.values td {
   padding: 0.25em 0.25em;
   border: 1px solid #333333;
 }
+
+.box {
+  float: left;
+  height: 14px;
+  width: 28px;
+  margin-right: 24px;
+  margin-bottom: 12px;
+  border: 1px solid #303030;
+  clear: both;
+}
+
+.highlight1 {
+  background-color: #ffffe0;
+}
+
+.highlight2 {
+  background-color: #e0ffe0;
+}
+
+.highlight3 {
+  background-color: #f0e8ff;
+}
+
+.highlight4 {
+  background-color: #ffe0e0;
+}
+
 
 /*******/
 
