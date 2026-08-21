@@ -234,29 +234,33 @@
 
         <h2>HP 9872 HP-IB Implementation</h2>
         <ol>
-          <li>Functions implemented (ANSI/IEEE 488-1978)</li>
-          <ol type="a">
-            <li>Source Handshake (SH1)</li>
-            <li>Acceptor Handshake (AH1)</li>
-            <li>Talker (T2) Serial Poll</li>
-            <li>Listener (L2)</li>
-            <li>Service Request (SR1)</li>
-            <li>No Remote Local (RL0)</li>
-            <li>Parallel Poll (PP2)</li>
-            <li>Device Clear (DC1)</li>
-            <li>No Device Trigger (DT0)</li>
-          </ol>
-          <li>Device Clear or Selected Device Clear causes the plotter to:</li>
-          <ol type="a">
-            <li>Complete plotting of points in progress, then stop.</li>
-            <li>Reset parser to expect next instruction.</li>
-          </ol>
+          <li>
+            Functions implemented (ANSI/IEEE 488-1978)
+            <ol type="a">
+              <li>Source Handshake (SH1)</li>
+              <li>Acceptor Handshake (AH1)</li>
+              <li>Talker (T2) Serial Poll</li>
+              <li>Listener (L2)</li>
+              <li>Service Request (SR1)</li>
+              <li>No Remote Local (RL0)</li>
+              <li>Parallel Poll (PP2)</li>
+              <li>Device Clear (DC1)</li>
+              <li>No Device Trigger (DT0)</li>
+            </ol>
+          </li>
+          <li>
+            Device Clear or Selected Device Clear causes the plotter to:
+            <ol type="a">
+              <li>Complete plotting of points in progress, then stop.</li>
+              <li>Reset parser to expect next instruction.</li>
+            </ol>
+          </li>
           <li>
             PPPRN for parallel poll is assigned by the rear panel address
             switch. Listen addresses O through 7 assign DIO lines 8 - 1
             respectively. All other listen addresses disable parallel poll.
           </li>
-        </ol>
+        </ol
 
         <h2>Address Switch Positions</h2>
         <table class="standard">
